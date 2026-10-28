@@ -1,6 +1,8 @@
 """A YouTube video -> a study file: what is on screen every ~10 s, with the words said over it.
 
-    python3 scripts/ingest_youtube.py <youtube url or id> [...] [--out sources/videos]
+    python3 scripts/ingest_youtube.py <youtube url or id> [...] [--out sources/videos] [--frames-only]
+
+--frames-only skips the transcript (layout inspiration: sheets/ and meta.json only).
 
 Writes sources/videos/<id>/:
   meta.json          title, channel, date, length
@@ -110,14 +112,17 @@ def stamp(sec):
     return f"{sec // 3600}:{sec // 60 % 60:02d}:{sec % 60:02d}" if sec >= 3600 else f"{sec // 60}:{sec % 60:02d}"
 
 
-def ingest(arg, root):
+def ingest(arg, root, frames_only=False):
     vid = re.search(r"(?:v=|youtu\.be/|^)([\w-]{11})", arg).group(1)
     out = os.path.join(root, vid)
     os.makedirs(out, exist_ok=True)
     info = video_info(vid)
-    meta = {k: info.get(k) for k in ("id", "title", "channel", "upload_date", "duration", "webpage_url")}
+    meta = {k: info.get(k) for k in ("id", "title", "channel", "upload_date", "duration", "view_count", "webpage_url")}
     json.dump(meta, open(os.path.join(out, "meta.json"), "w"), indent=1)
     sheets, sb = storyboard(info, out)
+    if frames_only:
+        print(f"OK {vid} {meta['title']!r}: {len(sheets)} sheets (frames only)")
+        return
     lines = transcript(vid, out)
 
     with open(os.path.join(out, "transcript.md"), "w", encoding="utf-8") as f:
@@ -161,7 +166,9 @@ if __name__ == "__main__":
         i = args.index("--out")
         root = args[i + 1]
         del args[i:i + 2]
+    frames_only = "--frames-only" in args
+    args = [a for a in args if a != "--frames-only"]
     if not args:
         sys.exit(__doc__)
     for a in args:
-        ingest(a, root)
+        ingest(a, root, frames_only)
