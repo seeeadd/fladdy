@@ -1,27 +1,33 @@
-/* The foundations every YouTube slide shares. A different brand = a different copy of this block only. */
+/* The foundations every YouTube slide shares. A different brand = a different copy of this block only.
+   Type roles (Sean 2026-10-28): Olivera = headlines, Literata = subheadings, Hanken Grotesk = body,
+   IBM Plex Mono = small labels. */
 @font-face { font-family: "Display"; src: url(fonts/Olivera-Demo.ttf); }
 @font-face { font-family: "Display Italic"; src: url(fonts/Olivera-Oblique-Demo.ttf); }
-@font-face { font-family: "Body"; src: url(fonts/Literata.ttf); }
-@font-face { font-family: "Body"; src: url(fonts/Literata-Italic.ttf); font-style: italic; }
+@font-face { font-family: "Sub"; src: url(fonts/Literata.ttf); }
+@font-face { font-family: "Sub"; src: url(fonts/Literata-Italic.ttf); font-style: italic; }
+@font-face { font-family: "Body"; src: url(fonts/HankenGrotesk-Variable.ttf); font-weight: 100 900; }
 @font-face { font-family: "Label"; src: url(fonts/IBMPlexMono-Medium.ttf); }
 
 :root {
   /* colour roles */
   --paper: #FBFAF6;      /* the ground, most of every slide */
-  --ink: #262119;        /* text, and the dark ground of a dark slide */
-  --quiet: #6E6554;      /* labels, small print */
+  --field: #F1ECE1;      /* a quieter paper for a panel */
+  --ink: #262119;        /* text, and the ground of a dark slide */
+  --quiet: #6E6554;      /* small print */
   --line: #DCD3C1;       /* hairlines, card borders, the dot grid */
-  --card: #FEFDFA;       /* raised card */
+  --card: #FEFDFA;       /* raised paper */
   --accent: #B06A4A;     /* the ONE emphasis colour: the italic word, the underline */
   --spark: #E8A100;      /* at most one tiny moment per slide */
   --panel: #8A9068;      /* a colour field for part titles */
-  /* type: Olivera has letters and digits only, so punctuation falls back to Literata glyph by glyph */
-  --display: "Display", "Body", Georgia, serif;
-  --display-italic: "Display Italic", "Body", Georgia, serif;
-  --body: "Body", Georgia, serif;
+  --stitch: #C89B4B;     /* lone stitches */
+  /* type. Olivera has letters and digits only; punctuation falls back to Literata glyph by glyph */
+  --display: "Display", "Sub", Georgia, serif;
+  --display-italic: "Display Italic", "Sub", Georgia, serif;
+  --sub: "Sub", Georgia, serif;
+  --body: "Body", system-ui, sans-serif;
   --label: "Label", ui-monospace, monospace;
-  /* the facecard: same place on every slide so the face can be dropped in once and reused */
-  --face-x: 112px; --face-y: 676px; --face-size: 330px; --face-radius: 26px;
+  /* the facecard: same place on every slide, so the face is dropped in once and reused */
+  --face-x: 96px; --face-y: 668px; --face-size: 330px; --face-radius: 28px;
 }
 
 * { box-sizing: border-box; margin: 0; }
@@ -29,28 +35,45 @@ body { background: #d9d4c9; font-family: var(--body); }
 .slide {
   width: 1920px; height: 1080px; position: relative; overflow: hidden;
   background-color: var(--paper); color: var(--ink);
-  background-image: radial-gradient(var(--line) 1.6px, transparent 1.7px);
-  background-size: 36px 36px; background-position: 18px 18px;
+  background-image: radial-gradient(var(--line) 1.7px, transparent 1.8px);
+  background-size: 38px 38px; background-position: 19px 19px;
   margin: 0 auto 40px;
 }
+/* paper grain over everything, very light */
+.slide::before { content: ""; position: absolute; inset: 0; z-index: 50; pointer-events: none; opacity: .5; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .15  0 0 0 0 .13  0 0 0 0 .1  0 0 0 .07 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>"); }
 .slide.dark { background-color: var(--ink); color: var(--paper);
-  background-image: radial-gradient(rgba(251,250,246,.10) 1.6px, transparent 1.7px); }
+  background-image: radial-gradient(rgba(251,250,246,.09) 1.7px, transparent 1.8px); }
+.slide.dark::before { mix-blend-mode: screen; opacity: .35; }
 
-/* the facecard placeholder: Sean's face goes here in Canva */
+/* the facecard: Sean's face goes here in Canva */
 .face { position: absolute; left: var(--face-x); top: var(--face-y); width: var(--face-size); height: var(--face-size);
-  border-radius: var(--face-radius); background: var(--card); border: 3px solid #D8B27A;
-  display: flex; align-items: center; justify-content: center; z-index: 5; }
-.face::after { content: "FACECARD"; font-family: var(--label); font-size: 18px; letter-spacing: .14em; color: #C9A46D; }
-.dark .face { background: #332d24; border-color: #8a7350; }
+  border-radius: var(--face-radius); background: var(--card); border: 3px solid #D8B27A; z-index: 40;
+  box-shadow: 0 14px 34px rgba(38,33,25,.12); display: flex; align-items: center; justify-content: center; }
+.face::after { content: "FACECARD"; font-family: var(--label); font-size: 18px; letter-spacing: .16em; color: #C9A46D; }
+.dark .face { background: #332d24; border-color: #8a7350; box-shadow: 0 14px 34px rgba(0,0,0,.35); }
 
-.label { font-family: var(--label); text-transform: uppercase; letter-spacing: .14em; font-size: 26px; color: var(--accent); }
+.label { font-family: var(--label); text-transform: uppercase; letter-spacing: .16em; font-size: 25px; color: var(--accent); }
 .dark .label { color: #D8B27A; }
-.display { font-family: var(--display); font-weight: 400; line-height: 1.04; letter-spacing: .005em;
-  -webkit-text-stroke: .022em currentColor; } /* Olivera has one thin weight; the site thickens it the same way */
+.display { font-family: var(--display); font-weight: 400; line-height: 1.02; letter-spacing: .004em;
+  -webkit-text-stroke: .022em currentColor; } /* Olivera has one thin weight; the website thickens it the same way */
 .em { font-family: var(--display-italic); color: var(--accent); -webkit-text-stroke: .018em currentColor; }
 .dark .em { color: #E0A57E; }
-.underline { position: relative; display: inline-block; }
-.underline svg { position: absolute; left: -2%; width: 104%; bottom: -.16em; height: .22em; overflow: visible; }
-.small { font-family: var(--body); font-size: 34px; line-height: 1.4; color: var(--quiet); }
-.dark .small { color: #CFC6B4; }
-.card { background: var(--card); border: 2px solid var(--line); border-radius: 22px; box-shadow: 0 10px 30px rgba(38,33,25,.07); }
+.sub { font-family: var(--sub); font-style: italic; font-size: 44px; line-height: 1.3; color: var(--quiet); }
+.body { font-family: var(--body); font-size: 34px; line-height: 1.45; color: var(--quiet); font-weight: 450; }
+.dark .sub, .dark .body { color: #CFC6B4; }
+
+/* paper things */
+.card { background: var(--card); border: 2px solid var(--line); border-radius: 20px; box-shadow: 0 18px 40px rgba(38,33,25,.10); }
+.shot { position: absolute; background: var(--card); padding: 14px; border-radius: 16px; box-shadow: 0 22px 50px rgba(38,33,25,.16); }
+.shot img { display: block; width: 100%; border-radius: 8px; }
+.tape { position: absolute; width: 190px; height: 50px; background: rgba(232,224,207,.82);
+  box-shadow: 0 2px 6px rgba(38,33,25,.08); z-index: 3; }
+.art { position: absolute; display: block; }
+/* lone stitches near a margin (the brand's "scatter") */
+.x { position: absolute; width: 18px; height: 18px; z-index: 2; }
+.x::before, .x::after { content: ""; position: absolute; left: 7px; top: -1px; width: 4px; height: 20px; border-radius: 2px;
+  background: var(--stitch); transform: rotate(45deg); }
+.x::after { transform: rotate(-45deg); }
+.x.o::before, .x.o::after { background: #8A9068; }
+.x.r::before, .x.r::after { background: #C77E82; }
