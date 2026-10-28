@@ -1,0 +1,341 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>YouTube, light: launches vs 3-day events</title>
+<link rel="stylesheet" href="theme.css">
+<script src="lib/rough.js"></script>
+<script src="ink.js"></script>
+<script src="stitch.js"></script>
+<style>
+/* Sean 2026-10-28: "Can you make a light one? ... it still doesn't feel complete ... it still looks very Claude."
+   What read as Claude: the caps label / serif headline / italic line on every slide, one object in a lot of empty
+   space, nothing funny, website parts rebuilt as boxes. Deya's slides (sources/inspiration/deya/best) are full:
+   a title that mixes three sizes and faces, typewriter body text, grid paper, tape, a sticker, real objects at the
+   edges, a prop on the face. Here with After Harvest's own hand: the cross-stitch (stitch.js, the stitch icons, the
+   scarecrow) and harvest things (wheat, straw hat, kraft folders). */
+.lt { background: #FBF8F1; background-image: none; }
+.lt::before { opacity: .5; }
+.a { position: absolute; z-index: 20; }
+.ph { position: absolute; display: block; filter: drop-shadow(0 22px 26px rgba(38,33,25,.16)) drop-shadow(0 3px 5px rgba(38,33,25,.10)); }
+.tp { position: absolute; display: block; z-index: 30; opacity: .92; }
+/* type: three voices per title, never the caps-label stack */
+.pre { font-family: var(--sub); font-style: italic; color: #6E6554; }
+.mega { font-family: var(--body); font-weight: 900; text-transform: uppercase; letter-spacing: -.025em; line-height: .88; color: #262119; }
+.low { font-family: var(--body); font-weight: 900; letter-spacing: -.035em; line-height: .92; color: #262119; }
+.ol { font-family: var(--display); -webkit-text-stroke: .022em currentColor; line-height: 1; color: #262119; }
+.sc { font-family: var(--display-italic); -webkit-text-stroke: .02em currentColor; line-height: 1; }
+.ol .ap, .sc .ap { font-family: var(--sub); font-size: .78em; margin: 0 -.05em 0 -.06em; -webkit-text-stroke: .01em currentColor; }
+.ol .pn, .sc .pn { font-family: var(--sub); font-size: .86em; margin-left: -.03em; -webkit-text-stroke: .012em currentColor; }
+.tw { font-family: var(--label); font-size: 30px; line-height: 1.55; color: #3A3329; }
+.tw u { text-decoration-color: #B79F86; text-decoration-thickness: 2px; text-underline-offset: 7px; }
+.rust { color: #B06A4A; } .sage { color: #8A9068; } .umber { color: #6E6554; }
+.icon { position: absolute; display: block; z-index: 25; }
+/* the camera, Deya's way: big, no frame, a soft shadow; sometimes wearing a prop */
+.cam { position: absolute; overflow: hidden; z-index: 40; box-shadow: 0 26px 50px rgba(38,33,25,.20); background: #d9cdb8; }
+.cam img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cam.round { border-radius: 50%; } .cam.box { border-radius: 44px; }
+.hat { position: absolute; z-index: 45; filter: drop-shadow(0 10px 10px rgba(38,33,25,.25)); }
+/* stickers and chips */
+.burst { position: absolute; display: flex; align-items: center; justify-content: center; text-align: center; z-index: 35;
+  clip-path: polygon(50% 0%,59% 12%,73% 5%,76% 20%,91% 18%,87% 33%,100% 40%,90% 52%,99% 65%,85% 70%,86% 85%,71% 84%,65% 98%,53% 89%,41% 99%,34% 86%,19% 89%,18% 74%,3% 69%,11% 56%,0% 44%,13% 36%,9% 21%,24% 21%,27% 6%,41% 13%); }
+.burst span { font-family: var(--body); font-weight: 800; line-height: 1.05; letter-spacing: -.01em; }
+.chip { display: inline-block; padding: 14px 28px; border-radius: 40px; font-family: var(--body); font-weight: 650; font-size: 28px; margin: 0 12px 14px 0; }
+.chip.out { border: 2.5px solid #A7A08F; color: #6E6554; background: rgba(255,255,255,.5); }
+.chip.on { background: #8A9068; color: #FBF8F1; box-shadow: 0 8px 16px rgba(92,83,64,.2); }
+.pill { position: absolute; padding: 12px 30px; border: 2.5px solid #B06A4A; border-radius: 40px; font-family: var(--body); font-weight: 800; font-size: 22px;
+  letter-spacing: .16em; color: #B06A4A; text-transform: uppercase; z-index: 20; }
+.tag { position: absolute; background: #FFFEFA; padding: 18px 24px 16px; box-shadow: 0 2px 4px rgba(38,33,25,.12); z-index: 22; }
+.tag .n { font-family: var(--label); font-size: 20px; color: #8C8576; }
+.tag .w { font-family: var(--sub); font-size: 40px; color: #262119; line-height: 1.1; margin-top: 4px; }
+.browser { position: absolute; background: #FBFAF6; border-radius: 18px; overflow: hidden; z-index: 15; box-shadow: 0 36px 70px rgba(38,33,25,.20), 0 3px 6px rgba(38,33,25,.10); }
+.browser .bar { height: 50px; background: #ECE6D9; display: flex; align-items: center; gap: 10px; padding: 0 20px; }
+.browser .bar i { width: 14px; height: 14px; border-radius: 50%; background: #CFC3AB; display: block; }
+.browser .bar span { margin-left: 18px; padding: 6px 22px; background: #FBFAF6; border-radius: 16px; font-family: var(--body); font-size: 19px; color: #6E6554; }
+.browser img { display: block; width: 100%; }
+.post { position: absolute; background: #fff; border-radius: 22px; font-family: var(--body); color: #0f1419; z-index: 15; box-shadow: 0 30px 60px rgba(38,33,25,.16), 0 2px 4px rgba(38,33,25,.08); }
+.post .row { display: flex; align-items: center; gap: 18px; }
+.post .av { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 25px; background: #E8DCC4; color: #6E6554; flex: none; }
+.post .nm { font-size: 29px; font-weight: 700; } .post .hd { font-size: 25px; color: #536471; }
+.post .x { margin-left: auto; font-weight: 800; font-size: 34px; color: #0f1419; }
+.post .tx { font-size: 44px; line-height: 1.3; margin: 24px 0 20px; }
+.post mark { background: linear-gradient(transparent 56%, rgba(200,155,75,.5) 56%); color: inherit; padding: 0 3px; }
+.post .meta { font-size: 23px; color: #536471; padding-bottom: 18px; border-bottom: 1px solid #eff3f4; }
+.post .stats { display: flex; gap: 44px; font-size: 24px; color: #536471; padding-top: 16px; } .post .stats b { color: #0f1419; }
+.tile { position: absolute; border-radius: 18px; border: 3px dashed #C9BCA4; background: rgba(241,236,225,.6); z-index: 10;
+  display: flex; align-items: center; justify-content: center; font-family: var(--label); font-size: 22px; color: #A99D84; }
+
+/* 1. Title. Deya 1 + 24: a small lead-in, a huge word, a script line, an aside; objects at the edges. */
+.s1 .pre { left: 118px; top: 196px; font-size: 52px; }
+.s1 .mega { left: 106px; top: 262px; font-size: 168px; }
+.s1 .sc { left: 116px; top: 560px; font-size: 128px; }
+.s1 .aside { left: 122px; top: 724px; font-size: 40px; display: flex; align-items: center; gap: 14px; }
+.s1 .aside img { width: 54px; }
+.s1 .cam { left: 1150px; top: 250px; width: 720px; height: 720px; }
+.s1 .tix { left: 1380px; top: -170px; width: 640px; transform: rotate(14deg); z-index: 5; }
+.s1 .wheat { left: -170px; top: 790px; width: 640px; transform: rotate(-24deg); z-index: 5; }
+.s1 .sprig { left: 1020px; top: 150px; width: 96px; transform: rotate(12deg); }
+
+/* 2. The agenda. Deya 23 + 1: kraft folders, the done one ticked, the current one taped and raised. */
+.s2 .sc { left: 112px; top: 104px; font-size: 150px; }
+.s2 .pre { left: 120px; top: 280px; font-size: 42px; }
+.s2 .f { position: absolute; width: 470px; z-index: 10; }
+.s2 .f1 { left: 112px; top: 470px; transform: rotate(-3deg); }
+.s2 .f2 { left: 640px; top: 420px; transform: rotate(2deg); z-index: 12; filter: drop-shadow(0 34px 34px rgba(38,33,25,.22)) drop-shadow(0 3px 5px rgba(38,33,25,.1)); }
+.s2 .f3 { left: 1166px; top: 486px; transform: rotate(-1.4deg); }
+.s2 .l1 { left: 160px; top: 600px; transform: rotate(-3deg); } .s2 .l2 { left: 690px; top: 560px; transform: rotate(2deg); } .s2 .l3 { left: 1212px; top: 616px; transform: rotate(-1.4deg); }
+.s2 .chk { left: 470px; top: 470px; width: 110px; transform: rotate(-8deg); }
+.s2 .t2 { left: 760px; top: 392px; width: 230px; transform: rotate(-4deg); }
+.s2 .here { left: 760px; top: 862px; font-size: 40px; z-index: 30; }
+.s2 .arrow { left: 600px; top: 860px; width: 150px; transform: rotate(200deg) scaleX(-1); z-index: 30; }
+.s2 .cam { left: 1530px; top: 120px; width: 300px; height: 300px; }
+.s2 .wheat { left: 1500px; top: 820px; width: 520px; transform: rotate(-150deg); z-index: 5; }
+
+/* 3. Part title. Deya 18 + 19: a colour band, the number stitched, the face over the edge, a torn note taped below. */
+.s3 .band { position: absolute; left: 0; top: 0; width: 1920px; height: 590px; background: #8A9068; z-index: 2; }
+.s3 .num { left: 112px; top: 112px; z-index: 20; }
+.s3 .pre { left: 430px; top: 132px; font-size: 48px; color: #EDEAD8; }
+.s3 .ol { left: 424px; top: 200px; font-size: 156px; color: #FBF8F1; }
+.s3 .cam { left: 1230px; top: 150px; width: 580px; height: 660px; }
+.s3 .paper { left: 112px; top: 640px; width: 820px; transform: rotate(-2deg); z-index: 10; }
+.s3 .note { left: 190px; top: 730px; transform: rotate(-2deg); z-index: 20; width: 680px; }
+.s3 .tape1 { left: 80px; top: 630px; width: 220px; transform: rotate(-30deg); }
+.s3 .sprig { left: 960px; top: 880px; width: 120px; transform: rotate(-10deg); }
+
+/* 4. The actual problem. Deya 13: bold title with one shouted word, typewriter underneath, a colour panel, a
+   character standing next to the face (ours is the stitched scarecrow). */
+.s4 .panel { position: absolute; right: 0; top: 0; width: 640px; height: 1080px; background: #9A5A3F; z-index: 2; }
+.s4 .t1 { left: 112px; top: 150px; font-size: 150px; }
+.s4 .t1 b { font-family: var(--body); font-weight: 900; -webkit-text-stroke: 0; letter-spacing: -.02em; color: #B06A4A; font-size: .9em; }
+.s4 .tw { left: 118px; top: 520px; width: 980px; font-size: 32px; }
+.s4 .cam { left: 1330px; top: 140px; width: 480px; height: 620px; }
+.s4 .crow { position: absolute; left: 1130px; top: 560px; height: 480px; z-index: 30; filter: drop-shadow(0 12px 14px rgba(38,33,25,.25)); }
+
+/* 5. The number, stitched. The graph paper is the stitch grid. */
+.s5 .pre { left: 118px; top: 120px; font-size: 54px; }
+.s5 .paper { left: 100px; top: 220px; width: 1060px; transform: rotate(-1.6deg); z-index: 10; }
+.s5 .num { left: 210px; top: 420px; transform: rotate(-1.6deg); z-index: 20; }
+.s5 .cap { left: 230px; top: 780px; transform: rotate(-1.6deg); z-index: 20; font-size: 30px; }
+.s5 .tape1 { left: 60px; top: 220px; width: 240px; transform: rotate(-28deg); }
+.s5 .tape2 { left: 960px; top: 200px; width: 240px; transform: rotate(24deg); }
+.s5 .cam { left: 1260px; top: 300px; width: 600px; height: 600px; }
+.s5 .flower { left: 1210px; top: 230px; width: 110px; transform: rotate(-14deg); z-index: 45; }
+
+/* 6. The step + the real screen. Deya 7: tiny "step 3:", a huge lowercase line, the screen, a sticker. */
+.s6 .step { left: 120px; top: 110px; font-family: var(--body); font-weight: 800; font-size: 44px; color: #B06A4A; z-index: 20; }
+.s6 .low { left: 108px; top: 160px; font-size: 176px; }
+.s6 .browser { left: 640px; top: 380px; width: 1180px; transform: rotate(1.4deg); }
+.s6 .tape1 { left: 600px; top: 350px; width: 220px; transform: rotate(-24deg); }
+.s6 .tape2 { left: 1700px; top: 370px; width: 200px; transform: rotate(30deg); }
+.s6 .cam { left: 112px; top: 470px; width: 560px; height: 520px; }
+.s6 .burst { left: 1540px; top: 110px; width: 300px; height: 300px; background: #8A9068; transform: rotate(10deg); }
+.s6 .burst span { font-size: 36px; color: #FBF8F1; width: 190px; }
+
+/* 7. Proof, taped. Deya 14: the label runs up the edge, the screenshot is taped on, a drawn arrow points. */
+.s7 .side { position: absolute; left: 52px; top: 120px; height: 860px; writing-mode: vertical-rl; transform: rotate(180deg); text-align: right;
+  font-family: var(--display-italic); font-size: 200px; line-height: 1; color: #B06A4A; -webkit-text-stroke: .02em currentColor; z-index: 20; }
+.s7 .post1 { left: 400px; top: 180px; width: 1000px; padding: 46px 52px 40px; transform: rotate(-2deg); }
+.s7 .post2 { left: 1010px; top: 640px; width: 680px; padding: 28px 36px; transform: rotate(2.2deg); z-index: 16; }
+.s7 .tape1 { left: 380px; top: 150px; width: 230px; transform: rotate(-26deg); }
+.s7 .tape2 { left: 1260px; top: 120px; width: 230px; transform: rotate(20deg); }
+.s7 .arrow { left: 270px; top: 520px; width: 230px; transform: rotate(-12deg); z-index: 30; }
+.s7 .cam { left: 1500px; top: 110px; width: 340px; height: 340px; }
+.s7 .sprig { left: 300px; top: 850px; width: 110px; transform: rotate(-16deg); }
+.msg { display: flex; gap: 16px; align-items: flex-start; } .msg + .msg { margin-top: 18px; }
+.msg .av { width: 54px; height: 54px; font-size: 19px; } .msg .me { background: url(art/sean-face-preview.png) center 30%/cover; }
+.msg .nm { font-size: 24px; color: #262119; } .msg .tm { font-size: 19px; color: #8C8576; font-weight: 400; margin-left: 10px; }
+.msg .say { font-size: 29px; color: #262119; margin-top: 2px; }
+
+/* 8. Same list, same offer: which one sells? Deya 11: the question, chips, real objects. */
+.s8 .pre { left: 0; right: 0; top: 96px; text-align: center; font-size: 50px; }
+.s8 .mega { left: 0; right: 0; top: 160px; text-align: center; font-size: 132px; }
+.s8 .k1 { left: 150px; top: 350px; font-size: 84px; color: #6E6554; }
+.s8 .k2 { left: 1050px; top: 350px; font-size: 84px; color: #B06A4A; }
+.s8 .env { left: 170px; top: 470px; width: 520px; transform: rotate(-5deg); filter: saturate(.6) drop-shadow(0 22px 26px rgba(38,33,25,.16)); }
+.s8 .tix { left: 1100px; top: 450px; width: 720px; }
+.s8 .c1 { left: 150px; top: 850px; width: 620px; } .s8 .c2 { left: 1150px; top: 880px; width: 720px; }
+.s8 .or { left: 928px; top: 520px; z-index: 20; }
+.s8 .cam { left: 805px; top: 700px; width: 310px; height: 310px; }
+
+/* 9. Story time. Deya 21: centred title, a pill, the face under it wearing a prop. */
+.s9 .pill { left: 50%; top: 150px; transform: translateX(-50%); }
+.s9 .low { left: 0; right: 0; top: 236px; text-align: center; font-size: 128px; }
+.s9 .pre { left: 0; right: 0; top: 520px; text-align: center; font-size: 48px; color: #B06A4A; }
+.s9 .cam { left: 800px; top: 690px; width: 320px; height: 320px; }
+.s9 .hat { left: 824px; top: 628px; width: 250px; transform: rotate(-8deg); }
+.s9 .w1 { left: -190px; top: -90px; width: 640px; transform: rotate(32deg); z-index: 5; }
+.s9 .w2 { left: 1480px; top: 790px; width: 640px; transform: rotate(-148deg); z-index: 5; }
+.s9 .flower { left: 1560px; top: 160px; width: 120px; transform: rotate(12deg); }
+
+/* 10. Why events sell more. Deya 10: a full colour field, the list top to bottom (Jason 1:29), numbers stitched. */
+.s10 { background: #8A9068; }
+.s10::before { mix-blend-mode: multiply; opacity: .55; }
+.s10 .ol { left: 112px; top: 110px; font-size: 120px; color: #FBF8F1; }
+.s10 .row { position: absolute; left: 118px; display: flex; gap: 40px; align-items: flex-start; z-index: 20; }
+.s10 .row .w { font-family: var(--body); font-weight: 800; font-size: 54px; color: #FBF8F1; letter-spacing: -.01em; line-height: 1.1; }
+.s10 .row .t { font-family: var(--label); font-size: 27px; color: #E4E3D2; margin-top: 10px; }
+.s10 .r1 { top: 330px; } .s10 .r2 { top: 545px; } .s10 .r3 { top: 760px; }
+.s10 .row .n { width: 100px; padding-top: 6px; }
+.s10 .paper { left: 1200px; top: 120px; width: 700px; transform: rotate(4deg); z-index: 5; }
+.s10 .cam { left: 1270px; top: 210px; width: 560px; height: 680px; }
+.s10 .wheat { left: 1560px; top: 880px; width: 480px; transform: rotate(-160deg); z-index: 45; }
+
+/* 11. End screen. Deya 24: the lockup, objects at the edges, the two video tiles YouTube fills. */
+.s11 .pre { left: 118px; top: 120px; font-size: 52px; }
+.s11 .mega { left: 106px; top: 186px; font-size: 150px; }
+.s11 .aside { left: 122px; top: 340px; font-size: 40px; display: flex; align-items: center; gap: 14px; }
+.s11 .aside img { width: 52px; }
+.s11 .tw { left: 120px; top: 430px; width: 760px; }
+.s11 .v1 { left: 560px; top: 610px; width: 600px; height: 338px; transform: rotate(-1.5deg); }
+.s11 .v2 { left: 1220px; top: 590px; width: 600px; height: 338px; transform: rotate(1.5deg); }
+.s11 .tape1 { left: 520px; top: 580px; width: 180px; transform: rotate(-28deg); }
+.s11 .tape2 { left: 1700px; top: 560px; width: 180px; transform: rotate(26deg); }
+.s11 .cam { left: 112px; top: 640px; width: 380px; height: 380px; }
+.s11 .wheat { left: 1430px; top: -120px; width: 620px; transform: rotate(150deg); z-index: 5; }
+.s11 .fold { left: 1240px; top: 120px; width: 300px; transform: rotate(-12deg); z-index: 4; }
+</style></head><body>
+
+<!-- 1 title -->
+<section class="slide lt s1" id="s1-title">
+  <img class="ph tix" src="art/photo/tickets.png" alt="">
+  <img class="ph wheat" src="art/photo/wheat.png" alt="">
+  <div data-edit class="a pre">why creators are</div>
+  <div data-edit class="a mega">Swapping<br>launches</div>
+  <div data-edit class="a sc rust">for 3-day events</div>
+  <div data-edit class="a pre aside">(and why it works) <img src="art/figma/stitch-flower-pink.png" alt=""></div>
+  <img class="icon sprig" src="art/figma/stitch-sprig-olive-lilac.png" alt="">
+  <div class="cam round"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- 2 agenda -->
+<section class="slide lt s2" id="s2-agenda">
+  <div data-edit class="a sc">Today&rsquo;s harvest</div>
+  <div data-edit class="a pre">three folders, in order</div>
+  <img class="ph f f1" src="art/photo/folder.png" alt="">
+  <img class="ph f f2" src="art/photo/folder.png" alt="">
+  <img class="ph f f3" src="art/photo/folder.png" alt="" style="filter:saturate(.75) brightness(1.03) drop-shadow(0 22px 26px rgba(38,33,25,.14))">
+  <div class="tag l1"><div data-edit class="n">folder 01</div><div data-edit class="w">Where it leaks</div></div>
+  <div class="tag l2"><div data-edit class="n">folder 02</div><div data-edit class="w">The 3-day event</div></div>
+  <div class="tag l3"><div data-edit class="n">folder 03</div><div data-edit class="w">Your numbers</div></div>
+  <img class="icon chk" src="art/figma/stitch-check-olive-cut.png" alt="">
+  <img class="tp t2" src="art/photo/tape1.png" alt="">
+  <img class="icon arrow" src="art/figma/hand-arrow-loop-olive-cut.png" alt="">
+  <div data-edit class="a pre here rust">we are here</div>
+  <img class="ph wheat" src="art/photo/wheat.png" alt="">
+  <div class="cam round"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- 3 part title -->
+<section class="slide lt s3" id="s3-part">
+  <div class="band"></div>
+  <div class="a num" data-stitch="2" data-cell="22" data-px="18" data-color="#F3EEDF"></div>
+  <div data-edit class="a pre">part two</div>
+  <div data-edit class="a ol">The 3-day<br>event.</div>
+  <img class="ph paper" src="art/photo/graph.png" alt="">
+  <div class="a tw note"><span data-edit>You teach 3 days.</span><br><span data-edit>Cart opens day 3.</span><br><span data-edit><u>We run it.</u></span></div>
+  <img class="tp tape1" src="art/photo/tape2.png" alt="">
+  <img class="icon sprig" src="art/figma/stitch-sprig-olive-lilac.png" alt="">
+  <div class="cam box"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- 4 the actual problem -->
+<section class="slide lt s4" id="s4-the-problem">
+  <div class="panel"></div>
+  <div data-edit class="a ol t1">The <b>ACTUAL</b><br>problem&hellip;</div>
+  <div data-edit class="a tw"><u>Your list showed up. They opened the emails.</u><br>Then the 7-day launch asked them to decide alone, on a sales page, with nobody in the room.</div>
+  <div class="cam box"><img src="art/sean-cam.jpg" alt=""></div>
+  <img class="crow" src="art/scarecrow-ink-coat.svg" alt="">
+</section>
+
+<!-- 5 the number, stitched -->
+<section class="slide lt s5" id="s5-number">
+  <div data-edit class="a pre">Jay Clouse, nine years in:</div>
+  <img class="ph paper" src="art/photo/graph.png" alt="">
+  <div class="a num" data-stitch="$100K" data-cell="15" data-px="18" data-weight="800" data-color="#C98A1E"></div>
+  <div data-edit class="a tw cap">his first $100,000+ launch &middot; 7/9/26</div>
+  <img class="tp tape1" src="art/photo/tape1.png" alt="">
+  <img class="tp tape2" src="art/photo/tape2.png" alt="">
+  <div class="cam round"><img src="art/sean-cam.jpg" alt=""></div>
+  <img class="icon flower" src="art/figma/stitch-flower-pink.png" alt="">
+</section>
+
+<!-- 6 the step + the screen -->
+<section class="slide lt s6" id="s6-step" data-ink='[{"k":"ellipse","x":1452,"y":520,"w":300,"h":120,"c":"#6F7452","sw":4,"seed":3}]'>
+  <div data-edit class="a step">step 3:</div>
+  <div data-edit class="a low">get the plan</div>
+  <div class="browser"><div class="bar"><i></i><i></i><i></i><span>theafterharvest.com</span></div><img src="art/figma/proof-client-plan-card-marcus-ellis.png" alt=""></div>
+  <img class="tp tape1" src="art/photo/tape1.png" alt="">
+  <img class="tp tape2" src="art/photo/tape2.png" alt="">
+  <div class="burst"><span data-edit>takes about 5 minutes</span></div>
+  <div class="cam box"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- 7 proof, taped -->
+<section class="slide lt s7" id="s7-proof">
+  <div data-edit class="side">proof #1</div>
+  <div class="post post1">
+    <div class="row"><div class="av">JC</div><div><div class="nm">Jay Clouse</div><div class="hd">@jayclouse</div></div></div>
+    <div class="tx">It took nine years, but we just had our <mark>first $100,000+ launch.</mark></div>
+    <div class="meta">9:45 PM &middot; 7/9/26 &middot; <b style="color:#0f1419">16K</b> Views</div>
+    <div class="stats"><span><b>63</b> replies</span><span><b>217</b> likes</span></div>
+  </div>
+  <div class="post post2">
+    <div class="msg"><div class="av">JC</div><div><div class="nm"><b>Jay Clouse</b><span class="tm">8:47 AM</span></div><div class="say">we did! about 30 mins ago</div></div></div>
+    <div class="msg"><div class="av me"></div><div><div class="nm"><b>Sean Canela</b><span class="tm">8:51 AM</span></div><div class="say">let&rsquo;s go!!!!</div></div></div>
+  </div>
+  <img class="tp tape1" src="art/photo/tape1.png" alt="">
+  <img class="tp tape2" src="art/photo/tape2.png" alt="">
+  <img class="icon arrow" src="art/figma/hand-arrow-loop-olive-cut.png" alt="">
+  <img class="icon sprig" src="art/figma/stitch-sprig-olive-lilac.png" alt="">
+  <div class="cam round"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- 8 which one sells -->
+<section class="slide lt s8" id="s8-which">
+  <div data-edit class="a pre">same list, same offer.</div>
+  <div data-edit class="a mega">Which one sells?</div>
+  <div data-edit class="a sc k1">a launch</div>
+  <div data-edit class="a sc k2">a 3-day event</div>
+  <img class="ph env" src="art/photo/envelope.png" alt="">
+  <img class="ph tix" src="art/photo/tickets.png" alt="">
+  <div class="a c1"><span data-edit class="chip out">email after email</span><span data-edit class="chip out">a replay</span><span data-edit class="chip out">cart closes Friday</span></div>
+  <div class="a c2"><span data-edit class="chip on">Day 1, live</span><span data-edit class="chip on">Day 2, live</span><span data-edit class="chip on">Day 3: the offer</span></div>
+  <div class="a or" data-stitch="or" data-cell="6" data-px="18" data-color="#B06A4A"></div>
+  <div class="cam round"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- 9 story time -->
+<section class="slide lt s9" id="s9-story">
+  <img class="ph w1" src="art/photo/wheat.png" alt="">
+  <img class="ph w2" src="art/photo/wheat.png" alt="">
+  <div data-edit class="pill">story time</div>
+  <div data-edit class="a low">The morning Jay<br>messaged me</div>
+  <div data-edit class="a pre">8:47 AM: &ldquo;we did! about 30 mins ago&rdquo;</div>
+  <img class="icon flower" src="art/figma/stitch-flower-pink.png" alt="">
+  <div class="cam round"><img src="art/sean-cam.jpg" alt=""></div>
+  <img class="hat" src="art/photo/hat.png" alt="">
+</section>
+
+<!-- 10 why events sell more -->
+<section class="slide lt s10" id="s10-list">
+  <div data-edit class="a ol">Why events sell more</div>
+  <div class="row r1"><div class="n" data-stitch="1" data-cell="9" data-px="18" data-color="#F3EEDF"></div><div><div data-edit class="w">People show up for a date.</div><div data-edit class="t">A launch is always open. An event starts at 11.</div></div></div>
+  <div class="row r2"><div class="n" data-stitch="2" data-cell="9" data-px="18" data-color="#F3EEDF"></div><div><div data-edit class="w">They watch you teach, live.</div><div data-edit class="t">Trust is built in the room, not in an email.</div></div></div>
+  <div class="row r3"><div class="n" data-stitch="3" data-cell="9" data-px="18" data-color="#F3EEDF"></div><div><div data-edit class="w">Three days earn one decision.</div><div data-edit class="t">By day 3 the offer is the next step.</div></div></div>
+  <img class="ph paper" src="art/photo/graph.png" alt="">
+  <div class="cam box"><img src="art/sean-cam.jpg" alt=""></div>
+  <img class="ph wheat" src="art/photo/wheat.png" alt="">
+</section>
+
+<!-- 11 end screen -->
+<section class="slide lt s11" id="s11-end">
+  <img class="ph wheat" src="art/photo/wheat.png" alt="">
+  <img class="ph fold" src="art/photo/folder.png" alt="">
+  <div data-edit class="a pre">want the plan</div>
+  <div data-edit class="a mega">For yours?</div>
+  <div data-edit class="a pre aside">(it&rsquo;s free) <img src="art/figma/stitch-flower-pink.png" alt=""></div>
+  <div class="a tw"><u data-edit>theafterharvest.com</u><br><span data-edit>takes about 5 minutes, the plan lands in 24 to 48 hours</span></div>
+  <div class="tile v1">next video</div>
+  <div class="tile v2">next video</div>
+  <img class="tp tape1" src="art/photo/tape1.png" alt="">
+  <img class="tp tape2" src="art/photo/tape2.png" alt="">
+  <div class="cam round"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+</body></html>

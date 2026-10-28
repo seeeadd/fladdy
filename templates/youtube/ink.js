@@ -43,7 +43,7 @@
   }
 
   function punctuation(el) {
-    el.querySelectorAll(".display").forEach((d) => {
+    el.querySelectorAll(".display, .ol, .sc").forEach((d) => {
       const walk = (node) => {
         if (node.nodeType === 3 && /[’'“”"?!,.:]/.test(node.nodeValue)) {
           const frag = document.createDocumentFragment();

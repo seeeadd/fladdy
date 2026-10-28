@@ -73,6 +73,26 @@ whole video (five slides of "headline left, object right" was the miss):
 The camera preview is `art/sean-cam.jpg` (from the factory's `template/youtube/sean_profile.webp`); in the edit the
 live camera goes there.
 
+## 3d. Why it still read as Claude, and the light set that answers it (ruling 2026-10-28)
+
+The dark library still "looked very Claude". The tells, now banned:
+- **The caps label / serif headline / italic line stack** on slide after slide (a spaced-out mono caps label over
+  every title). Deya never does it. Her titles mix three voices at three sizes: a small lead-in, a huge word, a
+  script line, sometimes a tiny aside in brackets.
+- **Tasteful and empty**: one object, lots of air, nothing funny. Deya's slides are full and a little playful: the
+  cat in the crown, the graduation cap on her own head, leaves and pears at the edges, grid paper, tape, a sticker.
+- **Website parts rebuilt as boxes.** Real things (a taped screenshot, a stitched number on graph paper) instead.
+
+The light set (`youtube-light.html`, 11 slides) is the recipe:
+- Type: Literata italic lead-in (sentence case), Hanken Grotesk 900 for the shout (caps or lowercase), Olivera or
+  Olivera Oblique for the script line, IBM Plex Mono in sentence case for typewriter body, underlined.
+- After Harvest's own hand: the cross-stitch. `stitch.js` stitches any number or short word
+  (`<div data-stitch="$100K" data-cell="15" data-color="#C98A1E">`); the stitch icons (flower, sprig, check) are
+  the little marks; the stitched scarecrow is the character.
+- Harvest props at the edges (wheat, kraft folders, tickets) and on the face (the straw hat on story slides);
+  `art/photo/SOURCES.md` lists each with its Canva media id.
+- Grounds: warm paper, sage and rust panels or bands; the face big, unframed, soft shadow.
+
 ## 4. What makes it look human (Deya, the brief, Mino)
 
 - **The real artefact is the picture**: Deya shows her actual task list, her actual bookshelf.
