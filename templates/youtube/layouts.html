@@ -1,0 +1,365 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>YouTube layouts: the dark stage library</title>
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="stage.css">
+<script src="lib/rough.js"></script>
+<script src="ink.js"></script>
+<style>
+/* Sean 2026-10-28: "When are you going to make the real nice templates with interesting layouts?"
+   The five dark slides all shared one layout (headline left, object right, face bottom left). This is the library:
+   fourteen layouts, each a different composition, each named for the job it does in a video. Deya builds every
+   layout around her face, a third of the frame (sources/inspiration/deya/best), so the camera's size and place is
+   the first decision of each layout. Copy is one hypothetical After Harvest video, "why creators are swapping
+   launches for 3-day events"; the only facts on it are Jay Clouse's real post and chat and the website's offer. */
+.t { position: absolute; z-index: 20; }
+.ol { font-family: var(--display); -webkit-text-stroke: .022em currentColor; line-height: 1.02; }
+.it { font-family: var(--sub); font-style: italic; color: #CFC6B4; }
+.dim { color: #6B6355; }
+
+/* L01 cold open. Deya 1/3/5: the face is half the frame; the question sits beside it. Jason 3:01: the tickets
+   that come later peek in at the edge. */
+.l01 { --gx: 76%; --gy: 50%; }
+.l01 .cam { left: 1030px; top: 120px; width: 840px; height: 840px; }
+.l01 .lead { left: 116px; top: 236px; }
+.l01 .hl { left: 112px; top: 290px; font-size: 136px; }
+.l01 .peek { left: 40px; top: 830px; width: 720px; transform: rotate(5deg); opacity: .92; }
+
+/* L02 the map. Jason 23:20: the framework returns each section, the current part strongest. Deya 1/8: chapter
+   tabs, the done one ticked. Three tickets, one per part. */
+.l02 { --gx: 50%; --gy: 70%; }
+.l02 .lead { left: 116px; top: 136px; }
+.l02 .hl { left: 112px; top: 180px; font-size: 128px; }
+.l02 .cam { left: 1420px; top: 96px; width: 400px; height: 400px; }
+.tk { position: absolute; width: 520px; height: 400px; filter: drop-shadow(0 30px 40px rgba(0,0,0,.5)) drop-shadow(0 4px 8px rgba(0,0,0,.3)); z-index: 10; }
+.tk .pp { position: absolute; inset: 0; background: #F4EFE4; color: #262119; padding: 44px 48px;
+  -webkit-mask: radial-gradient(circle 24px at 0 50%, transparent 97%, #000 100%) left / 51% 100% no-repeat,
+                radial-gradient(circle 24px at 100% 50%, transparent 97%, #000 100%) right / 51% 100% no-repeat; }
+.tk .pp::after { content: ""; position: absolute; right: 118px; top: 26px; bottom: 26px; border-left: 4px dotted #CFC3AB; }
+.tk .no { font-family: var(--label); font-size: 22px; letter-spacing: .22em; color: #8C8576; }
+.tk .nm { font-family: var(--display); -webkit-text-stroke: .02em currentColor; font-size: 66px; line-height: 1; margin-top: 70px; width: 300px; }
+.tk .ln { font-family: var(--sub); font-style: italic; font-size: 30px; color: #6E6554; margin-top: 18px; }
+.tk .stub { position: absolute; right: 40px; top: 50%; transform: translate(50%,-50%) rotate(90deg); font-family: var(--label); font-size: 20px; letter-spacing: .24em; color: #8C8576; white-space: nowrap; }
+.tk .chk { position: absolute; right: 150px; top: 30px; width: 96px; }
+.tk.done { left: 112px; top: 480px; transform: rotate(-1.2deg); filter: brightness(.7) drop-shadow(0 30px 40px rgba(0,0,0,.5)); }
+.tk.now { left: 680px; top: 450px; transform: rotate(-2.6deg) scale(1.06); z-index: 12; }
+.tk.now .pp { box-shadow: inset 0 10px 0 #E8A100; }
+.tk.now .stub { color: #B06A4A; }
+.tk.next { left: 1290px; top: 495px; transform: rotate(1.4deg); filter: brightness(.5) drop-shadow(0 30px 40px rgba(0,0,0,.5)); }
+
+/* L03 chapter opener: the pattern interrupt. Deya 12/15/18: a colour panel, the face boxed inside it, the part
+   number huge. The numeral is drawn, the title sits on top. */
+.l03 { --gx: 30%; --gy: 40%; }
+.l03 .panel { position: absolute; right: 0; top: 0; bottom: 0; width: 760px; background: #7E3626; z-index: 5;
+  background-image: radial-gradient(rgba(251,250,246,.08) 1.6px, transparent 1.7px), linear-gradient(160deg, rgba(255,255,255,.05), rgba(0,0,0,.18));
+  background-size: 40px 40px, auto; }
+.l03 .cam { left: 1270px; top: 170px; width: 540px; height: 620px; }
+.l03 .pl { position: absolute; left: 1270px; top: 846px; z-index: 20; font-family: var(--label); font-size: 22px; letter-spacing: .24em; color: #F0D9C8; }
+.l03 .num { position: absolute; left: 40px; top: 340px; font-family: var(--display); font-size: 980px; line-height: .8; color: transparent;
+  -webkit-text-stroke: 3px rgba(232,161,0,.5); z-index: 6; letter-spacing: -.02em; }
+.l03 .lead { left: 116px; top: 150px; }
+.l03 .hl { left: 112px; top: 196px; font-size: 156px; }
+
+/* L04 the turn. Deya 16: "But..." in the accent colour. Jason 1:47: the most important word is the biggest. */
+.l04 { --gx: 22%; --gy: 40%; }
+.l04 .but { position: absolute; left: 96px; top: 96px; font-family: var(--display-italic); font-size: 520px; line-height: .9; color: var(--spark);
+  -webkit-text-stroke: .02em var(--spark); text-shadow: 0 0 120px rgba(232,161,0,.25); z-index: 20; }
+.l04 .hl { left: 980px; top: 236px; font-size: 100px; }
+.l04 .s { left: 118px; top: 690px; font-size: 56px; width: 1200px; }
+.l04 .cam { left: 1490px; top: 640px; width: 340px; height: 340px; }
+
+/* L05 the number. Jason 1:47 again: the number IS the slide. Deya: the face overlaps the thing. */
+.l05 { --gx: 50%; --gy: 52%; }
+.l05 .lead { left: 116px; top: 110px; }
+.l05 .big { position: absolute; left: 92px; top: 250px; font-family: var(--display); font-size: 600px; line-height: .86; color: var(--spark);
+  -webkit-text-stroke: .02em var(--spark); text-shadow: 0 0 110px rgba(232,161,0,.28); z-index: 20; letter-spacing: -.01em; }
+.l05 .s { left: 118px; top: 830px; font-size: 52px; }
+.l05 .src { left: 118px; top: 920px; font-family: var(--label); font-size: 21px; letter-spacing: .2em; color: #8C8576; text-transform: uppercase; }
+.l05 .cam { left: 1460px; top: 560px; width: 390px; height: 390px; z-index: 30; }
+
+/* L06 the step + the real screen. Deya 7: mono "step 1:", one bold line, the actual screen. A loupe lifts the
+   one number that matters (Jason 20:17: screenshots are your best friend). */
+.l06 { --gx: 66%; --gy: 46%; }
+.l06 .lead { left: 116px; top: 150px; color: var(--spark); }
+.l06 .hl { left: 112px; top: 196px; font-size: 140px; }
+.l06 .s { left: 118px; top: 380px; width: 560px; font-size: 42px; line-height: 1.3; }
+.win { position: absolute; background: #FBFAF6; border-radius: 22px; overflow: hidden; box-shadow: 0 50px 90px rgba(0,0,0,.55), 0 6px 12px rgba(0,0,0,.3); z-index: 10; }
+.win .bar { height: 58px; background: #EDE7DB; display: flex; align-items: center; gap: 12px; padding: 0 24px; }
+.win .bar i { width: 16px; height: 16px; border-radius: 50%; background: #CFC3AB; display: block; }
+.win .url { margin-left: 22px; padding: 8px 26px; background: #FBFAF6; border-radius: 20px; font-family: var(--body); font-size: 21px; color: #6E6554; }
+.win img { display: block; width: 100%; }
+.l06 .win { left: 770px; top: 150px; width: 1320px; transform: rotate(-1.4deg); }
+.loupe { position: absolute; border-radius: 50%; z-index: 25; background-color: #FEFDFA; background-repeat: no-repeat;
+  box-shadow: 0 0 0 8px #FBFAF6, 0 0 0 11px var(--spark), 0 40px 70px rgba(0,0,0,.55); }
+.l06 .loupe { left: 1060px; top: 560px; width: 400px; height: 400px;
+  background-image: url(art/figma/proof-client-plan-card-marcus-ellis.png); background-size: 2160px auto; background-position: -1270px 30px; }
+.l06 .cam { left: 112px; top: 640px; width: 420px; height: 340px; }
+
+/* L07 the side label + the taped proof. Deya 14: "strategy #1" runs up the edge, the screenshot is taped on. */
+.l07 { --gx: 50%; --gy: 45%; }
+.l07 .side { position: absolute; left: 70px; top: 110px; height: 860px; writing-mode: vertical-rl; transform: rotate(180deg); text-align: right;
+  font-family: var(--display); font-size: 200px; line-height: 1; color: #FBFAF6; -webkit-text-stroke: .02em currentColor; z-index: 20; }
+.l07 .side b { font-weight: 400; color: transparent; -webkit-text-stroke: 3px #8C8576; }
+.post { position: absolute; background: #FBFAF6; border-radius: 26px; box-shadow: 0 46px 80px rgba(0,0,0,.55); font-family: var(--body); color: #0f1419; z-index: 10; }
+.post .row { display: flex; align-items: center; gap: 18px; }
+.post .av { width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 26px; background: #E8DCC4; color: #6E6554; flex: none; }
+.post .nm { font-size: 30px; font-weight: 700; } .post .hd { font-size: 26px; color: #536471; }
+.post .tx { font-size: 46px; line-height: 1.3; margin: 26px 0 22px; }
+.post mark { background: linear-gradient(transparent 58%, rgba(232,161,0,.45) 58%); color: inherit; padding: 0 4px; }
+.post .meta { font-size: 24px; color: #536471; padding-bottom: 20px; border-bottom: 1px solid #eff3f4; }
+.post .stats { display: flex; gap: 46px; font-size: 25px; color: #536471; padding-top: 18px; } .post .stats b { color: #0f1419; }
+.l07 .post { left: 400px; top: 200px; width: 980px; padding: 50px 56px 44px; transform: rotate(-2deg); }
+.l07 .tape { width: 210px; height: 56px; z-index: 15; background: rgba(226,214,188,.78); }
+.l07 .chat { left: 960px; top: 650px; width: 700px; padding: 30px 40px; transform: rotate(2.2deg); z-index: 12; }
+.chat .msg { display: flex; gap: 18px; align-items: flex-start; } .chat .msg + .msg { margin-top: 20px; }
+.chat .av { width: 56px; height: 56px; font-size: 20px; }
+.chat .sc { background: url(art/sean-face-preview.png) center 30%/cover; }
+.chat .nm { font-size: 25px; color: #262119; } .chat .tm { font-size: 20px; color: #8C8576; font-weight: 400; margin-left: 10px; }
+.chat .say { font-size: 30px; color: #262119; margin-top: 2px; }
+.l07 .cam { left: 1500px; top: 96px; width: 340px; height: 340px; }
+
+/* L08 the split. Two grounds for two choices: the launch on paper, the event under the light. The face sits on
+   the seam. */
+.l08 { --gx: 76%; --gy: 62%; }
+.l08 .paperside { position: absolute; left: 0; top: 0; bottom: 0; width: 960px; background-color: #F1ECE1; z-index: 2;
+  background-image: radial-gradient(#DDD5C4 1.5px, transparent 1.6px); background-size: 40px 40px; background-position: 20px 20px; }
+.l08 .la { left: 116px; top: 140px; color: #B06A4A; } .l08 .lb { left: 1076px; top: 140px; }
+.l08 .ha { left: 112px; top: 186px; font-size: 118px; color: #262119; }
+.l08 .hb { left: 1072px; top: 186px; font-size: 118px; }
+.l08 .env { left: 190px; top: 500px; width: 560px; transform: rotate(-5deg); filter: saturate(.55) drop-shadow(0 26px 30px rgba(38,33,25,.18)); z-index: 6; }
+.l08 .tix { left: 1090px; top: 470px; width: 780px; z-index: 6; }
+.l08 .cam { left: 810px; top: 730px; width: 300px; height: 300px; }
+
+/* L09 the list. Jason 1:29: top to bottom. The point being made is lit, the others wait in the dark.
+   The face is big and runs off the right edge (Deya 1). */
+.l09 { --gx: 80%; --gy: 50%; }
+.l09 .lead { left: 116px; top: 120px; }
+.l09 .row { position: absolute; left: 112px; display: flex; align-items: baseline; gap: 44px; z-index: 20; }
+.l09 .row .n { font-family: var(--display); font-size: 150px; line-height: 1; width: 110px; -webkit-text-stroke: .02em currentColor; }
+.l09 .row .w { font-family: var(--display); font-size: 78px; line-height: 1.05; -webkit-text-stroke: .02em currentColor; }
+.l09 .row .x2 { font-family: var(--sub); font-style: italic; font-size: 36px; color: #CFC6B4; margin-top: 14px; }
+.l09 .r1 { top: 200px; color: #5E574B; } .l09 .r2 { top: 430px; } .l09 .r2 .n { color: var(--spark); } .l09 .r3 { top: 720px; color: #5E574B; }
+.l09 .cam { left: 1250px; top: 160px; width: 760px; height: 760px; }
+
+/* L10 the quote. The real words, big, in the subhead serif; the giant mark is the gold moment. */
+.l10 { --gx: 30%; --gy: 40%; }
+.l10 .qm { position: absolute; left: 70px; top: -150px; font-family: var(--sub); font-size: 900px; line-height: 1; color: var(--spark); opacity: .9; z-index: 8; }
+.l10 .q { position: absolute; left: 330px; top: 230px; width: 1320px; font-family: var(--sub); font-style: italic; font-size: 88px; line-height: 1.16; color: #FBFAF6; z-index: 20; }
+.l10 .by { position: absolute; left: 334px; top: 720px; display: flex; align-items: center; gap: 22px; z-index: 20; font-family: var(--body); }
+.l10 .by .av { width: 84px; height: 84px; border-radius: 50%; background: #E8DCC4; color: #6E6554; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 28px; }
+.l10 .by .who { font-size: 36px; font-weight: 700; color: #FBFAF6; }
+.l10 .by .src { font-family: var(--label); font-size: 20px; letter-spacing: .2em; color: #8C8576; text-transform: uppercase; margin-top: 6px; }
+.l10 .cam { left: 1500px; top: 660px; width: 330px; height: 330px; }
+
+/* L11 story break. Deya 21: dark field, a small pill, a centred title, the face under it. */
+.l11 { --gx: 50%; --gy: 80%; }
+.l11 .pill { position: absolute; left: 50%; top: 150px; transform: translateX(-50%); padding: 14px 34px; border: 2px solid #8a7350; border-radius: 40px;
+  font-family: var(--label); font-size: 22px; letter-spacing: .26em; color: #D8B27A; text-transform: uppercase; z-index: 20; }
+.l11 .hl { left: 0; right: 0; top: 236px; text-align: center; font-size: 150px; }
+.l11 .s { left: 0; right: 0; top: 560px; text-align: center; font-size: 48px; }
+.l11 .cam { left: 805px; top: 680px; width: 310px; height: 310px; }
+
+/* L12 the reveal. Jason 31:24: duplicate the slide, lay ~80% over it, the new word on top. Deya 5: a tiny
+   lead-in, one huge word. The face stays sharp. */
+.l12 .under { position: absolute; inset: -20px; width: 1960px; height: 1120px; object-fit: cover; filter: blur(9px) brightness(.55); z-index: 1; }
+.l12 .wash { position: absolute; inset: 0; background: rgba(29,25,20,.66); z-index: 2; }
+.l12 .s { left: 0; right: 0; top: 300px; text-align: center; font-size: 60px; }
+.l12 .big { position: absolute; left: 0; right: 0; top: 380px; text-align: center; font-family: var(--display-italic); font-size: 300px; line-height: 1;
+  color: var(--spark); -webkit-text-stroke: .02em var(--spark); text-shadow: 0 0 120px rgba(232,161,0,.3); z-index: 20; }
+.l12 .cam { left: 96px; top: 700px; width: 300px; height: 300px; }
+
+/* L13 the calendar. "How do we show this?" (37:00): the same month, planned two ways. January, the launches we
+   pitch next. */
+.l13 { --gx: 62%; --gy: 60%; }
+.l13 .hl { left: 112px; top: 120px; font-size: 112px; }
+.l13 .key { position: absolute; left: 116px; z-index: 20; display: flex; align-items: center; gap: 18px; font-family: var(--body); font-size: 30px; color: #CFC6B4; }
+.l13 .key i { width: 54px; height: 22px; border-radius: 6px; display: block; }
+.l13 .k1 { top: 340px; } .l13 .k1 i { background: rgba(176,106,74,.55); }
+.l13 .k2 { top: 400px; } .l13 .k2 i { background: var(--spark); }
+.cal { position: absolute; left: 540px; top: 250px; width: 1290px; background: #FBFAF6; border-radius: 26px; padding: 40px 44px 44px; z-index: 10;
+  box-shadow: 0 50px 90px rgba(0,0,0,.55); transform: rotate(-1deg); color: #262119; }
+.cal .mo { display: flex; justify-content: space-between; align-items: baseline; }
+.cal .mo b { font-family: var(--display); font-weight: 400; font-size: 58px; -webkit-text-stroke: .02em currentColor; }
+.cal .mo span { font-family: var(--label); font-size: 20px; letter-spacing: .2em; color: #8C8576; }
+.cal .wd, .cal .grid { display: grid; grid-template-columns: repeat(7, 1fr); }
+.cal .wd { margin-top: 26px; padding-bottom: 12px; border-bottom: 2px solid #E4DDCC; font-family: var(--label); font-size: 18px; letter-spacing: .2em; color: #8C8576; }
+.cal .grid { position: relative; grid-auto-rows: 104px; }
+.cal .grid div { border-bottom: 1px solid #EEE8DC; padding: 12px 0 0 4px; font-family: var(--body); font-size: 24px; color: #6E6554; font-weight: 500; }
+.cal .grid div.o { color: #CFC6B4; }
+.cal .grid div.bar { position: absolute; border-radius: 12px; display: flex; align-items: center; padding-left: 22px; font-family: var(--label); font-size: 19px; letter-spacing: .16em; text-transform: uppercase; }
+.cal .grid div.launch { background: rgba(176,106,74,.22); color: #9A5A3E; border: 2px dashed rgba(176,106,74,.5); }
+.cal .grid div.event { background: var(--spark); color: #262119; box-shadow: 0 14px 26px rgba(232,161,0,.35); font-weight: 600; justify-content: space-around; padding: 0 10px; }
+.l13 .cam { left: 96px; top: 690px; width: 300px; height: 300px; }
+
+/* L14 the end screen. YouTube's end screen covers the last 5-20 s: two video elements go on the tiles, the face
+   keeps its place. The tiles are guides; the real thumbnails land on top of them. */
+.l14 { --gx: 64%; --gy: 70%; }
+.l14 .hl { left: 112px; top: 120px; font-size: 140px; }
+.l14 .s { left: 118px; top: 300px; font-size: 46px; }
+.l14 .s .u svg { bottom: -.18em; }
+.tile { position: absolute; top: 560px; width: 640px; height: 360px; border-radius: 22px; border: 3px dashed #5A5246; background: rgba(251,250,246,.03); z-index: 10;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; font-family: var(--label); font-size: 20px; letter-spacing: .22em; color: #8C8576; text-transform: uppercase; }
+.tile::before { content: ""; width: 0; height: 0; border-left: 46px solid #6B6355; border-top: 28px solid transparent; border-bottom: 28px solid transparent; margin-left: 12px; }
+.l14 .v1 { left: 520px; } .l14 .v2 { left: 1190px; }
+.l14 .cam { left: 96px; top: 640px; width: 340px; height: 340px; }
+</style></head><body>
+
+<!-- L01 cold open -->
+<section class="slide stage l01" id="L01-cold-open">
+  <div data-edit class="lead">for creators with a list</div>
+  <h1 data-edit class="display hl">Why does<br>every launch<br>feel like <span class="em">begging?</span></h1>
+  <img class="photo peek" src="art/photo/tickets.png" alt="">
+  <div class="cam round"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- L02 the map -->
+<section class="slide stage l02" id="L02-the-map">
+  <div data-edit class="lead">today, in three parts</div>
+  <h1 data-edit class="display hl">Where we are.</h1>
+  <div class="tk done"><div class="pp"><div data-edit class="no">PART 01</div><div data-edit class="nm">Where it leaks</div><div data-edit class="ln">the launch, step by step</div>
+    <img class="chk" src="art/figma/stitch-check-olive-cut.png" alt=""><div class="stub">NO. 0001</div></div></div>
+  <div class="tk now"><div class="pp"><div data-edit class="no">PART 02 &middot; NOW</div><div data-edit class="nm">The 3-day event</div><div data-edit class="ln">what to run instead</div>
+    <div class="stub">NO. 0002</div></div></div>
+  <div class="tk next"><div class="pp"><div data-edit class="no">PART 03</div><div data-edit class="nm">Your numbers</div><div data-edit class="ln">the plan for yours</div>
+    <div class="stub">NO. 0003</div></div></div>
+  <div class="cam round ring"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- L03 chapter opener -->
+<section class="slide stage l03" id="L03-chapter">
+  <div class="num">02</div>
+  <div data-edit class="lead">chapter two</div>
+  <h1 data-edit class="display hl">The 3-day<br>event.</h1>
+  <div class="panel"></div>
+  <div class="cam box"><img src="art/sean-cam.jpg" alt=""></div>
+  <div data-edit class="pl">PART 02 OF 03</div>
+</section>
+
+<!-- L04 the turn -->
+<section class="slide stage l04" id="L04-the-turn">
+  <div data-edit class="but">But</div>
+  <h1 data-edit class="display hl">the list was<br>never the<br>problem.</h1>
+  <div data-edit class="t it s">The seven-day launch was.</div>
+  <div class="cam round ring"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- L05 the number -->
+<section class="slide stage l05" id="L05-the-number">
+  <div data-edit class="lead">Jay Clouse, nine years in</div>
+  <div data-edit class="big">$100K</div>
+  <div data-edit class="t it s">His first $100,000+ launch, in his own words.</div>
+  <div data-edit class="t src">x.com/jayclouse &middot; 9:45 PM &middot; 7/9/26</div>
+  <div class="cam round ring"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- L06 the step + the screen -->
+<section class="slide stage l06" id="L06-step-screen">
+  <div data-edit class="lead">step 3:</div>
+  <h1 data-edit class="display hl">Get the plan.</h1>
+  <div data-edit class="t it s">Your list, your offer, your numbers. Back in 24 to 48 hours.</div>
+  <div class="win"><div class="bar"><i></i><i></i><i></i><span class="url">theafterharvest.com</span></div>
+    <img src="art/figma/proof-client-plan-card-marcus-ellis.png" alt=""></div>
+  <div class="loupe"></div>
+  <div class="cam box ring"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- L07 the side label + the taped proof -->
+<section class="slide stage l07" id="L07-side-label">
+  <div data-edit class="side">proof <b>01</b></div>
+  <div class="post">
+    <div class="row"><div class="av">JC</div><div><div class="nm">Jay Clouse</div><div class="hd">@jayclouse</div></div></div>
+    <div class="tx">It took nine years, but we just had our <mark>first $100,000+ launch.</mark></div>
+    <div class="meta">9:45 PM &middot; 7/9/26 &middot; <b style="color:#0f1419">16K</b> Views</div>
+    <div class="stats"><span><b>63</b> replies</span><span><b>217</b> likes</span></div>
+  </div>
+  <div class="tape" style="left:400px;top:178px;transform:rotate(-24deg)"></div>
+  <div class="tape" style="left:1210px;top:160px;transform:rotate(18deg)"></div>
+  <div class="post chat">
+    <div class="msg"><div class="av">JC</div><div><div class="nm"><b>Jay Clouse</b><span class="tm">8:47 AM</span></div><div class="say">we did! about 30 mins ago</div></div></div>
+    <div class="msg"><div class="av sc"></div><div><div class="nm"><b>Sean Canela</b><span class="tm">8:51 AM</span></div><div class="say">let&rsquo;s go!!!!</div></div></div>
+  </div>
+  <div class="cam round ring"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- L08 the split -->
+<section class="slide stage l08" id="L08-split">
+  <div class="paperside"></div>
+  <div data-edit class="lead la">a launch</div>
+  <h1 data-edit class="display t ha">Seven days<br>of emails.</h1>
+  <img class="photo env" src="art/photo/envelope.png" alt="">
+  <div data-edit class="lead lb">an event</div>
+  <h1 data-edit class="display t hb">Three days,<br><span class="em">live.</span></h1>
+  <img class="photo tix" src="art/photo/tickets.png" alt="">
+  <div class="cam round ring"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- L09 the list -->
+<section class="slide stage l09" id="L09-list">
+  <div data-edit class="lead">why events sell more</div>
+  <div class="row r1"><div class="n">1</div><div><div data-edit class="w">People show up<br>for a date.</div></div></div>
+  <div class="row r2"><div class="n">2</div><div><div data-edit class="w">Live beats<br>recorded.</div><div data-edit class="x2">They watch you teach, then they trust the offer.</div></div></div>
+  <div class="row r3"><div class="n">3</div><div><div data-edit class="w">Three days earn<br>one decision.</div></div></div>
+  <div class="cam round"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- L10 the quote -->
+<section class="slide stage l10" id="L10-quote">
+  <div class="qm">&ldquo;</div>
+  <div data-edit class="q">It took nine years, but we just had our first $100,000+ launch.</div>
+  <div class="by"><div class="av">JC</div><div><div data-edit class="who">Jay Clouse</div><div data-edit class="src">x.com/jayclouse &middot; 7/9/26</div></div></div>
+  <div class="cam round ring"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- L11 story break -->
+<section class="slide stage l11" id="L11-story-break">
+  <div data-edit class="pill">story time</div>
+  <h1 data-edit class="display t hl">The morning Jay<br>messaged me.</h1>
+  <div data-edit class="t it s">8:47 AM: &ldquo;we did! about 30 mins ago&rdquo;</div>
+  <div class="cam round ring"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- L12 the reveal -->
+<section class="slide stage l12" id="L12-reveal">
+  <img class="under" src="renders/youtube-dark/d1-pop-quiz.png" alt="">
+  <div class="wash"></div>
+  <div data-edit class="t it s">so the answer is</div>
+  <div data-edit class="big">the event.</div>
+  <div class="cam round ring"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- L13 the calendar -->
+<section class="slide stage l13" id="L13-calendar">
+  <h1 data-edit class="display hl">Same month, two plans.</h1>
+  <div class="key k1"><i></i><span data-edit>a 7-day launch</span></div>
+  <div class="key k2"><i></i><span data-edit>a 3-day live event</span></div>
+  <div class="cal">
+    <div class="mo"><b>January 2027</b><span>YOUR CALENDAR</span></div>
+    <div class="wd"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div>
+    <div class="grid" id="cal13"></div>
+  </div>
+  <div class="cam round ring"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- L14 the end screen -->
+<section class="slide stage l14" id="L14-end-screen">
+  <h1 data-edit class="display hl">Watch this next.</h1>
+  <div data-edit class="t it s">Or get the free 3-day plan at <span class="u" style="color:#FBFAF6">theafterharvest.com<svg viewBox="0 0 300 10" preserveAspectRatio="none"><path d="M2,6 C60,2 110,9 150,5 C195,1 250,8 298,4"/></svg></span></div>
+  <div class="tile v1">end screen &middot; video</div>
+  <div class="tile v2">end screen &middot; video</div>
+  <div class="cam round ring"><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<script>
+// L13: January 2027 starts on a Friday; Monday-first grid from Dec 28. The launch runs Jan 11-17, the event Jan 26-28.
+(function () {
+  const g = document.getElementById("cal13"); if (!g) return;
+  const days = [28, 29, 30, 31].map(d => [d, true]).concat(Array.from({length: 31}, (_, i) => [i + 1, false]));
+  days.forEach(([d, other]) => { const c = document.createElement("div"); c.textContent = d; if (other) c.className = "o"; g.appendChild(c); });
+  const colW = 100 / 7, rowH = 104;
+  const bar = (cls, row, col0, span, html) => { const b = document.createElement("div"); b.className = "bar " + cls;
+    b.style.left = `calc(${col0 * colW}% + 6px)`; b.style.width = `calc(${span * colW}% - 12px)`;
+    b.style.top = (row * rowH + 46) + "px"; b.style.height = "46px"; b.innerHTML = html; g.appendChild(b); };
+  bar("launch", 2, 0, 7, "7-day launch &middot; email, email, email");
+  bar("event", 4, 1, 3, "<span>Day 1</span><span>Day 2</span><span>Day 3</span>");
+})();
+</script>
+</body></html>

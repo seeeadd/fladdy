@@ -48,6 +48,31 @@ The light set was "boring af" and the three directions "placeholders". What fixe
 - **Faded wrong answer, lit right one**: the outlined A beside the gold B.
 - White cards (posts, the website) sit under the light with a deep shadow, so they glow off the stage.
 
+## 3c. The layout library (ruling 2026-10-28, "real nice templates with interesting layouts")
+
+Pick each slide's layout from `templates/youtube/layouts.html` by the job the line does, never one layout for a
+whole video (five slides of "headline left, object right" was the miss):
+
+| layout | job | camera |
+|---|---|---|
+| L01 cold open | the hook question | huge circle, right half |
+| L02 the map | where we are (returns each part, Jason 23:20) | circle, top right |
+| L03 chapter | the pattern interrupt between parts | box inside a colour panel |
+| L04 the turn | "But..." | small, bottom right |
+| L05 the number | one number is the point | overlaps the number |
+| L06 step + screen | a step shown on the real screen, loupe on the detail | box, bottom left |
+| L07 side label | proof, taped on | circle, top right |
+| L08 split | two choices, two grounds | on the seam |
+| L09 list | top to bottom, the current point lit | huge, off the right edge |
+| L10 quote | their real words | small, bottom right |
+| L11 story break | a story starts | centred under the title |
+| L12 reveal | the answer over the washed slide (31:24) | stays sharp |
+| L13 calendar | time made visible | bottom left |
+| L14 end screen | YouTube's last 5-20 s, two video tiles | bottom left |
+
+The camera preview is `art/sean-cam.jpg` (from the factory's `template/youtube/sean_profile.webp`); in the edit the
+live camera goes there.
+
 ## 4. What makes it look human (Deya, the brief, Mino)
 
 - **The real artefact is the picture**: Deya shows her actual task list, her actual bookshelf.
