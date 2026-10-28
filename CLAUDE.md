@@ -20,6 +20,8 @@ Why it exists (Sean, 2026-10-28), in order:
 | `rulings.md` | Sean's answers to "what does Jason mean here?" and every standard he sets. **A ruling beats a source** |
 | `scripts/` | the machine |
 
+**Designing any slide: follow `rules/slide-method.md` first** (start from the real line, Jason's "how do we show this?", the human-touch rules, the template tells to avoid). Layouts live in `templates/youtube/` (`theme.css`, `ink.js` for hand marks), rendered with `python3 scripts/render_slides.py <file.html> [--out DIR]`.
+
 Still to come (do not invent them early): `teardowns/` (one per video), `rules/` (slide rules: Jason, brand,
 YouTube), `brand/` (the After Harvest kit for slides), `templates/` (the slide layouts), `playbooks/` (one per
 webinar section, for the webinar machine).
