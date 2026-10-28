@@ -1,0 +1,175 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>YouTube, dark stage: launches vs 3-day events</title>
+<link rel="stylesheet" href="theme.css">
+<script src="lib/rough.js"></script>
+<script src="ink.js"></script>
+<style>
+/* Sean 2026-10-28: "i like the idea of b and c" = the dark stage (B) with real photo objects (C).
+   Warm near-black stage, a spotlight behind the object, eggshell type, ONE gold moment per slide,
+   photo objects with real detail printed on them (never a blank box). */
+.stage { background-color: #1D1914; color: #FBFAF6;
+  background-image: radial-gradient(circle at var(--gx, 68%) var(--gy, 52%), rgba(232,161,0,.17), rgba(232,161,0,.05) 28%, transparent 48%),
+                    radial-gradient(rgba(251,250,246,.06) 1.6px, transparent 1.7px);
+  background-size: auto, 40px 40px; background-position: 0 0, 20px 20px; background-repeat: no-repeat, repeat; }
+.stage::before { mix-blend-mode: screen; opacity: .28; }
+.stage .face { background: #2E2820; border: 5px solid #8a7350; border-radius: 50%; box-shadow: 0 20px 50px rgba(0,0,0,.45); }
+.stage .face img { border-radius: 50%; }
+.stage .display { color: #FBFAF6; }
+.gold { color: var(--spark); }
+.stage .em { color: var(--spark); font-family: var(--display-italic); }
+.stage .sub { color: #CFC6B4; font-family: var(--sub); font-style: italic; }
+.stage .body { color: #BFB6A4; }
+.hl { position: absolute; z-index: 20; }
+.photo { position: absolute; display: block; filter: drop-shadow(0 40px 50px rgba(0,0,0,.55)) drop-shadow(0 6px 10px rgba(0,0,0,.35)); }
+.on { position: absolute; transform: translate(-50%,-50%) rotate(-8.6deg); z-index: 22; white-space: nowrap; color: #262119; }
+.mono { font-family: var(--label); letter-spacing: .22em; text-transform: uppercase; }
+.burst { position: absolute; display: flex; align-items: center; justify-content: center; text-align: center; z-index: 30;
+  clip-path: polygon(50% 0%,59% 12%,73% 5%,76% 20%,91% 18%,87% 33%,100% 40%,90% 52%,99% 65%,85% 70%,86% 85%,71% 84%,65% 98%,53% 89%,41% 99%,34% 86%,19% 89%,18% 74%,3% 69%,11% 56%,0% 44%,13% 36%,9% 21%,24% 21%,27% 6%,41% 13%); }
+.burst span { font-family: var(--body); font-weight: 800; line-height: 1.02; letter-spacing: -.01em; }
+.u { position: relative; white-space: nowrap; }
+.u svg { position: absolute; left: -1%; width: 102%; bottom: -.12em; height: .2em; overflow: visible; }
+.u path { fill: none; stroke: var(--spark); stroke-width: 5px; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.card { position: absolute; background: #FBFAF6; border-radius: 26px; box-shadow: 0 40px 80px rgba(0,0,0,.5); border: 0; }
+
+/* 1. Pop quiz. Jason's hook #1. The answers are printed on the tickets themselves. */
+.y1 { --gx: 66%; --gy: 50%; }
+.y1 .hl { left: 112px; top: 110px; font-size: 168px; }
+.y1 .q { position: absolute; left: 118px; top: 330px; width: 600px; font-size: 54px; line-height: 1.22; }
+.y1 .tix { left: 690px; top: 120px; width: 1300px; }
+.y1 .ta { left: 1205px; top: 392px; font-family: var(--display); font-size: 88px; -webkit-text-stroke: .02em currentColor; }
+.y1 .tb { left: 1192px; top: 640px; font-family: var(--display); font-size: 64px; -webkit-text-stroke: .02em currentColor; }
+.y1 .ta b, .y1 .tb b { font-family: var(--display-italic); font-weight: 400; color: #B06A4A; margin-right: 24px; }
+.y1 .adm { left: 1150px; top: 300px; font-size: 19px; color: #8C8576; }
+.y1 .stub { left: 1815px; top: 300px; font-size: 18px; color: #8C8576; transform: translate(-50%,-50%) rotate(81.4deg); }
+.y1 .burst { left: 300px; top: 560px; width: 240px; height: 240px; background: var(--spark); transform: rotate(-10deg); }
+.y1 .burst span { font-size: 32px; color: #1D1914; width: 160px; }
+.y1 .face { left: 96px; top: 700px; width: 300px; height: 300px; }
+
+/* 2. Three days. The same tickets come back as the agenda (Jason: extend the visual, reuse it). */
+.y2 { --gx: 64%; --gy: 52%; }
+.y2 .hl { left: 112px; top: 150px; font-size: 128px; }
+.y2 .sub { position: absolute; left: 118px; top: 450px; width: 560px; font-size: 48px; line-height: 1.25; }
+.y2 .tix { left: 780px; top: 180px; width: 1080px; }
+.y2 .d1 { left: 1210px; top: 420px; font-family: var(--display); font-size: 120px; -webkit-text-stroke: .02em currentColor; }
+.y2 .d2 { left: 1166px; top: 655px; font-family: var(--display); font-size: 64px; color: #A99D84; -webkit-text-stroke: .02em currentColor; }
+.y2 .d3 { left: 1145px; top: 815px; font-family: var(--display); font-size: 64px; color: #BDB29C; -webkit-text-stroke: .02em currentColor; }
+.y2 .adm { left: 1150px; top: 318px; font-size: 19px; color: #8C8576; }
+.y2 .now { left: 1700px; top: 300px; font-size: 22px; color: #B06A4A; transform: translate(-50%,-50%) rotate(81.4deg); }
+.y2 .face { left: 96px; top: 650px; width: 340px; height: 340px; }
+
+/* 3. The answer. Direction B: the faint outlined A, the lit gold B. */
+.y3 { --gx: 72%; --gy: 46%; }
+.y3 .opt { position: absolute; top: 120px; text-align: center; }
+.y3 .opt .k { font-family: var(--display); font-size: 520px; line-height: .8; }
+.y3 .oa { left: 700px; } .y3 .oa .k { color: transparent; -webkit-text-stroke: 3px #5A5246; }
+.y3 .ob { left: 1180px; } .y3 .ob .k { color: var(--spark); -webkit-text-stroke: .02em var(--spark); text-shadow: 0 0 90px rgba(232,161,0,.35); }
+.y3 .line { position: absolute; left: 700px; top: 610px; font-size: 96px; }
+.y3 .sub { position: absolute; left: 706px; top: 745px; font-size: 54px; }
+.y3 .face { left: 96px; top: 650px; width: 340px; height: 340px; }
+
+/* 4. Proof. Jay's real post and chat, white cards under the light. */
+.y4 { --gx: 72%; --gy: 45%; }
+.y4 .hl { left: 112px; top: 150px; font-size: 92px; }
+.y4 .cap { position: absolute; left: 118px; top: 390px; width: 600px; font-family: var(--body); font-size: 32px; line-height: 1.45; }
+.y4 .tweet { left: 920px; top: 150px; width: 860px; padding: 46px 52px 40px; transform: rotate(-1.4deg); font-family: var(--body); color: #0f1419; z-index: 10; }
+.y4 .row { display: flex; align-items: center; gap: 18px; }
+.y4 .av { width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 26px; }
+.y4 .jc { background: #E8DCC4; color: #6E6554; }
+.y4 .sc { background: url(art/sean-face-preview.png) center 30%/cover; }
+.y4 .nm { font-size: 30px; font-weight: 700; }
+.y4 .hd { font-size: 26px; color: #536471; }
+.y4 .tx { font-size: 44px; line-height: 1.3; margin: 26px 0 22px; letter-spacing: -.005em; }
+.y4 .tx mark { background: linear-gradient(transparent 58%, rgba(232,161,0,.45) 58%); color: inherit; padding: 0 4px; }
+.y4 .meta { font-size: 24px; color: #536471; padding-bottom: 20px; border-bottom: 1px solid #eff3f4; }
+.y4 .stats { display: flex; gap: 46px; font-size: 25px; color: #536471; padding-top: 18px; }
+.y4 .stats b { color: #0f1419; }
+.y4 .chat { left: 1010px; top: 640px; width: 740px; padding: 30px 40px; transform: rotate(1.8deg); font-family: var(--body); z-index: 12; }
+.y4 .msg { display: flex; gap: 18px; align-items: flex-start; }
+.y4 .msg + .msg { margin-top: 20px; }
+.y4 .msg .av { width: 56px; height: 56px; font-size: 20px; flex: none; }
+.y4 .msg .nm { font-size: 25px; color: #262119; } .y4 .msg .t { font-size: 20px; color: #8C8576; font-weight: 400; margin-left: 10px; }
+.y4 .msg .say { font-size: 30px; color: #262119; margin-top: 2px; }
+.y4 .face { left: 96px; top: 650px; width: 340px; height: 340px; }
+
+/* 5. Call to action. The real offer, the website card under the light; the gold is the word FREE. */
+.y5 { --gx: 70%; --gy: 50%; }
+.y5 .hl { left: 112px; top: 150px; font-size: 136px; }
+.y5 .body { position: absolute; left: 118px; top: 452px; width: 600px; font-family: var(--body); font-size: 34px; line-height: 1.45; }
+.y5 .site { left: 860px; top: 200px; width: 960px; padding: 70px 76px 76px; transform: rotate(-1.2deg); }
+.y5 .step { font-family: var(--label); font-size: 22px; letter-spacing: .2em; color: #B08A3E; }
+.y5 .step span { color: #6E6554; }
+.y5 .t { font-family: var(--display); font-size: 74px; line-height: 1.05; margin-top: 22px; -webkit-text-stroke: .02em currentColor; color: #262119; }
+.y5 .p { font-family: var(--body); font-size: 30px; line-height: 1.45; color: #6E6554; margin-top: 26px; }
+.y5 .btn { margin-top: 44px; display: inline-flex; align-items: center; gap: 18px; padding: 30px 50px; border-radius: 16px; background: #262119;
+  color: #FBFAF6; font-family: var(--label); font-size: 28px; letter-spacing: .16em; box-shadow: 0 16px 30px rgba(38,33,25,.3), inset 0 1px 0 rgba(255,255,255,.12); }
+.y5 .btn b { color: var(--spark); font-weight: 500; }
+.y5 .fine { font-family: var(--body); font-size: 24px; color: #8C8576; margin-top: 22px; }
+.y5 .face { left: 96px; top: 650px; width: 340px; height: 340px; }
+</style></head><body>
+
+<!-- 1 -->
+<section class="slide stage y1" id="d1-pop-quiz">
+  <h1 data-edit class="display hl">Pop quiz.</h1>
+  <div data-edit class="sub q">Same list. Same offer. Which ticket sells more?</div>
+  <img class="photo tix" src="art/photo/tickets.png" alt="">
+  <div class="on mono adm">Admit one &middot; live online</div>
+  <div data-edit class="on ta"><b>A</b>7-day launch</div>
+  <div data-edit class="on tb"><b>B</b>3-day live event</div>
+  <div class="on mono stub">No. 0001</div>
+  <div class="burst"><span>hint: not the long one</span></div>
+  <div class="face"><img src="art/sean-face-preview.png" alt=""></div>
+</section>
+
+<!-- 2 -->
+<section class="slide stage y2" id="d2-three-days">
+  <h1 data-edit class="display hl">Three days.<br><span class="em">One offer.</span></h1>
+  <div data-edit class="sub">Each day earns the next one. Here is day one.</div>
+  <img class="photo tix" src="art/photo/tickets.png" alt="">
+  <div class="on mono adm">Admit one &middot; day 1 of 3</div>
+  <div data-edit class="on d1">Day 1</div>
+  <div data-edit class="on d2">Day 2</div>
+  <div data-edit class="on d3">Day 3</div>
+  <div class="on mono now">&bull; Today</div>
+  <div class="face"><img src="art/sean-face-preview.png" alt=""></div>
+</section>
+
+<!-- 3 -->
+<section class="slide stage y3" id="d3-the-answer">
+  <div class="opt oa"><div class="k">A</div></div>
+  <div class="opt ob"><div class="k">B</div></div>
+  <div data-edit class="display line">People show up for an event.</div>
+  <div data-edit class="sub">They scroll past a launch.</div>
+  <div class="face"><img src="art/sean-face-preview.png" alt=""></div>
+</section>
+
+<!-- 4 -->
+<section class="slide stage y4" id="d4-proof">
+  <h1 data-edit class="display hl">Nine years in.<br><span class="em">His first <span class="u">$100K<svg viewBox="0 0 300 10" preserveAspectRatio="none"><path d="M2,6 C60,2 110,9 150,5 C195,1 250,8 298,4"/></svg></span> launch.</span></h1>
+  <div data-edit class="cap">Jay Clouse, the night it happened. His post, then our chat the next morning.</div>
+  <div class="card tweet">
+    <div class="row"><div class="av jc">JC</div><div><div class="nm">Jay Clouse</div><div class="hd">@jayclouse</div></div></div>
+    <div class="tx">It took nine years, but we just had our <mark>first $100,000+ launch.</mark></div>
+    <div class="meta">9:45 PM &middot; 7/9/26 &middot; <b style="color:#0f1419">16K</b> Views</div>
+    <div class="stats"><span><b>63</b> replies</span><span><b>217</b> likes</span></div>
+  </div>
+  <div class="card chat">
+    <div class="msg"><div class="av jc">JC</div><div><div class="nm"><b>Jay Clouse</b><span class="t">8:47 AM</span></div><div class="say">we did! about 30 mins ago</div></div></div>
+    <div class="msg"><div class="av sc"></div><div><div class="nm"><b>Sean Canela</b><span class="t">8:51 AM</span></div><div class="say">let&rsquo;s go!!!!</div></div></div>
+  </div>
+  <div class="face"><img src="art/sean-face-preview.png" alt=""></div>
+</section>
+
+<!-- 5 -->
+<section class="slide stage y5" id="d5-free-plan">
+  <h1 data-edit class="display hl">Want the plan<br><span class="em">for yours?</span></h1>
+  <div data-edit class="body">Tell us your offer, your list and your audience. We build the 3-day plan around your own numbers.</div>
+  <div class="card site">
+    <div class="step">STEP 02 <span>&middot; GET YOUR FREE PLAN</span></div>
+    <div class="t">Want a free 3-day<br>live event plan?</div>
+    <div class="p">The topic, the structure, and the numbers we&rsquo;d project. Takes about 5 minutes.</div>
+    <div class="btn">GET MY <b>FREE</b> EVENT PLAN &rarr;</div>
+    <div class="fine">The After Harvest team sends the plan in 24&ndash;48 hours.</div>
+  </div>
+  <div class="face"><img src="art/sean-face-preview.png" alt=""></div>
+</section>
+</body></html>

@@ -36,6 +36,18 @@ Only then pick the layout.
 - **The facecard shows Sean's photo in previews** (`art/sean-face-preview.png`) so a slide reads as finished.
 - **Deliver each slide on its own**, full size, no contact-sheet frame.
 
+## 3b. The YouTube look: dark stage + the object (ruling 2026-10-28, "i like the idea of b and c")
+
+The light set was "boring af" and the three directions "placeholders". What fixed it, in `youtube-dark.html`:
+- **The stage**: warm near-black `#1D1914`, a soft gold spotlight behind the focal object (`--gx/--gy`), a 6% dot grid.
+  Type is eggshell; the subhead is Literata italic `#CFC6B4`.
+- **One gold moment per slide** (`#E8A100`): the lit B, the word FREE, the highlighted line in the post. Never two.
+- **The object carries real detail**: the tickets have "Admit one · live online" and "No. 0001" printed on them,
+  rotated with the paper (-8.6deg); the post is the real post with its real numbers. A blank box reads as a placeholder.
+- **The object repeats**: the quiz tickets come back as the Day 1-3 agenda (Jason 23:20, the framework returns).
+- **Faded wrong answer, lit right one**: the outlined A beside the gold B.
+- White cards (posts, the website) sit under the light with a deep shadow, so they glow off the stage.
+
 ## 4. What makes it look human (Deya, the brief, Mino)
 
 - **The real artefact is the picture**: Deya shows her actual task list, her actual bookshelf.
