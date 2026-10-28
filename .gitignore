@@ -1,0 +1,7 @@
+# videos are too big for git: keep them in Drive
+*.mp4
+*.webm
+*.mov
+*.part
+.DS_Store
+__pycache__/
