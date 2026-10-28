@@ -11,3 +11,4 @@ the standard, Sean's words, what it changes.
 | 2026-10-28 | Olivera licence | "why are we going to buy Olivera? We're not even going to sell it" | use the demo; headlines work around its missing punctuation |
 | 2026-10-28 | YouTube slides | "a little bit simpler and not overly after-harvest... adaptable to different stuff... just the foundations" | one theme file; layouts do not depend on After Harvest art |
 | 2026-10-28 | Rounds 1-2 rejected | "too much like Claude... templateized... not derived from the transcripts... doesn't feel human-touched. Maybe we could use more brain in the layouts" | rules/slide-method.md |
+| 2026-10-28 | Round 3 rejected | "It looks messy. It doesn't really look great... It doesn't look nicely made... remove the gray border around it" | clean and crafted beats messy: one focal photo object, wide margins, one precise mark at most, no handwriting font; slides delivered one by one, no contact-sheet frame |

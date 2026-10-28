@@ -1,155 +1,118 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>VSL opening: round 3</title>
+<html><head><meta charset="utf-8"><title>VSL opening: round 4</title>
 <link rel="stylesheet" href="theme.css">
 <script src="lib/rough.js"></script>
 <script src="ink.js"></script>
 <style>
-.h1 { position: absolute; left: 96px; top: 78px; font-size: 90px; z-index: 20; }
+/* Round 4 (2026-10-28, after "it looks messy... doesn't look nicely made"): one focal object per slide, shot
+   like a product photo; wide margins; one precise hand mark at most; the face in its card. */
+.hl { position: absolute; font-size: 112px; z-index: 20; }
+.u { position: relative; white-space: nowrap; }
+.u svg { position: absolute; left: -1%; width: 102%; bottom: -.12em; height: .2em; overflow: visible; }
+.u path { fill: none; stroke: var(--accent); stroke-width: 5px; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.photo { position: absolute; display: block; filter: drop-shadow(0 28px 34px rgba(38,33,25,.16)) drop-shadow(0 4px 6px rgba(38,33,25,.10)); }
 
-/* ---------- 1. the inbox ----------
-   Belief: "this is for me, they picked me". Jason 19:05: show it in the reality it lives in (he typed the real
-   YouTube search instead of an AI picture). So: their real inbox, our email among the others, circled by hand. */
-.mail { position: absolute; left: 392px; top: 330px; width: 1450px; background: #fff; border-radius: 18px; transform: rotate(-1.1deg);
-  box-shadow: 0 30px 70px rgba(38,33,25,.16), 0 0 0 1px #e6e0d4; overflow: hidden; z-index: 10; font-family: var(--body); color: #202124; }
-.mail .bar { height: 76px; display: flex; align-items: center; gap: 22px; padding: 0 30px; border-bottom: 1px solid #eceae4; }
-.mail .burger { width: 26px; height: 18px; border-top: 3px solid #5f6368; border-bottom: 3px solid #5f6368; position: relative; }
-.mail .burger::after { content: ""; position: absolute; left: 0; right: 0; top: 4.5px; border-top: 3px solid #5f6368; }
-.mail .logo { font-size: 28px; color: #5f6368; font-weight: 500; letter-spacing: -.01em; }
-.mail .search { margin-left: 70px; flex: 1; max-width: 780px; height: 50px; border-radius: 25px; background: #eef1f5; display: flex; align-items: center; padding: 0 26px; color: #6b6f75; font-size: 22px; }
-.mail .tabs { display: flex; height: 58px; border-bottom: 1px solid #eceae4; font-size: 20px; color: #5f6368; }
-.mail .tabs div { width: 260px; display: flex; align-items: center; padding-left: 30px; }
-.mail .tabs .on { color: #0b57d0; box-shadow: inset 0 -3px 0 #0b57d0; font-weight: 600; }
-.mail .row { display: grid; grid-template-columns: 300px 1fr 150px; align-items: center; height: 68px; padding: 0 30px; border-bottom: 1px solid #f1efea; font-size: 22px; color: #3c4043; }
-.mail .row .who { font-weight: 400; white-space: nowrap; overflow: hidden; }
-.mail .row .what { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #5f6368; }
-.mail .row .what b { color: #3c4043; font-weight: 400; }
-.mail .row .when { text-align: right; font-size: 19px; color: #5f6368; }
-.mail .row.us { background: #fff8e6; color: #111; }
-.mail .row.us .who, .mail .row.us .what b, .mail .row.us .when { font-weight: 700; color: #111; }
-.mail .row.us .who::before { content: ""; display: inline-block; width: 30px; height: 30px; border-radius: 50%; vertical-align: -7px; margin-right: 12px;
-  background: url(art/sean-avatar.png) center/cover, #d8b27a; }
-.s-inbox .note { position: absolute; left: 1470px; top: 214px; transform: rotate(-4deg); z-index: 46; }
+/* 1. the email. Jason 19:05: show it where it lives. The envelope is the feeling, the notification is the proof. */
+.v1 .hl { left: 112px; top: 160px; font-size: 104px; }
+.v1 .env { left: 1000px; top: 170px; width: 870px; transform: rotate(-4deg); }
+.v1 .note { position: absolute; left: 1010px; top: 560px; width: 800px; padding: 34px 40px 38px; background: #fff; border-radius: 28px;
+  box-shadow: 0 34px 60px rgba(38,33,25,.16), 0 2px 0 rgba(38,33,25,.04); transform: rotate(1.6deg); z-index: 25; font-family: var(--body); }
+.v1 .note .top { display: flex; align-items: center; gap: 18px; }
+.v1 .note .av { width: 66px; height: 66px; border-radius: 50%; background: url(art/sean-face-preview.png) center 30%/cover; }
+.v1 .note .who { font-size: 30px; font-weight: 650; color: var(--ink); }
+.v1 .note .when { margin-left: auto; font-size: 24px; color: #8C8576; }
+.v1 .note .subj { font-size: 35px; font-weight: 650; color: var(--ink); margin-top: 22px; letter-spacing: -.005em; }
+.v1 .note .snip { font-size: 28px; color: var(--quiet); margin-top: 8px; line-height: 1.4; }
+.v1 .note .u path { stroke-width: 4px; }
 
-/* ---------- 2. the half-planned quarter ----------
-   Belief: "my next quarter is already full, so a new thing feels heavy". Note from the brief: messy, like a draft,
-   each item pops up. Show it as their actual planner, half filled with the real work (real screenshots). */
-.planner { position: absolute; left: 400px; top: 300px; width: 1450px; height: 760px; background: var(--card); border-radius: 14px;
-  box-shadow: 0 26px 60px rgba(38,33,25,.13), 0 0 0 1.5px #e2dacb; transform: rotate(.6deg); z-index: 5; overflow: hidden; }
-.planner .months { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0 20px; border-bottom: 2px solid #d9d0bf; }
-.planner .months div { font-family: var(--label); font-size: 22px; letter-spacing: .2em; color: var(--quiet); padding: 22px 0 14px 8px; }
-.planner .months div:first-child::before { content: "Q1 \00B7  "; color: var(--accent); }
-.planner .weeks { position: absolute; left: 20px; right: 20px; top: 66px; bottom: 0; display: grid; grid-template-columns: repeat(12, 1fr); }
-.planner .weeks div { border-left: 1.5px solid #ece5d7; font-family: var(--label); font-size: 15px; color: #b3a891; padding: 10px 0 0 8px; }
-.item { position: absolute; z-index: 12; }
-.item .lab { font-family: "Hand"; font-size: 32px; color: var(--ink); margin: 0 0 8px 6px; white-space: nowrap; }
-.item .pic { background: #fff; padding: 9px; border-radius: 10px; box-shadow: 0 14px 30px rgba(38,33,25,.15); }
-.item .pic img { display: block; width: 100%; border-radius: 6px; }
-.item .tape { width: 110px; height: 34px; left: 50%; top: 30px; margin-left: -55px; }
-.s-quarter .note { position: absolute; left: 1490px; top: 980px; transform: rotate(-3deg); z-index: 46; font-size: 36px; }
+/* 2. the half-planned quarter. Brief: each item pops up. Their planner, half full; the right page left open. */
+.v2 .hl, .v3 .hl { left: 112px; top: 92px; font-size: 96px; }
+.planner { position: absolute; left: 380px; top: 310px; width: 1440px; z-index: 5; }
+.planner img { width: 100%; display: block; filter: drop-shadow(0 26px 34px rgba(38,33,25,.15)) drop-shadow(0 3px 5px rgba(38,33,25,.08)); }
+.planner .wk { position: absolute; top: 7.6%; font-family: var(--label); font-size: 17px; letter-spacing: .18em; color: #A2977F; transform: translateX(-50%); }
+.sticky { position: absolute; width: 150px; min-height: 160px; padding: 32px 16px 20px; font-family: var(--body); font-size: 25px; line-height: 1.22;
+  font-weight: 620; color: var(--ink); box-shadow: 0 14px 22px rgba(38,33,25,.13), 0 1px 2px rgba(38,33,25,.12); z-index: 8; }
+.sticky::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 22px; background: rgba(38,33,25,.045); }
+.s-sand { background: #F1E6CE; } .s-sage { background: #E2E4CF; } .s-blush { background: #F2DCD4; }
+.s-wheat { background: #F3E4C1; } .s-dusk { background: #E5E0EC; } .s-cream { background: #F6EFDD; }
 
-/* ---------- 3. the launch you are not running ----------
-   Jason 31:24: duplicate the slide, lay a ~80% white box over the old information, put the new line on top: a
-   dramatic reveal. The brief adds "blur the background". The empty weeks stay sharp: that is the launch. */
-.wash { position: absolute; inset: 0; z-index: 30; background: rgba(251,250,246,.80); backdrop-filter: blur(3px);
-  clip-path: path(evenodd, "M0 0H1920V1080H0Z M1236 318H1486V1046H1236Z"); }
-.reveal { position: absolute; left: 150px; top: 300px; width: 1050px; padding: 56px 60px 60px; z-index: 40; transform: rotate(-1.2deg); }
-.reveal .display { font-size: 80px; }
-.gapnote { position: absolute; left: 1262px; top: 560px; width: 210px; text-align: center; transform: rotate(-6deg); z-index: 46; font-size: 40px; }
+/* 3. the launch you are not running. Jason 31:24: the same slide under ~80% paper, the new line on top.
+   The empty right page stays sharp: that is the launch. */
+.wash { position: absolute; inset: 0; z-index: 30; background: rgba(251,250,246,.82); backdrop-filter: blur(4px);
+  clip-path: path(evenodd, "M0 0H1920V1080H0Z M1328 352H1763V1019H1328Z"); }
+.slot { position: absolute; left: 1342px; top: 366px; width: 407px; height: 639px; border: 3px dashed var(--accent); border-radius: 16px; z-index: 35;
+  display: flex; align-items: center; justify-content: center; }
+.slot span { font-family: var(--display-italic); font-size: 64px; color: var(--accent); -webkit-text-stroke: .015em currentColor; transform: rotate(-4deg); text-align: center; line-height: 1.05; }
+.reveal { position: absolute; left: 230px; top: 250px; padding: 60px 70px 66px; background: #fff; border-radius: 28px; z-index: 40;
+  box-shadow: 0 40px 80px rgba(38,33,25,.16); transform: rotate(-1.2deg); }
+.reveal .display { font-size: 88px; }
 
-/* ---------- 4. three things ----------
-   Brief: "I will add the animation, leave it blank, design the rest". Jason: lists read top to bottom, and the
-   number is not the important part, the things are; so the three slots carry the size. */
-.s-three .big3 { position: absolute; left: 96px; top: 40px; font-size: 400px; line-height: 1; color: var(--accent); }
-.s-three .t { position: absolute; left: 330px; top: 175px; font-size: 128px; }
-.s-three .slots { position: absolute; left: 110px; top: 438px; width: 800px; }
-.s-three .slot { display: flex; align-items: baseline; gap: 26px; height: 64px; margin-bottom: 8px; }
-.s-three .slot .n { font-family: var(--label); font-size: 28px; color: var(--accent); }
-.s-three .slot .what { font-family: "Hand"; font-size: 40px; color: #b8ae99; }
-.s-three .anim { position: absolute; left: 1010px; top: 150px; width: 820px; height: 800px; z-index: 3; display: flex; align-items: center; justify-content: center; }
-.s-three .anim span { font-family: "Hand"; font-size: 34px; color: #b8ae99; transform: rotate(-3deg); }
-.s-three .bloom { position: absolute; right: -30px; top: -40px; height: 260px; transform: rotate(18deg); z-index: 4; }
+/* 4. three things. Brief: the animation goes here, design the rest. Jason: the list reads top to bottom. */
+.v4 .hl { left: 112px; top: 150px; font-size: 150px; line-height: .98; }
+.v4 .stage { position: absolute; left: 900px; top: 120px; width: 908px; height: 840px; background: #fff; border-radius: 30px; z-index: 10;
+  box-shadow: 0 40px 80px rgba(38,33,25,.13); padding: 70px 80px; }
+.v4 .row { display: flex; align-items: center; gap: 34px; height: 233px; border-bottom: 2px solid #EEE8DC; }
+.v4 .row:last-child { border-bottom: 0; }
+.v4 .row .n { font-family: var(--display); font-size: 96px; color: var(--accent); -webkit-text-stroke: .02em currentColor; width: 110px; }
+.v4 .row .bar { height: 26px; border-radius: 13px; background: #F3EEE4; }
+.v4 .bloom { position: absolute; left: 1700px; top: 40px; height: 250px; transform: rotate(16deg); z-index: 9; }
 </style></head><body>
 
 <!-- 1 -->
-<section class="slide s-inbox" id="v1-inbox" data-ink='[
-  {"k":"ellipse","x":1188,"y":702,"w":1130,"h":112,"c":"rust","sw":4.6,"seed":3},
-  {"k":"arrow","d":[[1430,300],[1560,420],[1630,650]],"c":"rust","sw":4,"seed":5}
- ]'>
-  <h1 class="display h1">If you&rsquo;re watching this video,<br>it&rsquo;s because you&rsquo;ve seen <span class="em">our email.</span></h1>
-  <div class="mail">
-    <div class="bar"><div class="burger"></div><div class="logo">Mail</div><div class="search">Search mail</div></div>
-    <div class="tabs"><div class="on">Primary</div><div>Promotions</div><div>Updates</div></div>
-    <div class="row"><div class="who">Stripe</div><div class="what"><b>Your payout is on the way</b> - $4,812.40 will arrive in your bank account</div><div class="when">9:14 AM</div></div>
-    <div class="row"><div class="who">Skool</div><div class="what"><b>12 new posts in your community</b> - see what members are talking about</div><div class="when">8:52 AM</div></div>
-    <div class="row"><div class="who">Calendly</div><div class="what"><b>New event: podcast guest</b> - Thursday, 2:00 PM</div><div class="when">8:30 AM</div></div>
-    <div class="row us"><div class="who">Sean Canela</div><div class="what"><b>any plans for the program this spring?</b> - Hey, this is my 4th email about this, so I&rsquo;ll keep it short</div><div class="when">8:12 AM</div></div>
-    <div class="row"><div class="who">Kit</div><div class="what"><b>Your weekly broadcast stats</b> - 41% open rate on Tuesday&rsquo;s email</div><div class="when">Yesterday</div></div>
-    <div class="row"><div class="who">YouTube Studio</div><div class="what"><b>Your video is getting more views than usual</b></div><div class="when">Yesterday</div></div>
-    <div class="row"><div class="who">Teachable</div><div class="what"><b>You made a sale!</b> - Course: Start here</div><div class="when">Oct 26</div></div>
-    <div class="row"><div class="who">Google Calendar</div><div class="what"><b>Reminder: Q1 planning</b> - Friday</div><div class="when">Oct 25</div></div>
+<section class="slide v1" id="v1-you-saw-our-email">
+  <h1 class="display hl">If you&rsquo;re watching<br>this video, it&rsquo;s<br>because you&rsquo;ve seen<br><span class="em">our email.</span></h1>
+  <img class="photo env" src="art/photo/envelope.png" alt="">
+  <div class="note">
+    <div class="top"><div class="av"></div><div class="who">Sean Canela</div><div class="when">8:12 AM</div></div>
+    <div class="subj">any plans for the program this spring?</div>
+    <div class="snip">Hey, this is my <span class="u">4th<svg viewBox="0 0 300 10" preserveAspectRatio="none"><path d="M2,6 C60,2 110,9 150,5 C195,1 250,8 298,4"/></svg></span> email about this, so I&rsquo;ll keep it short.</div>
   </div>
-  <div class="hand rust note">this one.<br>(the 4th one)</div>
-  <div class="face"></div>
+  <div class="face"><img src="art/sean-face-preview.png" alt=""></div>
 </section>
 
 <!-- 2 -->
-<section class="slide s-quarter" id="v2-half-planned" data-ink='[
-  {"k":"under","x":555,"y":262,"w":470,"c":"rust","sw":4.4,"seed":11},
-  {"k":"scribble","x":1665,"y":930,"w":150,"h":18,"c":"ink","sw":3,"n":9,"seed":13}
- ]'>
-  <h1 class="display h1">So your next quarter is probably<br>already <span class="em">half-planned.</span></h1>
+<section class="slide v2" id="v2-half-planned">
+  <h1 class="display hl">So your next quarter is<br>probably already <span class="em u">half-planned.<svg viewBox="0 0 300 10" preserveAspectRatio="none"><path d="M2,6 C60,2 110,9 150,5 C195,1 250,8 298,4"/></svg></span></h1>
   <div class="planner" id="planner">
-    <div class="months"><div>Jan</div><div>Feb</div><div>Mar</div></div>
-    <div class="weeks"><div>W1</div><div>W2</div><div>W3</div><div>W4</div><div>W5</div><div>W6</div><div>W7</div><div>W8</div><div>W9</div><div>W10</div><div>W11</div><div>W12</div></div>
+    <img src="art/photo/planner.png" alt="">
+    <div class="wk" style="left:8.9%">WK 1</div><div class="wk" style="left:19%">WK 2</div><div class="wk" style="left:29.4%">WK 3</div><div class="wk" style="left:39.8%">WK 4</div>
+    <div class="wk" style="left:60.4%">WK 5</div><div class="wk" style="left:70.8%">WK 6</div><div class="wk" style="left:81%">WK 7</div><div class="wk" style="left:91.2%">WK 8</div>
   </div>
-  <div class="items" id="items">
-    <div class="item" style="left:440px;top:400px;width:330px;transform:rotate(-3deg)"><div class="lab">fix open rates</div><div class="pic"><img src="art/shots/email-open-rates-dashboard.png"></div></div>
-    <div class="item" style="left:800px;top:350px;width:220px;transform:rotate(2.6deg)"><div class="lab">another course push</div><div class="pic"><img src="art/shots/course-community-start-here.png"></div></div>
-    <div class="item" style="left:985px;top:520px;width:235px;transform:rotate(-2deg)"><div class="lab">next YouTube<br>batch</div><div class="pic"><img src="art/shots/youtube-thumbnail-batch.png"></div></div>
-    <div class="item" style="left:515px;top:700px;width:340px;transform:rotate(2deg)"><div class="lab">rewrite the sales page <i>again</i></div><div class="pic"><img src="art/shots/sales-page-60-creators.png"></div></div>
-    <div class="item" style="left:1495px;top:350px;width:320px;transform:rotate(-2.5deg)"><div class="lab">finally start<br>the community</div><div class="pic"><img src="art/shots/skool-community-feed.png"></div></div>
-    <div class="item" style="left:1610px;top:640px;width:205px;transform:rotate(4deg)"><div class="lab">test a low-ticket?</div><div class="pic"><img src="art/shots/low-ticket-claude-for-coaches.png"></div></div>
+  <div id="stickies">
+    <div class="sticky s-sand" style="left:433px;top:440px;transform:rotate(-2.2deg)">fix open rates</div>
+    <div class="sticky s-blush" style="left:579px;top:610px;transform:rotate(1.8deg)">another course push</div>
+    <div class="sticky s-sage" style="left:728px;top:455px;transform:rotate(1.2deg)">next YouTube batch</div>
+    <div class="sticky s-wheat" style="left:878px;top:660px;transform:rotate(-1.6deg)">rewrite the sales page again</div>
+    <div class="sticky s-dusk" style="left:1175px;top:450px;transform:rotate(2.0deg)">finally start the community</div>
+    <div class="sticky s-cream" style="left:1175px;top:720px;transform:rotate(-1.8deg)">test a low&#8209;ticket offer</div>
   </div>
-  <div class="hand note">and that&rsquo;s just Q1</div>
-  <div class="face"></div>
+  <div class="face"><img src="art/sean-face-preview.png" alt=""></div>
 </section>
 
 <!-- 3 -->
-<section class="slide s-quarter s-gap" id="v3-not-running-yet" data-ink='[
-  {"k":"box","x":1248,"y":336,"w":226,"h":690,"c":"rust","sw":4,"dash":[16,14],"seed":21,"r":1.6},
-  {"k":"arrow","d":[[1180,520],[1215,560],[1252,620]],"c":"rust","sw":4,"seed":22}
- ]'>
-  <h1 class="display h1">So your next quarter is probably<br>already <span class="em">half-planned.</span></h1>
+<section class="slide v3" id="v3-not-running-yet">
+  <h1 class="display hl">So your next quarter is<br>probably already <span class="em">half-planned.</span></h1>
   <div class="wash"></div>
-  <div class="card reveal"><div class="display">We emailed you about the launch <span class="em">you aren&rsquo;t running yet.</span></div></div>
-  <div class="hand rust gapnote">a 3-day event?</div>
-  <div class="face"></div>
+  <div class="slot"><span>your<br>3-day<br>event?</span></div>
+  <div class="reveal"><div class="display">We emailed you about<br>the launch <span class="em">you aren&rsquo;t<br>running yet.</span></div></div>
+  <div class="face"><img src="art/sean-face-preview.png" alt=""></div>
 </section>
 
 <!-- 4 -->
-<section class="slide s-three" id="v4-three-things" data-ink='[
-  {"k":"ellipse","x":215,"y":245,"w":300,"h":360,"c":"olive","sw":3.6,"seed":31},
-  {"k":"under","x":110,"y":498,"w":760,"c":"#d4c9b3","sw":2.4,"seed":32,"r":1},
-  {"k":"under","x":110,"y":570,"w":760,"c":"#d4c9b3","sw":2.4,"seed":33,"r":1},
-  {"k":"under","x":110,"y":642,"w":760,"c":"#d4c9b3","sw":2.4,"seed":34,"r":1},
-  {"k":"box","x":1010,"y":150,"w":820,"h":800,"c":"#cbbfa6","sw":3,"dash":[14,12],"seed":35,"r":1.2}
- ]'>
-  <div class="display big3">3</div>
-  <div class="display t">things:</div>
-  <div class="slots">
-    <div class="slot"><span class="n">01</span><span class="what">first thing</span></div>
-    <div class="slot"><span class="n">02</span><span class="what">second thing</span></div>
-    <div class="slot"><span class="n">03</span><span class="what">third thing</span></div>
-  </div>
-  <div class="anim"><span>animation goes here</span></div>
+<section class="slide v4" id="v4-three-things">
+  <h1 class="display hl">Three<br><span class="em">things:</span></h1>
   <img class="bloom" src="art/figma/stitch-flower-pink.png" alt="">
-  <div class="face"></div>
+  <div class="stage">
+    <div class="row"><div class="n">1</div><div class="bar" style="width:520px"></div></div>
+    <div class="row"><div class="n">2</div><div class="bar" style="width:430px"></div></div>
+    <div class="row"><div class="n">3</div><div class="bar" style="width:480px"></div></div>
+  </div>
+  <div class="face"><img src="art/sean-face-preview.png" alt=""></div>
 </section>
 
 <script>
-  // slide 3 is slide 2 under a wash: copy the planner and the items so the two never drift apart
-  const s3 = document.getElementById("v3-not-running-yet");
-  const first = s3.querySelector(".wash");
-  ["planner", "items"].forEach(id => s3.insertBefore(document.getElementById(id).cloneNode(true), first));
+  // slide 3 is slide 2 under a wash: copy the planner and stickies so the two never drift apart
+  const s3 = document.getElementById("v3-not-running-yet"), wash = s3.querySelector(".wash");
+  ["planner", "stickies"].forEach(id => s3.insertBefore(document.getElementById(id).cloneNode(true), wash));
 </script>
 </body></html>
