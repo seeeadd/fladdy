@@ -28,7 +28,7 @@ Only then pick the layout.
 
 - **One focal object per slide, shot like a product photo**: a real-looking envelope, planner, phone. Generate
   it (Canva generate-image; the brief: "combine it with Google Gemini AI for more realistic images"), export
-  it full size, cut it out (`rembg`, `isnet-general-use`), give it a soft two-layer drop shadow. These live
+  it full size, cut it out (`rembg`: `isnet-general-use`; for a light object on a light ground use `birefnet-general-lite`, isnet dropped the lower tickets), give it a soft two-layer drop shadow. These live
   in `templates/youtube/art/photo/`.
 - **Wide margins (112px), nothing collides, the headline has its own space.** Headlines hand-broken.
 - **One precise hand mark at most**: the website's underline path (`.u`), never a scribble.
