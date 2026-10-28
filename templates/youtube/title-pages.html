@@ -1,0 +1,100 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Title pages: draft 1</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+/* 1 chapter map: opens every section, shows where we are (Jason's returning mechanism slide) */
+.map .top { position: absolute; left: 112px; top: 96px; }
+.map h1 { font-size: 84px; margin-top: 18px; }
+.map .row { position: absolute; left: 112px; right: 112px; top: 330px; display: flex; gap: 28px; align-items: flex-end; }
+.map .ch { flex: 1; padding: 36px 36px 40px; min-height: 270px; display: flex; flex-direction: column; justify-content: space-between; }
+.map .ch .n { font-family: var(--label); font-size: 24px; letter-spacing: .14em; color: var(--quiet); }
+.map .ch .t { font-family: var(--display); font-size: 54px; line-height: 1.06; -webkit-text-stroke: .02em currentColor; }
+.map .done { opacity: .5; }
+.map .done .n::after { content: "  \2713  DONE"; color: var(--panel); }
+.map .now { min-height: 330px; border: 3px solid var(--ink); }
+.map .now .n { color: var(--accent); }
+.map .now .n::after { content: "  \25CF  NOW"; }
+.map .now .t { font-size: 64px; }
+.map .later { opacity: .38; border-style: dashed; box-shadow: none; background: transparent; }
+
+/* 2 big question: dark full bleed */
+.q .txt { position: absolute; left: 560px; right: 150px; top: 250px; }
+.q h1 { font-size: 104px; margin-top: 28px; }
+.q .small { margin-top: 40px; max-width: 1050px; }
+.q .kernel { position: absolute; right: 190px; top: 150px; width: 26px; height: 26px; background: var(--spark); transform: rotate(45deg); border-radius: 4px; }
+
+/* 3 the reveal: tiny lead-in, one huge word */
+.rv .txt { position: absolute; left: 0; right: 0; top: 270px; text-align: center; }
+.rv .big { font-size: 330px; line-height: .95; margin-top: 30px; }
+.rv .small { margin-top: 70px; }
+
+/* 4 the object: headline + one stitched object off the edge */
+.ob h1 { position: absolute; left: 112px; top: 120px; width: 1120px; font-size: 112px; }
+.ob .small { position: absolute; left: 112px; top: 430px; width: 900px; }
+.ob .obj { position: absolute; right: 150px; bottom: -150px; height: 1130px; }
+
+/* 5 part title on a colour panel */
+.pt .panel { position: absolute; right: 0; top: 0; bottom: 0; width: 760px; background: var(--panel); }
+.pt .shot { position: absolute; right: 120px; top: 230px; width: 600px; height: 560px; transform: rotate(2.5deg);
+  display: flex; align-items: center; justify-content: center; font-family: var(--label); letter-spacing: .14em; font-size: 20px; color: var(--quiet); }
+.pt .tape { position: absolute; width: 170px; height: 46px; background: rgba(232,224,207,.85); right: 340px; top: 205px; transform: rotate(-4deg); z-index: 2; }
+.pt .txt { position: absolute; left: 112px; top: 160px; width: 940px; }
+.pt h1 { font-size: 118px; margin-top: 26px; }
+.pt .small { margin-top: 36px; }
+</style></head><body>
+
+<!-- 1 -->
+<section class="slide map" id="s1">
+  <div class="top"><div class="label">The 3-day event plan</div><h1 class="display">where we are</h1></div>
+  <div class="row">
+    <div class="card ch done"><div class="n">01</div><div class="t">Why events beat launches</div></div>
+    <div class="card ch now"><div class="n">02</div><div class="t">Pick the <span class="em">topic</span></div></div>
+    <div class="card ch later"><div class="n">03</div><div class="t">Fill the room</div></div>
+    <div class="card ch later"><div class="n">04</div><div class="t">Sell on day 3</div></div>
+  </div>
+  <div class="face"></div>
+</section>
+
+<!-- 2 -->
+<section class="slide dark q" id="s2">
+  <div class="kernel"></div>
+  <div class="txt">
+    <div class="label">A quick question</div>
+    <h1 class="display">What if your next launch sold out in <span class="em">3 days</span>?</h1>
+    <div class="small">Same list. Same offer. A different way to sell it.</div>
+  </div>
+  <div class="face"></div>
+</section>
+
+<!-- 3 -->
+<section class="slide rv" id="s3">
+  <div class="txt">
+    <div class="label">The real answer is...</div>
+    <div class="display big"><span class="em underline">events<svg viewBox="0 0 300 10" preserveAspectRatio="none"><path d="M2,6 C60,2 110,9 150,5 C195,1 250,8 298,4" fill="none" stroke="#B06A4A" stroke-width="2.4" stroke-linecap="round" vector-effect="non-scaling-stroke" style="stroke-width:7px"/></svg></span></div>
+    <div class="small">not another course launch</div>
+  </div>
+  <div class="face"></div>
+</section>
+
+<!-- 4 -->
+<section class="slide ob" id="s4">
+  <h1 class="display">Your audience isn’t tired. <span class="em">Your launch is.</span></h1>
+  <div class="small">They still open your emails. They just stopped believing the next “big announcement.”</div>
+  <img class="obj" src="art/scarecrow-ink-coat.svg" alt="">
+  <div class="face"></div>
+</section>
+
+<!-- 5 -->
+<section class="slide pt" id="s5">
+  <div class="panel"></div>
+  <div class="tape"></div>
+  <div class="card shot">YOUR SCREENSHOT</div>
+  <div class="txt">
+    <div class="label">Part 02</div>
+    <h1 class="display">Fill the room <span class="em">before</span> day 1</h1>
+    <div class="small">The 14 days that decide your show-up rate.</div>
+  </div>
+  <div class="face"></div>
+</section>
+
+</body></html>

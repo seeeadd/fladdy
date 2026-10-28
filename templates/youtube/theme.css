@@ -1,0 +1,56 @@
+/* The foundations every YouTube slide shares. A different brand = a different copy of this block only. */
+@font-face { font-family: "Display"; src: url(fonts/Olivera-Demo.ttf); }
+@font-face { font-family: "Display Italic"; src: url(fonts/Olivera-Oblique-Demo.ttf); }
+@font-face { font-family: "Body"; src: url(fonts/Literata.ttf); }
+@font-face { font-family: "Body"; src: url(fonts/Literata-Italic.ttf); font-style: italic; }
+@font-face { font-family: "Label"; src: url(fonts/IBMPlexMono-Medium.ttf); }
+
+:root {
+  /* colour roles */
+  --paper: #FBFAF6;      /* the ground, most of every slide */
+  --ink: #262119;        /* text, and the dark ground of a dark slide */
+  --quiet: #6E6554;      /* labels, small print */
+  --line: #DCD3C1;       /* hairlines, card borders, the dot grid */
+  --card: #FEFDFA;       /* raised card */
+  --accent: #B06A4A;     /* the ONE emphasis colour: the italic word, the underline */
+  --spark: #E8A100;      /* at most one tiny moment per slide */
+  --panel: #8A9068;      /* a colour field for part titles */
+  /* type: Olivera has letters and digits only, so punctuation falls back to Literata glyph by glyph */
+  --display: "Display", "Body", Georgia, serif;
+  --display-italic: "Display Italic", "Body", Georgia, serif;
+  --body: "Body", Georgia, serif;
+  --label: "Label", ui-monospace, monospace;
+  /* the facecard: same place on every slide so the face can be dropped in once and reused */
+  --face-x: 112px; --face-y: 676px; --face-size: 330px; --face-radius: 26px;
+}
+
+* { box-sizing: border-box; margin: 0; }
+body { background: #d9d4c9; font-family: var(--body); }
+.slide {
+  width: 1920px; height: 1080px; position: relative; overflow: hidden;
+  background-color: var(--paper); color: var(--ink);
+  background-image: radial-gradient(var(--line) 1.6px, transparent 1.7px);
+  background-size: 36px 36px; background-position: 18px 18px;
+  margin: 0 auto 40px;
+}
+.slide.dark { background-color: var(--ink); color: var(--paper);
+  background-image: radial-gradient(rgba(251,250,246,.10) 1.6px, transparent 1.7px); }
+
+/* the facecard placeholder: Sean's face goes here in Canva */
+.face { position: absolute; left: var(--face-x); top: var(--face-y); width: var(--face-size); height: var(--face-size);
+  border-radius: var(--face-radius); background: var(--card); border: 3px solid #D8B27A;
+  display: flex; align-items: center; justify-content: center; z-index: 5; }
+.face::after { content: "FACECARD"; font-family: var(--label); font-size: 18px; letter-spacing: .14em; color: #C9A46D; }
+.dark .face { background: #332d24; border-color: #8a7350; }
+
+.label { font-family: var(--label); text-transform: uppercase; letter-spacing: .14em; font-size: 26px; color: var(--accent); }
+.dark .label { color: #D8B27A; }
+.display { font-family: var(--display); font-weight: 400; line-height: 1.04; letter-spacing: .005em;
+  -webkit-text-stroke: .022em currentColor; } /* Olivera has one thin weight; the site thickens it the same way */
+.em { font-family: var(--display-italic); color: var(--accent); -webkit-text-stroke: .018em currentColor; }
+.dark .em { color: #E0A57E; }
+.underline { position: relative; display: inline-block; }
+.underline svg { position: absolute; left: -2%; width: 104%; bottom: -.16em; height: .22em; overflow: visible; }
+.small { font-family: var(--body); font-size: 34px; line-height: 1.4; color: var(--quiet); }
+.dark .small { color: #CFC6B4; }
+.card { background: var(--card); border: 2px solid var(--line); border-radius: 22px; box-shadow: 0 10px 30px rgba(38,33,25,.07); }
