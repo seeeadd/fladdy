@@ -144,6 +144,9 @@ rules and add a row to rulings.md with his words.
 The agents' logs from step 3, unedited.
 ```
 
+Then `python3 scripts/check_teardown.py "<video folder>"` must print PASS (every template section, every frame
+sheet in the appendix); fix any FAIL, and look at any WARN (few timestamps, em dashes in our own writing).
+
 ## 5. Ship it
 
 1. `python3 scripts/teardown_index.py` rebuilds `TEARDOWNS.md`, the one page that links every teardown.

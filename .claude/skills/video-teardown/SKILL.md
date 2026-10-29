@@ -13,7 +13,8 @@ Follow `sops/video-teardown.md` exactly; it holds the agent brief and the teardo
    stories, lines worth keeping, calls to action. Everything with its `[m:ss]`.
 3. Frames: one background agent per printed chunk, all started in one message, with the SOP's brief (over 30
    minutes of video); under 30 minutes, read the sheets yourself. Wait for every agent.
-4. Write `teardown.md` in the video folder from the SOP template; the agents' logs go in its appendix.
+4. Write `teardown.md` in the video folder from the SOP template; the agents' logs go in its appendix. Then
+   `python3 scripts/check_teardown.py "<folder>"` must print PASS.
 5. `python3 scripts/teardown_index.py` (rebuilds TEARDOWNS.md); commit, push the working branch, merge to `main`,
    push `main`; send Sean the folder, transcript, teardown and TEARDOWNS.md links plus the open questions.
 
