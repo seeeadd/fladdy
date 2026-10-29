@@ -16,6 +16,7 @@ Why it exists (Sean, 2026-10-28), in order:
 |---|---|
 | `sources/` | what we learn from, never edited. One folder per coach. A source is cited by file + timestamp |
 | `sources/fladlien/notes/full-methodology.md` | copy of the Google Doc "Full Jason Fladlien Methodology" (hooks, pain, curiosity, excite, positioning, paradigm, commitment, close, offer, price, bonuses, risk, scarcity). The doc is the master |
+| `jason-fladlien-videos/` | the four Jason videos as study files, one folder each (`NN Title (id)/`: transcript, frame study, frames); README lists them |
 | `sources/videos/<id>/` | one YouTube video as a study file (below) |
 | `rulings.md` | Sean's answers to "what does Jason mean here?" and every standard he sets. **A ruling beats a source** |
 | `scripts/` | the machine |
