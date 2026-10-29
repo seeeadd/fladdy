@@ -51,8 +51,8 @@ Fladlien's transition and close framework); for comparison, Jeremy Haynes' teard
 
 **Introducing the program**
 17. Order: name, promise, proof, components, investment (price and value stack), guarantee, bonuses, call to action
-    [doc L9529-9547]. Show how each component solves a specific problem, never a bare feature list
-    [doc L10117-10121].
+    [doc L9529-9547]; each part has its own playbook (offer, price, bonuses, risk). Show how each component solves a
+    specific problem, never a bare feature list [doc L10117-10121].
 18. Stack the proof: results, peers, an origin story, demonstration (real dashboards) [doc L9313-9323].
 19. Specific numbers: "960 sellers" not "hundreds", "population 7261" not "small town" [doc L9787-9799,
     L10373-10395].
