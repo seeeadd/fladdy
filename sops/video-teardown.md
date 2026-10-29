@@ -146,10 +146,13 @@ The agents' logs from step 3, unedited.
 
 ## 5. Ship it
 
-1. `git add` the video folder (and `CLAUDE.md` if a coach folder was new); commit; push the working branch.
+1. `python3 scripts/teardown_index.py` rebuilds `TEARDOWNS.md`, the one page that links every teardown.
+   `git add` the video folder, `TEARDOWNS.md` (and `CLAUDE.md` if a coach folder was new); commit; push the working
+   branch.
 2. Merge to `main` and push it (Sean, 2026-10-29: "merge to main, make a folder for it"). `main` is what GitHub
    shows by default.
-3. Send Sean three links: the folder, `transcript.md`, `teardown.md` (GitHub `main` URLs; spaces in folder names
+3. Send Sean the links: the folder, `transcript.md`, `teardown.md`, and the index
+   https://github.com/seeeadd/fladdy/blob/main/TEARDOWNS.md (GitHub `main` URLs; spaces in folder names
    become `%20`). Say in two lines what the teardown found and list the "Questions for Sean".
 
 ## Notes

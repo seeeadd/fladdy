@@ -22,6 +22,7 @@ Why it exists (Sean, 2026-10-28), in order:
 | `sources/` | what we learn from, never edited. One folder per coach. A source is cited by file + timestamp |
 | `sources/fladlien/notes/full-methodology.md` | copy of the Google Doc "Full Jason Fladlien Methodology" (hooks, pain, curiosity, excite, positioning, paradigm, commitment, close, offer, price, bonuses, risk, scarcity). The doc is the master |
 | `jason-fladlien-videos/`, `jeremy-haynes-videos/` | one folder per coach, one subfolder per video (`NN Title (id)/`: transcript.md, study.md, sheets/, teardown.md); each README lists its videos. `scripts/add_video.py` makes them |
+| `TEARDOWNS.md` | one page linking every video, its transcript and its teardown (`scripts/teardown_index.py` rebuilds it) |
 | `sops/` | the step-by-step procedures (`video-teardown.md`: ingest a video and tear it down) |
 | `sources/videos/<id>/` | the default output of a bare `ingest_youtube.py` run (below) |
 | `rulings.md` | Sean's answers to "what does Jason mean here?" and every standard he sets. **A ruling beats a source** |
