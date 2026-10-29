@@ -39,7 +39,7 @@ in the Jason slides and Jeremy teardowns. Built 2026-10-29. The source is the ma
 18. "Wrong person" pricing: an incredible deal for the right person, fantastic for the kind-of-right, beautiful for the wrong one; then reveal less. That lowest price becomes the floor. [doc L13917-13937]
 19. Future pace: what happens once they click (access now, within 24 hours, next week, in 30 days). [doc L13939-13961]
 20. The takeaway: what they lose after [date]: a higher price, no bonuses, no payment plan. [doc L13963-13989]
-21. Pre-handle objections. "Too expensive": DIY, market prices, your investment, "don't buy it". "I need to think": scarcity. "What if it doesn't work": guarantee and proof. "No time": "This saves you 8 weeks of work". [doc L13779-13807]
+21. Pre-handle objections: "too expensive" with DIY, market and your cost; "I need to think" with scarcity; "what if it doesn't work" with guarantee and proof; "no time" with "This saves you 8 weeks of work". [doc L13779-13807]
 22. Give a "because" for the deal; any reason raises compliance. Write 5. [doc L13745-13761]
 23. Scarcity stack: at least 3 real layers from time, quantity, qualifier, bonuses that expire before the offer, a coming price rise. [doc L13731-13743]
 24. To existing customers: say they don't need it and lose nothing by passing, "Only invest if you feel you'll get more than [amount] out of this", set delivery dates, sales final. [doc L13341-13407]
@@ -47,7 +47,7 @@ in the Jason slides and Jeremy teardowns. Built 2026-10-29. The source is the ma
 26. Never apologise for your price. [doc L14405]
 
 **Measuring**
-27. Track show rate, stay rate to the price, conversion, cart value, tier split and payment split. His targets: show 40-50%+, stay 60-70%+, conversion 5-10%+ cold and 15-30%+ warm, 70-80% on the plan. Test anchors, tier names, multiples, bonuses, scarcity and deadline lengths. [doc L14317-14355]
+27. Track show rate, stay rate to the price, conversion, cart value, tier split, payment split. Targets: show 40-50%+, stay 60-70%+, conversion 5-10%+ cold and 15-30%+ warm, 70-80% on the plan. Test anchors, tier names, multiples, bonuses, scarcity, deadlines. [doc L14317-14355]
 
 ## How to do it
 The script [doc L13449-13571]:
@@ -68,12 +68,12 @@ The script [doc L13449-13571]:
 ## Examples
 - DIY: 5 year-long email follow-ups $2,250, 15 free reports $3,000, theme and hosting $150, 8 weeks' time $2,500: $7,900. [doc L12557-12567]
 - Affiliorama: DIY $7,900, "bare minimum" $2,995, big launch $1,995, his link $747. [doc L12921-12953]
-- CopyEClass: "a MILLION-dollar education", $2,000 "would be a GREAT DEAL", "However, it's not $2,000": $997, then $497. [doc L12955-12981]
+- CopyEClass: "a MILLION-dollar education", $2,000 "would be a GREAT DEAL", "However, it's not $2,000": $997, then $497, bonuses still to come. [doc L12955-12981]
 - Genius Webinars: "won't bat an eye if the investment was $20,000", Joe's 2-day event is $10,000 (and you must qualify); then $4,995, 70 spots. [doc L12983-13019]
 - Launchpad: $1,000 a month for 12 months anchors $9,995 a year; 300 spots; the last launch sold out in 6 minutes. [doc L12687-12695, L13021-13057]
 - OMG Project Juggernaut: "What Jeff Bezos is to eCommerce... That's what Mike, Greg, & Mike are to Free Traffic." [doc L13059-13101]
 - One Stop Shop: build cost crossed out up to $159,134.92+, ad spend to $1,688,097.11+, three "right person" prices, then $4,995 a year. [doc L13103-13189]
-- Wholesale Formula: "Is it around ... $25,000 ... $12,000 ... $10,000?"; then $874 today plus 3 more, or $2,997 with a 30-day guarantee. [doc L13191-13237]
+- Wholesale Formula: its own $25,000 mastermind, $12,000 retreat and $10,000 software as anchors; then $874 today plus 3 more, or $2,997 with a 30-day guarantee. [doc L13191-13237]
 - Product eClass: members' results make "$9997.00 would be fair"; public $999.95; for you $499 or $194 x 3. [doc L13239-13269]
 - Ramp Engine: worth "AT LEAST double" their revenue so far; public $3,495 + $97 a month, founders $2,495 once, no continuity. [doc L13271-13339]
 
@@ -89,13 +89,12 @@ Also: apologising for the price [doc L14405].
 - "What do you suppose it cost Ezra just in programmers, engineers, developers, and designers to perfect the Proven Profitable Theme over the course of the last several years?" [doc L13115-13117]
 - "I don't care which option you pick, just that you get in right now because the timing couldn't be better" [doc L13219]
 - "Only invest if you feel you'll get more than $349 out of this. If you do not invest, you do not lose any of your existing perks." [doc L13359-13361]
-- "I gave the URL to sign up on the webinar at 1:15pm" / "By 1:21 we were sold out" [doc L12691-12693]
 - "Your job is to make your prospect say: 'How could I NOT buy this at this price?'" [doc L14475]
 
 ## After Harvest
 From the doc:
 - Preframe with market entry, partnership, beta or limited capacity; frame the deal as them helping us reach a bigger goal (market share, testimonials, case studies). [doc L12543-12551]
-- DIY at market rates plus opportunity cost and the "trial and error" tax; our own cost from years, courses, failed tests, tools, coaching, travel, books. [doc L12581-12591, L12625-12645]
+- DIY at market rates plus opportunity cost and the "trial and error" tax; our cost from years, courses, failed tests, tools, coaching, travel, books. [doc L12581-12591, L12625-12645]
 - Real scarcity: onboarding capacity, founding or launch pricing, partnership limits, our time, platform limits. Tiers: DIY ($X), done-with-you ($3X, the target), done-for-you ($5-10X). [doc L12717-12729, L12829-12873]
 - A 4-week plan: numbers, tiers, bonuses; preframe, anchors, scarcity; scripts, visuals, a timed run-through; practice, order pages, launch, track. [doc L14205-14315]
 
@@ -106,9 +105,9 @@ Our reading:
 
 ## Open questions for Sean
 1. Tiers: "3 tiers minimum" [doc L12809], "or at minimum offer payment plans" [doc L14173], "one or two options max" [doc L12033]. What is our default?
-2. Plan figures disagree and cite nothing: 85-90% take the plan [doc L13827], 70-80% [doc L14341], plans add 30-50% conversions [doc L14179]. Jason's numbers or the note-taker's?
+2. Plan figures disagree and cite nothing: 85-90% take the plan [doc L13827] or 70-80% [doc L14341]; plans add 30-50% conversions [doc L14179]. Jason's numbers?
 3. Plan markup: 4% in the template ($347 x 3 vs $997) [doc L13821-13823], about 17% in his real ones ($874 x 4 vs $2,997; $194 x 3 vs $499) [doc L13421-13423]. Which?
-4. "Wrong person" prices are credited to OMG Project Juggernaut [doc L13919] and to One Stop Shop [doc L13157-13163], with different end prices ($3,995 then $997 a year [doc L13169-13171] vs "$3,995 (or $995 founding member)" [doc L13927]). Which is right?
+4. "Wrong person" pricing is credited to both OMG Project Juggernaut [doc L13919] and One Stop Shop [doc L13157-13163], with different end prices [doc L13169-13171, L13927]. Which is right?
 5. Stay rate "60-70%+ is good" [doc L14337] vs Jeremy's 80%+ retention to the pitch [Jeremy 1:10:58]: which target?
 6. Jeremy may leave the price off and sell a call [Jeremy 1:19:03]; Jason always reveals it. Which for a client's Day 3 close?
 7. Tier tables use yellow for savings and green for best value [doc L12817-12819]; Jason uses two colours [Jason slides 7:06] and our YouTube look has one gold moment [ruling 2026-10-28]. Keep yellow and green on price slides?
