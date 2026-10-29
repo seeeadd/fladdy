@@ -106,7 +106,7 @@ The steps in order. A blank time means no source gives one.
 8. **The YouTube version** [Jason new webinar 2:34-12:45]: the hook becomes the previous video, the pop quiz the
    YouTube two agendas, positioning yourself positioning the vehicle; a soft sell throughout with several calls to
    action replaces the hard pitch; the product is demonstrated throughout; the stack moves behind the link; scarcity
-   is built into the offer. The core video is unlisted, one to three hours.
+   is built into the offer. The core video is unlisted, one to three hours. Read youtube.md.
 
 ## Examples
 - Pitch up front: "I'm going to teach you copywriting in the next 90 minutes" (Copy eClass) [doc L129].

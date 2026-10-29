@@ -10,6 +10,11 @@ into a rule, a template or a script, so every deck gets it.
 `python3 scripts/add_video.py <url>` files it, the transcript and every frame are read, `teardown.md` is written next
 to it, everything is merged to `main` and Sean gets the links. No briefing needed.**
 
+**Any writing or slide task (a YouTube video, the VSL, a webinar or Day 1-3 deck, an offer, a hook, a close):
+read `playbooks/core.md` first, then only the playbooks `playbooks/README.md` lists for that job.** They are the
+methodology doc and the teardowns cut to one short file per topic, every point cited; go to the sources only to check
+a quote. When Sean answers an open question, write it in `rulings.md` and update the playbook it changes.
+
 Why it exists (Sean, 2026-10-28), in order:
 1. content (YouTube videos) with perfect positioning, on our own slides
 2. the VSL updated to match
@@ -23,6 +28,7 @@ Why it exists (Sean, 2026-10-28), in order:
 | `sources/fladlien/notes/full-methodology.md` | copy of the Google Doc "Full Jason Fladlien Methodology" (hooks, pain, curiosity, excite, positioning, paradigm, commitment, close, offer, price, bonuses, risk, scarcity). The doc is the master |
 | `jason-fladlien-videos/`, `jeremy-haynes-videos/` | one folder per coach, one subfolder per video (`NN Title (id)/`: transcript.md, study.md, sheets/, teardown.md); each README lists its videos. `scripts/add_video.py` makes them |
 | `TEARDOWNS.md` | one page linking every video, its transcript and its teardown (`scripts/teardown_index.py` rebuilds it) |
+| `playbooks/` | the distilled method: `core.md` (read first), one file per topic (hooks ... scarcity, slides, youtube, webinar-map, funnel-numbers), `README.md` says which to read for which job |
 | `sops/` | the step-by-step procedures (`video-teardown.md`: ingest a video and tear it down) |
 | `sources/videos/<id>/` | the default output of a bare `ingest_youtube.py` run (below) |
 | `rulings.md` | Sean's answers to "what does Jason mean here?" and every standard he sets. **A ruling beats a source** |
@@ -31,8 +37,7 @@ Why it exists (Sean, 2026-10-28), in order:
 **Designing any slide: follow `rules/slide-method.md` first** (start from the real line, Jason's "how do we show this?", the human-touch rules, the template tells to avoid). Layouts live in `templates/youtube/` (`theme.css`, `ink.js` for hand marks), rendered with `python3 scripts/render_slides.py <file.html> [--out DIR]`.
 
 Still to come (do not invent them early): `rules/` (slide rules: Jason, brand, YouTube; started with
-`rules/slide-method.md`), `brand/` (the After Harvest kit for slides), `templates/` (the slide layouts), `playbooks/` (one per
-webinar section, for the webinar machine).
+`rules/slide-method.md`), `brand/` (the After Harvest kit for slides).
 
 ## Studying a video
 
