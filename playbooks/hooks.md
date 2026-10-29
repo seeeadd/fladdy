@@ -151,7 +151,7 @@ facts, each with a source (rule 8). No ruling changes this topic yet.
 ## Open questions for Sean
 1. The doc's After Harvest part sells a $15K retention rebuild to course creators, not 3-day events and the free
    event plan: keep, adapt or drop? [doc L649, L725]
-2. "AfterHarvest Application: ⬇️" under each of the 7 hooks is empty: did content fail to copy? [doc L99-303]
+2. "AfterHarvest Application:" under each of the 7 hooks points down to nothing: did content fail to copy? [doc L99-303]
 3. The quiz answers (10% finish, 10x ROI, under 5% have a system) have no source: which are real? [doc L657-685]
 4. The same 350 past customers are worth $462K here, $187K there: which? [doc L787, L797, L983]
 5. The doc puts the hook first, pop quiz on top; the New Webinar says an unlisted YouTube webinar needs no hook and

@@ -9,8 +9,7 @@ plus two teardowns where cited. Built 2026-10-29. The source is the master: re-c
    [doc L1177, L1867-1869]
 2. Subtract before you add: remove their excuses and they buy. [doc L1211-1217]
 3. Find the pain with the grid: excuses, limiting beliefs, complaints, obstacles, enemies, fears. [doc L1321-1335]
-4. Pick from the 8 strategies, dose it (enough to move them, never hopeless), use it most at the close. [doc
-   L1341-1595]
+4. Use the 8 strategies, dosed (enough to move them, never hopeless), most of all in the close. [doc L1341-1595]
 5. Flip every benefit into its pain, and show that not buying costs more than buying. [doc L1597-1623, L1733-1737]
 
 ## The rules
@@ -18,9 +17,9 @@ plus two teardowns where cited. Built 2026-10-29. The source is the master: re-c
 **Why pain**
 1. Pain beats pleasure: Jane with a crippling toothache spends more, faster, than Joe who wants a whiter smile.
    [doc L1177-1185]
-2. The success paradox: the more successful you get, the further you are from their pain. Force yourself to keep
-   seeing through their eyes. [doc L1187-1203]
-3. Subtraction before addition (Michelangelo removed everything that wasn't David): remove the excuses, add nothing.
+2. The success paradox: the more successful you get, the further you are from their pain. Keep forcing yourself to
+   see through their eyes. [doc L1187-1203]
+3. Subtraction before addition (Michelangelo removed all that wasn't David): remove the excuses, add nothing.
    [doc L1205-1217]
 
 **Finding the pain: the grid** [doc L1239-1319]
@@ -43,23 +42,23 @@ plus two teardowns where cited. Built 2026-10-29. The source is the master: re-c
     me"). A true cold read any market agrees to. [doc L1343-1383]
 12. Exaggerated cynicism with a dash of hope (his #1B): confrontational, inspirational, accountability. Make it dark,
     sprinkle hope "like salt". Voice their doubts about your proof before they do. [doc L1385-1415]
-13. Contrast present to future: current limitations against future aspirations. The gap itself hurts. [doc L1417-1431]
+13. Contrast present to future: current limitations against future aspirations; the gap hurts. [doc L1417-1431]
 14. Misconceptions: indirect, use cases, nuanced. Talk about someone like them, not them, so they change their mind
     without getting defensive. [doc L1433-1449]
 15. External pressures: states are abstract, events are concrete; unmet expectations. Name specific events, real or
     proxied ("The economy crashed in 2008", not "economic uncertainty"). [doc L1451-1467]
 16. Past struggles: the near past, the mid past, disruptions in their industry. [doc L1469-1483]
-17. The enemy: blame, suppression, revenge. A competitor, "the system", old thinking, people who wronged them,
-    forces keeping them down. He uses it carefully. [doc L1485-1511]
+17. The enemy, used carefully: blame, suppression, revenge. A competitor, "the system", old thinking, people who
+    wronged them, forces keeping them down. [doc L1485-1511]
 18. Anger: lack of control, violations, lies. [doc L1513-1529]
 19. Informed pessimism: move them from uninformed optimism through informed pessimism and the crisis of meaning to
-    informed optimism (or crash and burn). Show every way it can go wrong, then that your solution covers it.
+    informed optimism (or crash and burn). Show every way it goes wrong, then that your solution covers it.
     [doc L1531-1551]
 
 **Where and how much**
 20. Use pain throughout: in pop quizzes (painful truths about where they stand), fortune telling (the painful
     future), the tall task (how hard their current path is). [doc L1559-1567, L1789-1805]
-21. It is most useful in the close. [doc L1569-1573]
+21. Pain is most useful in the close. [doc L1569-1573]
 22. Front and center from the beginning, never buried in the middle. [doc L1867-1869]
 23. Calibrate: too much pain kills hope, too little gives no reason to change. Set it by price, market
     sophistication and the severity of the problem; the higher the price, the more pain. [doc L1575-1595]
@@ -75,7 +74,8 @@ plus two teardowns where cited. Built 2026-10-29. The source is the master: re-c
 29. The reverse flip: turn their objection into the reason they will win. [doc L1625-1659]
 
 **Ethics: two pains**
-30. Never "Find the weakness. Open the wound. Pour the salt in. Sell the treatment." [doc L1663-1673]
+30. Never "Find the weakness. Open the wound. Pour the salt in. Sell the treatment." "There's no amount of money in
+    the world that that's okay." [doc L1663-1673]
 31. They always face one of two pains: short-term (doing something new, taking a risk) or long-term (doing nothing
     while slowly descending into nothing). Give them the better one. [doc L1675-1689]
 32. Make the pain of staying the same greater than the pain of changing; then change comes naturally. [doc
@@ -93,7 +93,7 @@ plus two teardowns where cited. Built 2026-10-29. The source is the master: re-c
 Templates:
 - Challenges you face: "If I had to guess: [external event]. [Internal state it creates]. [More of both]." Then ask
   them to commit to move forward. [doc L1359-1377]
-- Cynicism, then hope: "You might be thinking [their doubt about the proof]..." then the dash of hope that answers it.
+- Cynicism, then hope: "You might be thinking [their doubt about the proof]..." then the hope that answers it.
   [doc L1409-1415]
 - Misconception: "Many people in your position believe [X], but actually [Y]." [doc L1447-1449]
 - Informed pessimism: "You now know all the ways in which it can go wrong: [1], [2], [3]." Then show [solution]
@@ -120,7 +120,6 @@ Templates:
 - Too much (no hope) or too little (no motive); benefits with no flip. [doc L1871-1877]
 - Losing touch with the audience as you succeed. [doc L1879-1883]
 - An insulting flip: "Don't be a fat ass anymore" doesn't work. [doc L1613]
-- Celebrities skipping the empathy step. [doc L1847-1849]
 
 ## Lines worth keeping
 - "If I just remove the excuses, they will buy. I don't have to add anything." [doc L1213]
@@ -131,13 +130,12 @@ Templates:
 - "The higher the price, the more pain you need to work with." [doc L1593]
 - "Every time I put a gain, what's the pain? I don't always use both, but I think in both: pain-gain." [doc L1621-1623]
 - "If it's two pains, I'm gonna give him the better of the two pains." [doc L1683]
-- "There's no amount of money in the world that that's okay." [doc L1673]
 - "Keeping the money will be more costly than spending it with me." [doc L1737]
 
 ## After Harvest
 From the doc: the pain section has no After Harvest applications. The hooks part (written for a retention offer)
 uses pain twice:
-- Five objections, each with its answer: no time (show the time payback), need more students first (retention beats
+- Five objections and answers: no time (show the time payback), need more students first (retention beats
   acquisition, in numbers), students are lazy (prove it is the structure), sounds complicated (show it is simple),
   can't afford it (the cost of not doing it). [doc L873-883]
 - Path 1 of the fortune teller is the painful future: exhausted from launching, burned out, reputation damaged.
@@ -157,5 +155,4 @@ AI 10:34]. Every pain we name must come from research or Sean, never invented. N
    Jason AI 10:34]
 5. "Crash and burn" is step 5, after informed optimism; it reads as the branch off the crisis of meaning. Right?
    [doc L1533-1543]
-6. Can we get his "Know Your Customer" bonus, and the name of the masterclass these notes come from? [doc L1911,
-   L1961]
+6. Can we get his "Know Your Customer" bonus and the name of the masterclass behind these notes? [doc L1911, L1961]
