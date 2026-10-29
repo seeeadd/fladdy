@@ -18,9 +18,8 @@ study notes on his step 8 webinar). Built 2026-10-29. The source is the master: 
    end [doc L7799-7805].
 2. Each yes keeps them consistent with the last, so buying feels like the next step, not a leap (Cialdini's
    commitment and consistency) [doc L7809-7817, L8917-8925].
-3. Jason names four places: "within the mechanisms", "before a point is made", "to tie a point down", "in the
-   intro" [doc L7821-7823]. The notes sort them as intro, before content, throughout content, between content and
-   offer, and advanced [doc L7831-7841].
+3. Jason names four places (see Lines worth keeping) [doc L7821-7823]; the notes sort them as intro, before
+   content, throughout content, between content and offer, and advanced [doc L7831-7841].
 4. The ladder, always smaller to bigger: will you listen, does this make sense, can you see how this would help,
    would you do this if you could, would you pay for this [doc L8635-8651].
 
@@ -38,8 +37,8 @@ study notes on his step 8 webinar). Built 2026-10-29. The source is the master: 
    good?". The offer becomes a reward, not a trick [doc L7991-8015].
 
 **Before the content**
-10. The if-then: before teaching, ask if they would try it: conditional ("If I were to show you"), exclusive ("ONLY
-    myself and my customers"), soft ("MAY be possible for YOU"), then "Then WILL you try it?" [doc L8019-8065].
+10. The if-then: before teaching, ask if they would try it. Conditional, exclusive ("ONLY myself and my
+    customers"), soft ("MAY"), personal ("for YOU"), then "Then WILL you try it?" [doc L8019-8065].
 11. What I need from you: an implementation slide. Agreeing that staying stuck would be painful commits them to act
     [doc L8067-8103].
 12. Deal?: show the parts to come (Offer, Price, Bonus, Guarantee, Objections) and ask "Deal?". They agree to the
@@ -129,9 +128,6 @@ Fill-in templates (his patterns, our brackets):
 ## Lines worth keeping
 > "There are commitments within the mechanisms, commitments before a point is made, commitments to tie a point down,
 > and commitments in the intro as well." [doc L7821-7823]
-
-> "My agenda: Is to give you the best 60 minutes of copywriting you've ever heard to prove to you that my offer at
-> the end is an incredible deal..." [doc L7997-7999]
 
 > "Implementation nothing pains me more than giving you a solution yet run into years later still clinging
 > hopelessly to your problem" [doc L8075-8077]
