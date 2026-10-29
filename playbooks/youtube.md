@@ -48,7 +48,8 @@ master: re-check a quote there.
     webinar 9:08-9:58].
 12. No offer stack on the video: it sits behind the link, "pretty low-key" [Jason new webinar 9:58-10:27].
 13. Scarcity is built into the offer ("Richard Mille style": a fixed number, a release rate, reachable only through
-    this path) and kept; never "buy before the end" [Jason new webinar 10:25-11:46].
+    this path) and kept; never the live "if you buy before the end of this webinar" bonus [Jason new webinar
+    10:25-11:46].
 14. The flywheel: fixed supply gives a reliable number and a content budget (25 x $2,000 = $50,000 a month); grow
     demand, keep supply, double the price [Jason new webinar 11:46-12:21].
 
@@ -161,7 +162,7 @@ up"; keep the 1 good, ask for 50 more. Have AI count the clips in each long reco
   work for C- bosses" [Jason new way 4:44-6:08].
 - Outside proof per part: the HBR "trendslop" article, Israetel's AI-written book at 1.9 on Amazon [Jason AI 1:10,
   6:17].
-- A 10x move over copy tweaks: a guarantee so strong ("we'll buy your business and pay you $25,000 on top") that "the
+- A 10x move over copy tweaks: a guarantee so strong ("we'll buy your business and pay you $25,000 on top of that guarantee") that "the
   funnel can still be dog [ __ ]" [Jason AI 24:15-24:46].
 - One analogy per point: shovels and gold, the bucket brigade, ten rabbits, a hammer not a screwdriver [Jason AI 0:00,
   9:24, 23:44, 31:01].
