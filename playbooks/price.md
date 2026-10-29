@@ -1,7 +1,6 @@
 # Price playbook
 
-Read this when: revealing or justifying a price, price anchors, payment plans, value vs price (a webinar's price
-reveal, a client's Day 3 close, a checkout or sales page).
+Read this when: revealing or justifying a price, price anchors, payment plans, value vs price.
 Sources: `sources/fladlien/notes/full-methodology.md` L12507-14562 (Offer lessons, Jason's step 11: price); cross-checks
 in the Jason slides and Jeremy teardowns. Built 2026-10-29. The source is the master: re-check a quote there.
 
@@ -35,7 +34,7 @@ in the Jason slides and Jeremy teardowns. Built 2026-10-29. The source is the ma
 14. Offer one payment or a plan. One payment: lower total, the guarantee added, for all-in buyers. Plan: a slightly higher total, easier to say yes to; more people buy. [doc L13409-13433, L13809-13837]
 15. Continuity (a public price plus a monthly fee) makes dropping the fee a strong founding-member incentive. [doc L13435-13447]
 16. Keep bonuses out of the price reveal and bring them after it: "And we haven't even discussed the bonuses yet!" [doc L13839-13865]
-17. Qualify: "This isn't for everyone", who it is for, "If this seems too much, don't buy it". Self-selection cuts refunds. [doc L13895-13915]
+17. Qualify: "This isn't for everyone", who it is for, "If this seems too much, don't buy it". Self-selection cuts refunds. [doc L13031, L13895-13915]
 18. "Wrong person" pricing: an incredible deal for the right person, fantastic for the kind-of-right, beautiful for the wrong one; then reveal less. That lowest price becomes the floor. [doc L13917-13937]
 19. Future pace: what happens once they click (access now, within 24 hours, next week, in 30 days). [doc L13939-13961]
 20. The takeaway: what they lose after [date]: a higher price, no bonuses, no payment plan. [doc L13963-13989]
@@ -75,7 +74,7 @@ The script [doc L13449-13571]:
 - One Stop Shop: build cost crossed out up to $159,134.92+, ad spend to $1,688,097.11+, three "right person" prices, then $4,995 a year. [doc L13103-13189]
 - Wholesale Formula: its own $25,000 mastermind, $12,000 retreat and $10,000 software as anchors; then $874 today plus 3 more, or $2,997 with a 30-day guarantee. [doc L13191-13237]
 - Product eClass: members' results make "$9997.00 would be fair"; public $999.95; for you $499 or $194 x 3. [doc L13239-13269]
-- Ramp Engine: worth "AT LEAST double" their revenue so far; public $3,495 + $97 a month, founders $2,495 once, no continuity. [doc L13271-13339]
+- Ramp Engine: "Not everyone is going to be able to afford this"; "a world first"; worth "AT LEAST double" their revenue so far; public $3,495 + $97 a month, founders $2,495 once, no continuity. [doc L13271-13339]
 
 ## Mistakes he calls out
 The ten [doc L14141-14203]: price too early (10-15 minutes of value first); too few anchors (3-4 before the reveal);

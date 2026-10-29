@@ -1,7 +1,6 @@
 # Offer playbook
 
-Read this when: building or presenting an offer, the stack, what is included (a webinar's offer slide, a client's Day 3
-close, the "what you get" part of a page).
+Read this when: building or presenting an offer, the stack, what is included.
 Sources: `sources/fladlien/notes/full-methodology.md` L11151-12506 (Offer lessons, Jason's step 10); cross-checks in
 the Jason slides, Jason new webinar and Jeremy teardowns. Built 2026-10-29. The source is the master: re-check a quote there.
 
@@ -96,6 +95,7 @@ you, it's just [price] + [incentive]."
 - Product eClass: slept on the floor, then the right mentor; 7 named sessions; anchored down to $499 or $194 x 3. [doc L11665-11713]
 - Ramp Engine: three parts shown visually, coaching dated ("Week 1: Funnel Setup (Oct 9th, 1PM Central)"). [doc L11715-11761]
 - TCS: "historic first ever offering", 2,174,132 units sold (an exact number), a growth graph, a leverage story. [doc L11763-11823]
+- TWF: "I'm confident we can...", real products with their monthly earnings, community access with "a guaranteed response to each question". [doc L11825-11875]
 
 ## Mistakes he calls out
 - The offer only spoken. [doc L11165]
