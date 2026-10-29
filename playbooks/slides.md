@@ -222,8 +222,8 @@ One call to action; no presenter photo; questions answered live, not on the slid
   Fladdy layouts [Jason new webinar 6:35; Jason new way 2:38; Jason AI 0:29-12:34].
 
 **Rulings 2026-10-29:** real pictures and real screenshots on every story or proof slide, our own first, stock as
-a marked placeholder, each with a one-line source; marked with thread and pinned or sewn on, never taped; nothing
-made in Canva (rules/slide-method.md 3e, 3f).
+a marked placeholder, each with a one-line source; never taped; slides made in HTML, the light set as the base
+(rules/slide-method.md 3e, 3f).
 
 **Our reading** (ours): his rules are about function (what is biggest, what is real, what appears when), the rulings
 about finish. Apply both.

@@ -51,9 +51,9 @@ pitching January launches.
 - Type: Olivera headlines, Literata subheadings, Hanken Grotesk body; the Olivera demo is fine.
 - YouTube slides: simple, adaptable foundations, not overly After Harvest.
 - Not "too much like Claude": no templated stacks, real artefacts, human touch. Not messy either: nicely made.
-- The YouTube looks so far: the dark stage with real objects, a layout library, a light set; now the sewn set
-  (2026-10-29): real pictures and screenshots, marked with thread, pinned or sewn on, woven labels, the face in an
-  embroidery hoop. Never tape, nothing made in Canva (rules/slide-method.md 3f).
+- The YouTube looks so far: the dark stage, a layout library, the light set (the base, 2026-10-29), the sewn set
+  (rejected: "a very bad recreation of Deya's"). Slides are made in HTML ("you design better using HTML"); real
+  pictures and screenshots, never tape stuck on a photo (rules/slide-method.md 3d-3f).
 
 ## Waiting on Sean (these change what we build)
 

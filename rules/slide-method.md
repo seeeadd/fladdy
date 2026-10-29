@@ -110,7 +110,12 @@ content, more text maybe", then "you can get real pics from online even if they 
 - Every file and its source: `templates/youtube/art/real/SOURCES.md`. Closed from a cloud session: Unsplash,
   Pexels, Pixabay, Freepik; picjumbo works with curl.
 
-## 3f. Our own hand: needlework, not stationery (rulings 2026-10-29)
+## 3f. Tried and rejected: the sewn set (rulings 2026-10-29)
+
+Rejected: "they look like a very bad recreation of Deya's". It copied her compositions and swapped her stationery for
+needlework. Kept from it: never tape stuck on a photo; the audit's lessons (`sources/inspiration/deya/AUDIT.md`).
+The "no Canva elements" point below was a misreading of Sean (he wanted Canva elements); Canva-made props are fine.
+The base is the light set (3d). What follows is the record of the try.
 
 Sean on the real-picture slides: "a little bit too simple... they look very AI-edited... I was expecting something
 leaning towards Deya... make it our own... not a fan of putting tapes on the pictures. They're very generic... we
@@ -133,7 +138,7 @@ the brand already is (the cross-stitch icons; the stitched "AD" struck through w
 - **Harvest things carry the content**: a list as seed packets ("sow: day 1, harvest: day 3"), hung from one
   thread.
 - **One joke per video**: the crow (the brand's character is a scarecrow), standing on the thing it mocks.
-- **No Canva-made elements.** The marks, cloth, pins, labels, packets and hoop are drawn in code (`thread.js`,
+- ~~**No Canva-made elements.**~~ (misread; see above) The marks, cloth, pins, labels, packets and hoop are drawn in code (`thread.js`,
   `sewn.css`); objects are real photos with a licence (pxhere and ISO Republic are CC0; `art/real/SOURCES.md`).
   The Canva props of the light set (wheat, hat, graph paper, tape, folders, tickets) are retired.
 - The set: `templates/youtube/youtube-sewn.html`.
