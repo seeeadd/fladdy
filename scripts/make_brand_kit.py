@@ -7,7 +7,7 @@ for the Drive folder "AFTERHARVEST BRAND KIT". brand-kit/ is rebuilt every run a
 in templates/youtube/ (fonts, art/photo, art/figma, art/stitch-kit, art/real, renders/youtube-light), brand-kit-src/
 and guide/ (run guide/build_guide.py first so the PDF is current).
 """
-import os, shutil, zipfile
+import os, re, shutil, zipfile
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -62,6 +62,18 @@ def main():
     for f in sorted(os.listdir(src)):
         if f.endswith(".png"):
             Image.open(os.path.join(src, f)).convert("RGB").save(os.path.join(refs, f[:-4] + ".jpg"), quality=88)
+
+    # 9: the light set as a working template: open youtube-light.html in Chrome, or render it with
+    # scripts/render_slides.py. Only the files it loads are copied, at the same relative paths.
+    tpl = os.path.join(OUT, "9 slide templates (HTML)")
+    html = open(os.path.join(Y, "youtube-light.html")).read()
+    for f in ["youtube-light.html", "theme.css", "ink.js", "stitch.js", "lib/rough.js", "lib/rough-LICENSE.txt"]:
+        cp(os.path.join(Y, f), os.path.join(tpl, f))
+    for f in sorted(os.listdir(os.path.join(Y, "fonts"))):
+        cp(os.path.join(Y, "fonts", f), os.path.join(tpl, "fonts", f))
+    for ref in sorted(set(re.findall(r'src="(art/[^"]+)"', html))):
+        cp(os.path.join(Y, ref), os.path.join(tpl, ref))
+    cp(os.path.join(ROOT, "brand-kit-src", "TEMPLATES.md"), os.path.join(tpl, "README.md"))
 
     files = sorted(os.path.join(d, f) for d, _, fs in os.walk(OUT) for f in fs)
     with zipfile.ZipFile(os.path.join(OUT, ZIP), "w", zipfile.ZIP_DEFLATED) as z:

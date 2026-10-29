@@ -16,6 +16,7 @@ The pieces for making After Harvest YouTube slides in the light-set look. The gu
 | 6 real pictures | the Launch Lab page and ticket, Jay Clouse's post, our chat with Jay, The Lab photos; `stock-*` placeholders | real proof; every file's source is in its SOURCES.md |
 | 7 face cam | sean-cam-placeholder.jpg | stands in for the live camera |
 | 8 slide references (light set) | the 11 approved slides | the base layouts |
+| 9 slide templates (HTML) | youtube-light.html with its CSS, scripts, fonts and pictures | open in Chrome; copy a slide to make a new one (its README says how) |
 
 ## Colours
 
