@@ -93,6 +93,24 @@ The light set (`youtube-light.html`, 11 slides) is the recipe:
   `art/photo/SOURCES.md` lists each with its Canva media id.
 - Grounds: warm paper, sage and rust panels or bands; the face big, unframed, soft shadow.
 
+## 3e. Real pictures, real screenshots (ruling 2026-10-29)
+
+Sean on the light set: "in my slides, there to be real pictures, real screenshots... more texture or a bit more
+content, more text maybe", then "you can get real pics from online even if they are placeholders".
+- Every story or proof slide carries at least one real picture. Best first: our own (a lead's page, our event's
+  ticket, a client's post, our chat with them; the VSL file in Figma holds many), then a free stock photo as a
+  placeholder (`stock-*` in the name, so it is easy to find and swap).
+- Show them as objects: a print (`.print`, white border, soft shadow) or a polaroid (`.pol`, caption under the
+  photo), taped, tilted 2-6 degrees, overlapping a little. A highlighter swipe (`.print .mark`) on the one line
+  that matters in a screenshot.
+- Under each one, a one-line source in Plex Mono (`.src`): where it is from and its date ("x.com/jayclouse, 9:45
+  PM, 7/9/26"). Proof without a source reads as made up.
+- More text means a caption per picture (a bold line + one typewriter line), not a paragraph.
+- Never retype a screenshot as boxes, never a fake UI. A small source image is upscaled once (2x Lanczos +
+  unsharp) and shown no bigger than it reads.
+- Every file and its source: `templates/youtube/art/real/SOURCES.md`. Closed from a cloud session: Unsplash,
+  Pexels, Pixabay, Freepik; picjumbo works with curl.
+
 ## 4. What makes it look human (Deya, the brief, Mino)
 
 - **The real artefact is the picture**: Deya shows her actual task list, her actual bookshelf.

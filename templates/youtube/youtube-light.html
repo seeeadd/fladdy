@@ -62,6 +62,19 @@
 .tile { position: absolute; border-radius: 18px; border: 3px dashed #C9BCA4; background: rgba(241,236,225,.6); z-index: 10;
   display: flex; align-items: center; justify-content: center; font-family: var(--label); font-size: 22px; color: #A99D84; }
 
+/* real pictures (Sean 2026-10-29): a polaroid for a photo, a print for a screenshot, the source line under it */
+.pol { position: absolute; background: #FFFEFA; padding: 16px 16px 0; z-index: 12;
+  box-shadow: 0 24px 36px rgba(38,33,25,.24), 0 2px 4px rgba(38,33,25,.12); }
+.pol .p { display: block; width: 100%; object-fit: cover; }
+.pol .cap { padding: 14px 6px 20px; }
+.pol .cap b { display: block; font-family: var(--body); font-weight: 800; font-size: 28px; line-height: 1.15; color: #262119; }
+.pol .cap > span { display: block; margin-top: 8px; font-family: var(--label); font-size: 19px; line-height: 1.4; color: #6E6554; }
+.print { position: absolute; background: #FFFEFA; padding: 14px; z-index: 12;
+  box-shadow: 0 26px 40px rgba(38,33,25,.22), 0 2px 4px rgba(38,33,25,.12); }
+.print img { display: block; width: 100%; }
+.print .mark { position: absolute; background: rgba(232,161,0,.42); mix-blend-mode: multiply; border-radius: 4px; transform: rotate(-.6deg); }
+.src { position: absolute; z-index: 20; font-family: var(--label); font-size: 18px; color: #6E6554; }
+
 /* 1. Title. Deya 1 + 24: a small lead-in, a huge word, a script line, an aside; objects at the edges. */
 .s1 .pre { left: 118px; top: 196px; font-size: 52px; }
 .s1 .mega { left: 106px; top: 262px; font-size: 168px; }
@@ -88,16 +101,20 @@
 .s2 .cam { left: 1530px; top: 120px; width: 300px; height: 300px; }
 .s2 .wheat { left: 1500px; top: 820px; width: 520px; transform: rotate(-150deg); z-index: 5; }
 
-/* 3. Part title. Deya 18 + 19: a colour band, the number stitched, the face over the edge, a torn note taped below. */
-.s3 .band { position: absolute; left: 0; top: 0; width: 1920px; height: 590px; background: #8A9068; z-index: 2; }
+/* 3. Part title. Deya 18 + 19, with the real thing (Sean 2026-10-29: "in my slides, there to be real pictures, real
+   screenshots"): a real 3-day event's page and ticket taped under the band, the note beside it. */
+.s3 .band { position: absolute; left: 0; top: 0; width: 1920px; height: 570px; background: #8A9068; z-index: 2; }
 .s3 .num { left: 112px; top: 112px; z-index: 20; }
 .s3 .pre { left: 430px; top: 132px; font-size: 48px; color: #EDEAD8; }
 .s3 .ol { left: 424px; top: 200px; font-size: 156px; color: #FBF8F1; }
 .s3 .cam { left: 1230px; top: 150px; width: 580px; height: 660px; }
-.s3 .paper { left: 112px; top: 640px; width: 820px; transform: rotate(-2deg); z-index: 10; }
-.s3 .note { left: 190px; top: 730px; transform: rotate(-2deg); z-index: 20; width: 680px; }
-.s3 .tape1 { left: 80px; top: 630px; width: 220px; transform: rotate(-30deg); }
-.s3 .sprig { left: 960px; top: 880px; width: 120px; transform: rotate(-10deg); }
+.s3 .page { left: 104px; top: 612px; width: 640px; transform: rotate(-2.5deg); }
+.s3 .ticket { left: 560px; top: 838px; width: 330px; transform: rotate(6deg); z-index: 16; filter: drop-shadow(0 14px 16px rgba(38,33,25,.28)); }
+.s3 .src { left: 124px; top: 1032px; transform: rotate(-2.5deg); }
+.s3 .paper { left: 880px; top: 640px; width: 380px; transform: rotate(2.5deg); z-index: 10; }
+.s3 .note { left: 924px; top: 712px; width: 320px; font-size: 27px; transform: rotate(2.5deg); z-index: 20; }
+.s3 .tape1 { left: 70px; top: 596px; width: 190px; transform: rotate(-32deg); }
+.s3 .tape2 { left: 1000px; top: 622px; width: 150px; transform: rotate(7deg); }
 
 /* 4. The actual problem. Deya 13: bold title with one shouted word, typewriter underneath, a colour panel, a
    character standing next to the face (ours is the stitched scarecrow). */
@@ -128,29 +145,34 @@
 .s6 .burst { left: 1540px; top: 110px; width: 300px; height: 300px; background: #8A9068; transform: rotate(10deg); }
 .s6 .burst span { font-size: 36px; color: #FBF8F1; width: 190px; }
 
-/* 7. Proof, taped. Deya 14: the label runs up the edge, the screenshot is taped on, a drawn arrow points. */
+/* 7. Proof, taped. Deya 14: the label runs up the edge, the REAL screenshot taped on in two pieces (Jason slides
+   20:17: screenshots are your best friend; highlight the key line only, keep the source under it). */
 .s7 .side { position: absolute; left: 52px; top: 120px; height: 860px; writing-mode: vertical-rl; transform: rotate(180deg); text-align: right;
   font-family: var(--display-italic); font-size: 200px; line-height: 1; color: #B06A4A; -webkit-text-stroke: .02em currentColor; z-index: 20; }
-.s7 .post1 { left: 400px; top: 180px; width: 1000px; padding: 46px 52px 40px; transform: rotate(-2deg); }
-.s7 .post2 { left: 1010px; top: 640px; width: 680px; padding: 28px 36px; transform: rotate(2.2deg); z-index: 16; }
-.s7 .tape1 { left: 380px; top: 150px; width: 230px; transform: rotate(-26deg); }
-.s7 .tape2 { left: 1260px; top: 120px; width: 230px; transform: rotate(20deg); }
-.s7 .arrow { left: 270px; top: 520px; width: 230px; transform: rotate(-12deg); z-index: 30; }
+.s7 .p1 { left: 330px; top: 104px; width: 548px; transform: rotate(-2deg); }
+.s7 .p1 .mark { left: 72px; top: 136px; width: 182px; height: 28px; }
+.s7 .p2 { left: 846px; top: 330px; width: 628px; transform: rotate(2.4deg); z-index: 13; }
+.s7 .s1 { left: 350px; top: 852px; transform: rotate(-2deg); }
+.s7 .s2 { left: 870px; top: 950px; transform: rotate(2.4deg); }
+.s7 .lab { left: 1478px; top: 596px; width: 400px; transform: rotate(5deg); }
+.s7 .tape1 { left: 300px; top: 92px; width: 210px; transform: rotate(-28deg); }
+.s7 .tape2 { left: 1300px; top: 318px; width: 190px; transform: rotate(24deg); }
+.s7 .tape3 { left: 1600px; top: 580px; width: 150px; transform: rotate(-6deg); }
+.s7 .line { left: 350px; top: 998px; font-size: 40px; }
 .s7 .cam { left: 1500px; top: 110px; width: 340px; height: 340px; }
-.s7 .sprig { left: 300px; top: 850px; width: 110px; transform: rotate(-16deg); }
-.msg { display: flex; gap: 16px; align-items: flex-start; } .msg + .msg { margin-top: 18px; }
-.msg .av { width: 54px; height: 54px; font-size: 19px; } .msg .me { background: url(art/sean-face-preview.png) center 30%/cover; }
-.msg .nm { font-size: 24px; color: #262119; } .msg .tm { font-size: 19px; color: #8C8576; font-weight: 400; margin-left: 10px; }
-.msg .say { font-size: 29px; color: #262119; margin-top: 2px; }
 
-/* 8. Same list, same offer: which one sells? Deya 11: the question, chips, real objects. */
+/* 8. Same list, same offer: which one sells? Deya 11: the question, chips, real pictures (a real live session, a
+   real 3-day event's ticket; a stock photo stands in for the launch inbox). */
 .s8 .pre { left: 0; right: 0; top: 96px; text-align: center; font-size: 50px; }
 .s8 .mega { left: 0; right: 0; top: 160px; text-align: center; font-size: 132px; }
-.s8 .k1 { left: 150px; top: 350px; font-size: 84px; color: #6E6554; }
-.s8 .k2 { left: 1050px; top: 350px; font-size: 84px; color: #B06A4A; }
-.s8 .env { left: 170px; top: 470px; width: 520px; transform: rotate(-5deg); filter: saturate(.6) drop-shadow(0 22px 26px rgba(38,33,25,.16)); }
-.s8 .tix { left: 1100px; top: 450px; width: 720px; }
-.s8 .c1 { left: 150px; top: 850px; width: 620px; } .s8 .c2 { left: 1150px; top: 880px; width: 720px; }
+.s8 .k1 { left: 150px; top: 330px; font-size: 84px; color: #6E6554; }
+.s8 .k2 { left: 1130px; top: 330px; font-size: 84px; color: #B06A4A; }
+.s8 .pa { left: 140px; top: 446px; width: 560px; transform: rotate(-3deg); }
+.s8 .pa .p { height: 330px; filter: saturate(.75); }
+.s8 .pb { left: 1150px; top: 446px; width: 620px; transform: rotate(2.5deg); }
+.s8 .pb .p { height: 318px; }
+.s8 .tkt { left: 1600px; top: 372px; width: 270px; transform: rotate(9deg); z-index: 18; filter: drop-shadow(0 14px 16px rgba(38,33,25,.28)); }
+.s8 .c1 { left: 150px; top: 920px; width: 620px; } .s8 .c2 { left: 1200px; top: 922px; width: 700px; }
 .s8 .or { left: 928px; top: 520px; z-index: 20; }
 .s8 .cam { left: 805px; top: 700px; width: 310px; height: 310px; }
 
@@ -164,15 +186,23 @@
 .s9 .w2 { left: 1480px; top: 790px; width: 640px; transform: rotate(-148deg); z-index: 5; }
 .s9 .flower { left: 1560px; top: 160px; width: 120px; transform: rotate(12deg); }
 
-/* 10. Why events sell more. Deya 10: a full colour field, the list top to bottom (Jason 1:29), numbers stitched. */
+/* 10. Why events sell more. Deya 10: a full colour field, the list top to bottom (Jason 1:29) as three taped
+   polaroids, each reason shown by a real photo, numbers stitched on the frames. */
 .s10 { background: #8A9068; }
 .s10::before { mix-blend-mode: multiply; opacity: .55; }
-.s10 .ol { left: 112px; top: 110px; font-size: 120px; color: #FBF8F1; }
-.s10 .row { position: absolute; left: 118px; display: flex; gap: 40px; align-items: flex-start; z-index: 20; }
-.s10 .row .w { font-family: var(--body); font-weight: 800; font-size: 54px; color: #FBF8F1; letter-spacing: -.01em; line-height: 1.1; }
-.s10 .row .t { font-family: var(--label); font-size: 27px; color: #E4E3D2; margin-top: 10px; }
-.s10 .r1 { top: 330px; } .s10 .r2 { top: 545px; } .s10 .r3 { top: 760px; }
-.s10 .row .n { width: 100px; padding-top: 6px; }
+.s10 .ol { left: 112px; top: 96px; font-size: 112px; color: #FBF8F1; }
+.s10 .pol { width: 340px; }
+.s10 .pol .p { height: 230px; }
+.s10 .q1 { left: 112px; top: 300px; transform: rotate(-3deg); }
+.s10 .q2 { left: 480px; top: 334px; transform: rotate(2deg); }
+.s10 .q3 { left: 848px; top: 296px; transform: rotate(-1.5deg); }
+.s10 .pol .n { position: absolute; left: 6px; bottom: -94px; z-index: 3; }
+.s10 .pol .cap b span { white-space: nowrap; }
+.s10 .pol .n { left: 18px; }
+.s10 .t1 { left: 222px; top: 284px; width: 130px; transform: rotate(-8deg); }
+.s10 .t2 { left: 590px; top: 318px; width: 130px; transform: rotate(6deg); }
+.s10 .t3 { left: 958px; top: 280px; width: 130px; transform: rotate(-4deg); }
+.s10 .line { left: 118px; top: 850px; width: 1080px; font-size: 42px; color: #F3EEDF; }
 .s10 .paper { left: 1200px; top: 120px; width: 700px; transform: rotate(4deg); z-index: 5; }
 .s10 .cam { left: 1270px; top: 210px; width: 560px; height: 680px; }
 .s10 .wheat { left: 1560px; top: 880px; width: 480px; transform: rotate(-160deg); z-index: 45; }
@@ -228,10 +258,13 @@
   <div class="a num" data-stitch="2" data-cell="22" data-px="18" data-color="#F3EEDF"></div>
   <div data-edit class="a pre">part two</div>
   <div data-edit class="a ol">The 3-day<br>event.</div>
+  <div class="print page"><img src="art/real/launch-lab-registration-page.jpg" alt=""></div>
+  <img class="ticket a" src="art/real/launch-lab-ticket.png" alt="">
+  <div data-edit class="src">Launch Lab, a 3-day live event, June 9-11 (from the After Harvest VSL)</div>
   <img class="ph paper" src="art/photo/graph.png" alt="">
   <div class="a tw note"><span data-edit>You teach 3 days.</span><br><span data-edit>Cart opens day 3.</span><br><span data-edit><u>We run it.</u></span></div>
   <img class="tp tape1" src="art/photo/tape2.png" alt="">
-  <img class="icon sprig" src="art/figma/stitch-sprig-olive-lilac.png" alt="">
+  <img class="tp tape2" src="art/photo/tape1.png" alt="">
   <div class="cam box"><img src="art/sean-cam.jpg" alt=""></div>
 </section>
 
@@ -270,20 +303,16 @@
 <!-- 7 proof, taped -->
 <section class="slide lt s7" id="s7-proof">
   <div data-edit class="side">proof #1</div>
-  <div class="post post1">
-    <div class="row"><div class="av">JC</div><div><div class="nm">Jay Clouse</div><div class="hd">@jayclouse</div></div></div>
-    <div class="tx">It took nine years, but we just had our <mark>first $100,000+ launch.</mark></div>
-    <div class="meta">9:45 PM &middot; 7/9/26 &middot; <b style="color:#0f1419">16K</b> Views</div>
-    <div class="stats"><span><b>63</b> replies</span><span><b>217</b> likes</span></div>
-  </div>
-  <div class="post post2">
-    <div class="msg"><div class="av">JC</div><div><div class="nm"><b>Jay Clouse</b><span class="tm">8:47 AM</span></div><div class="say">we did! about 30 mins ago</div></div></div>
-    <div class="msg"><div class="av me"></div><div><div class="nm"><b>Sean Canela</b><span class="tm">8:51 AM</span></div><div class="say">let&rsquo;s go!!!!</div></div></div>
-  </div>
+  <div class="print p1"><img src="art/real/jay-post.png" alt=""><div class="mark"></div></div>
+  <div class="print p2"><img src="art/real/jay-chat.png" alt=""></div>
+  <div data-edit class="src s1">x.com/jayclouse, 9:45 PM, 7/9/26</div>
+  <div data-edit class="src s2">our chat: 3:57 AM, then 8:47 AM</div>
+  <div class="pol lab"><img class="p" style="height:216px" src="art/real/jay-the-lab-group.jpg" alt="">
+    <div class="cap"><b data-edit>The Lab</b><span data-edit>Jay's membership, 200 members (his own page)</span></div></div>
   <img class="tp tape1" src="art/photo/tape1.png" alt="">
   <img class="tp tape2" src="art/photo/tape2.png" alt="">
-  <img class="icon arrow" src="art/figma/hand-arrow-loop-olive-cut.png" alt="">
-  <img class="icon sprig" src="art/figma/stitch-sprig-olive-lilac.png" alt="">
+  <img class="tp tape3" src="art/photo/tape1.png" alt="">
+  <div data-edit class="a pre line">nine years in, and then this.</div>
   <div class="cam round"><img src="art/sean-cam.jpg" alt=""></div>
 </section>
 
@@ -293,9 +322,12 @@
   <div data-edit class="a mega">Which one sells?</div>
   <div data-edit class="a sc k1">a launch</div>
   <div data-edit class="a sc k2">a 3-day event</div>
-  <img class="ph env" src="art/photo/envelope.png" alt="">
-  <img class="ph tix" src="art/photo/tickets.png" alt="">
-  <div class="a c1"><span data-edit class="chip out">email after email</span><span data-edit class="chip out">a replay</span><span data-edit class="chip out">cart closes Friday</span></div>
+  <div class="pol pa"><img class="p" src="art/real/stock-mail-24-unread.jpg" alt="">
+    <div class="cap"><b data-edit>Email after email.</b><span data-edit>seven days of them, then a sales page</span></div></div>
+  <div class="pol pb"><img class="p" src="art/real/jay-unreal-collective-zoom.jpg" alt="">
+    <div class="cap"><b data-edit>Live, in the room.</b><span data-edit>a live session on Zoom (from Jay Clouse's site)</span></div></div>
+  <img class="tkt a" src="art/real/launch-lab-ticket.png" alt="">
+  <div class="a c1"><span data-edit class="chip out">a replay</span><span data-edit class="chip out">cart closes Friday</span></div>
   <div class="a c2"><span data-edit class="chip on">Day 1, live</span><span data-edit class="chip on">Day 2, live</span><span data-edit class="chip on">Day 3: the offer</span></div>
   <div class="a or" data-stitch="or" data-cell="6" data-px="18" data-color="#B06A4A"></div>
   <div class="cam round"><img src="art/sean-cam.jpg" alt=""></div>
@@ -316,9 +348,19 @@
 <!-- 10 why events sell more -->
 <section class="slide lt s10" id="s10-list">
   <div data-edit class="a ol">Why events sell more</div>
-  <div class="row r1"><div class="n" data-stitch="1" data-cell="9" data-px="18" data-color="#F3EEDF"></div><div><div data-edit class="w">People show up for a date.</div><div data-edit class="t">A launch is always open. An event starts at 11.</div></div></div>
-  <div class="row r2"><div class="n" data-stitch="2" data-cell="9" data-px="18" data-color="#F3EEDF"></div><div><div data-edit class="w">They watch you teach, live.</div><div data-edit class="t">Trust is built in the room, not in an email.</div></div></div>
-  <div class="row r3"><div class="n" data-stitch="3" data-cell="9" data-px="18" data-color="#F3EEDF"></div><div><div data-edit class="w">Three days earn one decision.</div><div data-edit class="t">By day 3 the offer is the next step.</div></div></div>
+  <div class="pol q1"><div class="n" data-stitch="1" data-cell="7" data-px="18" data-color="#F3EEDF"></div>
+    <img class="p" src="art/real/stock-calendar-thursday-31.jpg" alt="">
+    <div class="cap"><b data-edit><span>People show up</span><br><span>for a date.</span></b><span data-edit>A launch is always open. An event starts at 11.</span></div></div>
+  <div class="pol q2"><div class="n" data-stitch="2" data-cell="7" data-px="18" data-color="#F3EEDF"></div>
+    <img class="p" src="art/real/stock-whiteboard-teaching.jpg" alt="">
+    <div class="cap"><b data-edit><span>They watch you</span><br><span>teach, live.</span></b><span data-edit>Trust is built in the room, not in an email.</span></div></div>
+  <div class="pol q3"><div class="n" data-stitch="3" data-cell="7" data-px="18" data-color="#F3EEDF"></div>
+    <img class="p" src="art/real/stock-buying-on-laptop.jpg" alt="">
+    <div class="cap"><b data-edit><span>Three days earn</span><br><span>one decision.</span></b><span data-edit>By day 3 the offer is the next step.</span></div></div>
+  <img class="tp t1" src="art/photo/tape1.png" alt="">
+  <img class="tp t2" src="art/photo/tape2.png" alt="">
+  <img class="tp t3" src="art/photo/tape1.png" alt="">
+  <div data-edit class="a pre line">Same list, same offer. The date, the room and the three days do the selling.</div>
   <img class="ph paper" src="art/photo/graph.png" alt="">
   <div class="cam box"><img src="art/sean-cam.jpg" alt=""></div>
   <img class="ph wheat" src="art/photo/wheat.png" alt="">

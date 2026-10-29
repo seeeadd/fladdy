@@ -57,7 +57,7 @@ pitching January launches.
 ## Waiting on Sean (these change what we build)
 
 - Plain like Jason ("better to look ugly" [Jason slides 16:06]) or crafted ("nicely made")?
-- AI-generated objects, or real photos and screenshots only [Jason slides 7:22, 20:05]?
+- AI-generated props next to the real pictures, or real photos and screenshots only [Jason slides 7:22, 20:05]?
 - One font, no italics [Jason slides 13:35] vs our three type voices?
 - Close to a booked call (Jeremy) or to checkout (Jason, our Day 3)? Price on screen or not [Jeremy 1:19:03]?
 - Our videos as on-ramps to one unlisted core video [Jason new webinar 13:11]? Is the VSL that core video?
