@@ -23,9 +23,9 @@ Sources: `sources/fladlien/notes/full-methodology.md` L4823-6294 (Jason Fladlien
 8. Keep the soul: technique and heart, structure and authenticity, framework and feeling, script and spontaneity. [doc L5889-5907]
 
 **Stated or implied**
-9. Stated: tell them the paradigm and the result you are aiming for ("Here's the specific result, let's see if we can get there together"). Easier, safer, still very effective, best for beginners. [doc L4883-4891, L5425-5427]
-10. Implied: teach, never say what you are doing, let them draw the conclusion. More elegant and powerful, harder, can fail spectacularly. Jason's preference. [doc L4893-4903, L5413-5429]
-11. Stated when you are new, the offer is high risk (expensive, controversial), the concept needs explicit framing, the market is unsophisticated, or you want it safe. Implied when you are experienced, can afford a failed test, the conclusion is obvious once explained, the market is sophisticated. [doc L5675-5713]
+9. Stated: tell them the paradigm and the result you're aiming for. Safer, still very effective, best for beginners. [doc L4883-4891, L5425-5427]
+10. Implied: teach and let them draw the conclusion, never saying what you're doing. More powerful, harder, can fail spectacularly. Jason's preference. [doc L4893-4903, L5413-5429]
+11. Stated if you're new, the offer is risky (expensive, controversial), the concept needs framing or the market is unsophisticated. Implied if you're experienced, can afford a failed test, the conclusion is obvious once explained and the market is sophisticated. [doc L5675-5713]
 
 **The seven strategies** (use, risk, payoff from the table [doc L5715-5743])
 12. Show the manual, sell the automatic (his favourite; you have an automation or a service; low risk, high payoff): show exhaustively how to do it by hand, then reveal you do it for them. Seeing the manual work makes them value the automatic. [doc L4907-4995]
@@ -37,14 +37,14 @@ Sources: `sources/fladlien/notes/full-methodology.md` L4823-6294 (Jason Fladlien
 18. Opportunity, "get in on the ground floor" (a new market; medium risk, medium payoff): a problem they can see, buyers used to paying high prices, nobody helping yet. It taps fear of missing out and a closing window. [doc L5277-5309]
 
 **Building a combo** [doc L5909-5955]
-19. Foundation: your strongest paradigm (show manual sell automatic, the most versatile; big promise if you have proof; beta if the offer is new). Amplifier: speed, ground floor (urgency) or meet the market (sophistication). Proof system: case studies that reinforce it, testimonials that echo the aha, data that validates the shift.
+19. Foundation: your strongest (show manual sell automatic, the most versatile; big promise with proof; beta for a new offer). Amplifier: speed, ground floor (urgency) or meet the market. Proof system: case studies, testimonials that echo the aha, data.
 
 **Match the market's stage** [doc L5957-5997]
-20. Unaware: "possibility" (it exists and works; a relatable beginner's win). Problem aware: "mechanism" (here's how it works). Solution aware: "why you" (a person like them succeeding). Product aware: "objection destroying" (a skeptic turned believer). Most aware: "next level" (a past customer upgrading).
+20. Unaware: "possibility" (a relatable beginner's win). Problem aware: "mechanism" (how it works). Solution aware: "why you" (someone like them). Product aware: "objection destroying" (a skeptic turned believer). Most aware: "next level" (a customer upgrading).
 
 **Promise levels and proof** [doc L6201-6293]
 21. Possible, "You CAN": proof it was done once. Probable, "You WILL LIKELY": a pattern across people. Certain, "I GUARANTEE": overwhelming proof plus risk reversal. Inevitable, "You'd be an IDIOT not to": mechanical proof, "It's not motivational, it's mathematical."
-22. Proof for a big promise. Minimum: 3+ case studies, 1+ video testimonial, real numbers, before/after, a timeline. Strong: 10+ case studies, 5+ video testimonials, varied customers, third-party checks, public screenshots. Undeniable: 50+ and 20+, live demos, a customer on the webinar, real-time dashboards, media.
+22. Proof for a big promise. Minimum: 3+ case studies, a video testimonial, real numbers, before/after, a timeline. Strong: 10+ and 5+, varied customers, third-party checks, public screenshots. Undeniable: 50+ and 20+, live demos, a customer on the webinar, live dashboards, media.
 
 **Every paradigm needs four parts** [doc L5745-5779]
 23. The bridge: current state, the aha, the new state.
@@ -59,16 +59,15 @@ Sources: `sources/fladlien/notes/full-methodology.md` L4823-6294 (Jason Fladlien
 4. Test: can they go back to the old way after this (yes = too weak)? Will it keep them up at night until they buy (no = add urgency or contrast)? Does it make understanding AND purchase likely? [doc L5781-5801]
 
 **Show manual, sell automatic** [doc L6093-6199]
-1. List the manual way exhaustively: every step, its time, complexity, expertise, likely mistakes, opportunity cost.
-2. Teach it in the content, thoroughly: the complexity, the time, the pitfalls. This builds the contrast.
-3. Reveal: "You just saw how to do [task] manually. It takes [time]. It requires [expertise/tools]. There's [X] ways to mess it up. OR... [your solution] does it in [fraction of time]. Eliminates [X] points of failure. Requires [minimal expertise]. And costs [fraction of manual cost]."
-4. Amplify: manual (X hours, quality Y/10, $Z if hired) vs automatic (X/10 hours, 9/10, your price). Value = (time saved x hourly value) + (quality gain x outcome value) - your price. The brush is 25x worse, the sprayer 25x better: a 625x gap.
+1. List the manual way exhaustively (every step, its time, complexity, expertise, likely mistakes, opportunity cost) and teach all of it in the content: thoroughness builds the contrast.
+2. Reveal: "You just saw how to do [task] manually. It takes [time]. It requires [expertise/tools]. There's [X] ways to mess it up. OR... [your solution] does it in [fraction of time]. Eliminates [X] points of failure. Requires [minimal expertise]. And costs [fraction of manual cost]."
+3. Amplify: manual (X hours, quality Y/10, $Z if hired) vs automatic (X/10 hours, 9/10, your price). Value = (time saved x hourly value) + (quality gain x outcome value) - your price. The brush is 25x worse, the sprayer 25x better: a 625x gap.
 
 **Beta launch** [doc L5999-6091]
 1. Frame the cap as caution that protects them: "I [don't think / am not sure] that [statement protecting them]. So I [am being cautious] by [limiting availability]. Therefore I'm [only taking X people]."
-2. Qualify: "How much will you invest initially, beyond the $[price] for the program?" / "What's your risk tolerance from 1-10 (1 being most risk averse, 10 being extremely tolerant of taking risk)?" / "Would your life continue relatively the same if you somehow lost everything you invested? Yes/No?" It filters out people who would panic or breathe down your neck.
+2. Qualify: "How much will you invest initially, beyond the $[price] for the program?" / "What's your risk tolerance from 1-10 (1 being most risk averse, 10 being extremely tolerant of taking risk)?" / "Would your life continue relatively the same if you somehow lost everything you invested? Yes/No?" It filters out people who would panic.
 3. Set up proof before you have it: they cap their investment (relatable results; $25,000 in the crypto beta), share access to their results, and agree you can show them anywhere, to anyone.
-4. Set expectations: "I actually expect a 100% success rate for everyone who joins. But the only certainty in life is uncertainty." The first round should be people who can lose everything with no life-altering consequences.
+4. Set expectations: "I actually expect a 100% success rate for everyone who joins. But the only certainty in life is uncertainty", so the first round should be people who can lose everything without life-altering consequences.
 5. Grow in public: "we think it can support 100", sell those; "it can support more, but we'll be cautious", sell a few hundred more. [doc L5153-5165]
 
 Templates
@@ -78,16 +77,17 @@ Templates
 
 ## Examples
 - WP Twin (2010): 45 minutes of every manual WordPress step, then "What if you could automate all that in a couple clicks?" A long manual math problem did the same: "OR... you can use a tool that takes less than 1 minute." [doc L4935-4971, L5433-5483]
-- Amazon keywords: 40 sales a day from 1 phrase, or 1 sale each from 40? People skip long-tail from ignorance and because "it's freaking hard". [doc L4973-4987]
-- Raul (ASM 3): after students at $20K-$100K+ months, Raul at $3,500/month net on his first product, "the most CERTAIN approach to success I've ever seen". Relatable beats big. [doc L5063-5071]
+- Amazon keywords: 40 sales a day off 1 phrase, "OR a product that makes at least 1 sale from 40 different search phrases?" People ignore the long tail from ignorance and because "it's freaking hard" (40 funnels). [doc L4973-4987]
+- Raul (ASM 3): after $20K-$100K+ months, Raul's $3,500/month net on his first product: relatable beats big. [doc L5063-5071]
 - "If this is FREE, the paid stuff must be INSANE!": over-deliver on free content. [doc L5057-5061]
-- Crypto beta ($10,000+): 53 applicants for 12 spots, took 18 with the highest risk tolerance, all succeeded, no second round: "I set it up so good, I didn't even have to do the webinar." [doc L5141-5149, L5521-5587]
+- The inevitable-level promise: "It's now undeniable - We have exclusive access to the best ranking solution in the world." [doc L5041-5043, L6287-6293]
+- Crypto beta ($10,000+): 53 applicants for 12 spots, took 18 with the highest risk tolerance, all succeeded, no second round. [doc L5141-5149, L5521-5587]
 - ASM, six months apart: ASM 3 "is this real?" (possibility); ASM 4 "Amazon is BRIBING us to help them" (we're the beneficiaries); ASM 5, skeptical: "Maybe if I do just a BIT of what they do, I can bring in a BIT of what they bring in?" [doc L5203-5275]
-- Launchpad combo: all of Amazon ranking, then "Or we can do it for you"; the 12-month million-dollar promise; "only taking 100" so as not to disrupt Amazon. [doc L5169-5189, L5589-5647]
+- Launchpad combo: all of Amazon ranking then "Or we can do it for you", the 12-month million-dollar promise, and "only taking 100" so as not to disrupt Amazon. [doc L5169-5189, L5589-5647]
 - Ground floor: show a local business its broken mobile site on your phone; "No one is helping them right now". [doc L5281-5299]
 
 ## Mistakes he calls out
-- The Marlon Sanders trap: the best content, then they bought someone else's course. [doc L5805-5817]
+- Marlon Sanders: the best content, then they bought someone else's course. [doc L5805-5817]
 - Too much teaching: "Content is important, but it's not as important as most people think." [doc L5819-5841]
 - Over-stating: "Today I'm going to show you the paradigm that will make you realize you need my product and then at the end I'll sell you my product." [doc L5843-5851]
 - A big promise with no proof: a dead paradigm. [doc L5853-5871]
@@ -109,7 +109,7 @@ From the doc: none. L4823-6294 hold no After Harvest application.
 Our reading (ours, not decided):
 - Show manual, sell automatic fits our offer. Jason's sketch, two days "meticulously mapping out every trick... and then at the end, revealing that I'll write all of your webinars for you" [doc L6139-6145], is After Harvest with "3-day event" for "webinar": show how a 3-day challenge is built and run, then reveal we do it for them.
 - A candidate mindset, the agency one [doc L5673]: "I'm in the best position I've ever been to capitalize on this."
-- The free event plan can carry "If this is FREE, the paid stuff must be INSANE!" [doc L5057].
+- The free event plan can carry "If this is FREE, the paid stuff must be INSANE!" [doc L5057]
 - The paradigm is the top layer of the nesting dolls in `playbooks/positioning.md`.
 
 ## Open questions for Sean
@@ -119,5 +119,4 @@ Our reading (ours, not decided):
 - The risk/payoff table, proof tiers, value formula and five-stage ladder read like the note-taker's, not Jason's [doc L5719-5743, L6197, L6203-6241, L5957]. Rules or guides?
 - "Only 20 17 Spots. $3,000/month" [doc L5083] sits beside "$10,000 for the program" [doc L5089] and a 12-spot crypto beta: one offer or two?
 - The beta's "100% success rate" line, said to protect you legally [doc L6071-6089]: would After Harvest ever say it?
-- Stated or implied for our YouTube videos and the VSL [doc L5675-5713]?
-- Which strategy is After Harvest's primary paradigm, and which amplifiers?
+- For our videos and VSL: stated or implied [doc L5675-5713], and which primary strategy and amplifiers?

@@ -12,7 +12,7 @@ L4011, L4823, L7767, L8993, L11151, L12507, L14563, L16617, L16919) and every pl
 ## In 5 lines
 1. Default to Jason's traditional structure: Intro (hook, pain, gain, position), Content (paradigm, mechanisms,
    demonstrations), Transition (recap, tie-down, choices), Offer (core, price, bonus, guarantee, scarcity).
-2. Pain, tease, excitement, commitment, positioning and objections each have a slot, but run through the whole webinar.
+2. Pain, tease, excitement, commitment and positioning each have a slot, but run through the whole webinar.
 3. Value first: the price comes after the teaching and 10-15 minutes of value building; bonuses come after the price.
 4. Write the theme as one headline before anything else, and hold 80% of the live room until the pitch.
 5. On YouTube the structure changes: no hook, a soft sell throughout, the product shown in action, the stack behind
@@ -36,21 +36,20 @@ L4011, L4823, L7767, L8993, L11151, L12507, L14563, L16617, L16919) and every pl
    bigger star can be revealed right before the pitch [doc L4373-4377].
 8. Commitments come in the intro, before the content, after each point and between content and offer, so the offer
    feels like the next step [doc L8827-8891].
-9. "Close in the intro, close in the content, close in the close" [doc L16893].
-10. Scarcity can frame the whole webinar from minute one (a beta launch) [doc L17459-17479], but only after value is
-    established [doc L17951].
+9. Scarcity can frame the whole webinar from minute one (a beta launch) [doc L17459-17479], but only after value is
+   established [doc L17951].
 
 **Timing and the offer**
-11. The replay's first 30 seconds are make or break: small talk live, then "Let's begin"; the replay is cut to start
+10. The replay's first 30 seconds are make or break: small talk live, then "Let's begin"; the replay is cut to start
     there and the first 100 words are written to hook replay viewers [doc L411-429].
-12. The hook that brings them to the webinar need not be the webinar's own hook [doc L441-443].
-13. Hold 80%+ of the peak live audience until the pitch starts [Jeremy 1:10:58].
-14. The offer slide is the most important slide: on a slide, showing everything, stacking value, with a clear call to
+11. The hook that brings them to the webinar need not be the webinar's own hook [doc L441-443].
+12. Hold 80%+ of the peak live audience until the pitch starts [Jeremy 1:10:58].
+13. The offer slide is the most important slide: on a slide, showing everything, stacking value, with a clear call to
     action [doc L11159-11171].
-15. Never mention bonuses during the price reveal [doc L13841-13847]. Bonuses get more time than the core: 1 slide a
+14. Never mention bonuses during the price reveal [doc L13841-13847]. Bonuses get more time than the core: 1 slide a
     module, 2-4 slides a bonus [doc L14599-14605].
-16. Be willing to spend hours handling objections: "That's where all the money is" [doc L16623].
-17. Build it section by section, a person checking each: Jason uses one or two prompts a section, about 47 in all
+15. Be willing to spend hours handling objections: "That's where all the money is" [doc L16623].
+16. Build it section by section, a person checking each: Jason uses one or two prompts a section, about 47 in all
     [Jason AI 10:25-13:47].
 
 ## How to do it
