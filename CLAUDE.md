@@ -5,6 +5,11 @@ Fladdy is After Harvest's slide machine: webinar slides and YouTube slides, buil
 outreach thumbnail factory (`seeeadd/outreach-thumbnail-factory`) and works the same way: every fix goes
 into a rule, a template or a script, so every deck gets it.
 
+**A YouTube link, or "tear down / ingest / study this video": run the `video-teardown` skill
+(`.claude/skills/video-teardown/SKILL.md`, the SOP is `sops/video-teardown.md`) right away, start to finish:
+`python3 scripts/add_video.py <url>` files it, the transcript and every frame are read, `teardown.md` is written next
+to it, everything is merged to `main` and Sean gets the links. No briefing needed.**
+
 Why it exists (Sean, 2026-10-28), in order:
 1. content (YouTube videos) with perfect positioning, on our own slides
 2. the VSL updated to match
@@ -16,21 +21,22 @@ Why it exists (Sean, 2026-10-28), in order:
 |---|---|
 | `sources/` | what we learn from, never edited. One folder per coach. A source is cited by file + timestamp |
 | `sources/fladlien/notes/full-methodology.md` | copy of the Google Doc "Full Jason Fladlien Methodology" (hooks, pain, curiosity, excite, positioning, paradigm, commitment, close, offer, price, bonuses, risk, scarcity). The doc is the master |
-| `jason-fladlien-videos/` | the four Jason videos as study files, one folder each (`NN Title (id)/`: transcript, frame study, frames); README lists them |
-| `jeremy-haynes-videos/` | Jeremy Haynes videos as study files, same shape; README lists them |
-| `sources/videos/<id>/` | one YouTube video as a study file (below) |
+| `jason-fladlien-videos/`, `jeremy-haynes-videos/` | one folder per coach, one subfolder per video (`NN Title (id)/`: transcript.md, study.md, sheets/, teardown.md); each README lists its videos. `scripts/add_video.py` makes them |
+| `sops/` | the step-by-step procedures (`video-teardown.md`: ingest a video and tear it down) |
+| `sources/videos/<id>/` | the default output of a bare `ingest_youtube.py` run (below) |
 | `rulings.md` | Sean's answers to "what does Jason mean here?" and every standard he sets. **A ruling beats a source** |
 | `scripts/` | the machine |
 
 **Designing any slide: follow `rules/slide-method.md` first** (start from the real line, Jason's "how do we show this?", the human-touch rules, the template tells to avoid). Layouts live in `templates/youtube/` (`theme.css`, `ink.js` for hand marks), rendered with `python3 scripts/render_slides.py <file.html> [--out DIR]`.
 
-Still to come (do not invent them early): `teardowns/` (one per video), `rules/` (slide rules: Jason, brand,
-YouTube), `brand/` (the After Harvest kit for slides), `templates/` (the slide layouts), `playbooks/` (one per
+Still to come (do not invent them early): `rules/` (slide rules: Jason, brand, YouTube; started with
+`rules/slide-method.md`), `brand/` (the After Harvest kit for slides), `templates/` (the slide layouts), `playbooks/` (one per
 webinar section, for the webinar machine).
 
 ## Studying a video
 
-`python3 scripts/ingest_youtube.py <url or id> [...]` writes `sources/videos/<id>/`:
+For a coach's video use `python3 scripts/add_video.py <url>` and `sops/video-teardown.md`. Underneath it,
+`python3 scripts/ingest_youtube.py <url or id> [...]` writes `sources/videos/<id>/` (or `--out DIR`):
 `meta.json`, `transcript.json` + `transcript.md` (YouTube's captions with times), `sheets/S00.jpg...`
 (YouTube's storyboard: 3x3 frames per sheet, 320x180 each, about 10 s apart) and `study.md` (each frame's
 time and the words said over it). It works in a cloud session, where YouTube blocks the video itself; the

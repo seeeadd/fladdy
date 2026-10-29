@@ -5,3 +5,4 @@
 *.part
 .DS_Store
 __pycache__/
+.ingest-tmp/

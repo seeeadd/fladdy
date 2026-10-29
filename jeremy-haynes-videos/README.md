@@ -5,7 +5,7 @@ them from a cloud session, so each folder holds the transcript and the frames in
 
 | # | video | length | folder |
 |---|---|---|---|
-| 1 | [The Most Valuable Webinar Training You'll Ever Watch](https://www.youtube.com/watch?v=P1v-AN3So3A) | 1:40:45 | [01 The Most Valuable Webinar Training Youll Ever Watch (P1v-AN3So3A)](<01 The Most Valuable Webinar Training Youll Ever Watch (P1v-AN3So3A)/>) |
+| 1 | [The Most Valuable Webinar Training You'll Ever Watch](https://www.youtube.com/watch?v=P1v-AN3So3A) | 1:40:45 | [01 The Most Valuable Webinar Training Youll Ever Watch (P1v-AN3So3A)](<01 The Most Valuable Webinar Training Youll Ever Watch (P1v-AN3So3A)/>) · [teardown](<01 The Most Valuable Webinar Training Youll Ever Watch (P1v-AN3So3A)/teardown.md>) |
 
 ## What is in each folder
 
@@ -13,6 +13,6 @@ them from a cloud session, so each folder holds the transcript and the frames in
 - `study.md`: each frame time next to the words said over it, to read beside the frames.
 - `sheets/S00.jpg ...`: YouTube storyboard frames, 3x3 per sheet, about 10 seconds apart (one sheet is about 90 seconds).
 - `transcript.json`, `meta.json`: the same data for scripts (title, length, link).
+- `teardown.md`, when written: the analysis (frameworks, every number, the process, what is on screen, questions for Sean).
 
-Add another Jeremy video here with `python3 scripts/ingest_youtube.py <url> --out jeremy-haynes-videos`
-(then rename its folder to `NN Title (id)`).
+Add a video with `python3 scripts/add_video.py <url>`, then tear it down with `sops/video-teardown.md`.
