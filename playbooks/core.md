@@ -51,13 +51,13 @@ pitching January launches.
 - Type: Olivera headlines, Literata subheadings, Hanken Grotesk body; the Olivera demo is fine.
 - YouTube slides: simple, adaptable foundations, not overly After Harvest.
 - Not "too much like Claude": no templated stacks, real artefacts, human touch. Not messy either: nicely made.
-- The YouTube looks so far: the dark stage with real objects, a layout library, and a light set with the brand's
-  cross-stitch and harvest props; real pictures and screenshots wanted (2026-10-29).
+- The YouTube looks so far: the dark stage with real objects, a layout library, a light set; now the sewn set
+  (2026-10-29): real pictures and screenshots, marked with thread, pinned or sewn on, woven labels, the face in an
+  embroidery hoop. Never tape, nothing made in Canva (rules/slide-method.md 3f).
 
 ## Waiting on Sean (these change what we build)
 
 - Plain like Jason ("better to look ugly" [Jason slides 16:06]) or crafted ("nicely made")?
-- AI-generated props next to the real pictures, or real photos and screenshots only [Jason slides 7:22, 20:05]?
 - One font, no italics [Jason slides 13:35] vs our three type voices?
 - Close to a booked call (Jeremy) or to checkout (Jason, our Day 3)? Price on screen or not [Jeremy 1:19:03]?
 - Our videos as on-ramps to one unlisted core video [Jason new webinar 13:11]? Is the VSL that core video?

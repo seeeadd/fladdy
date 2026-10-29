@@ -100,9 +100,8 @@ content, more text maybe", then "you can get real pics from online even if they 
 - Every story or proof slide carries at least one real picture. Best first: our own (a lead's page, our event's
   ticket, a client's post, our chat with them; the VSL file in Figma holds many), then a free stock photo as a
   placeholder (`stock-*` in the name, so it is easy to find and swap).
-- Show them as objects: a print (`.print`, white border, soft shadow) or a polaroid (`.pol`, caption under the
-  photo), taped, tilted 2-6 degrees, overlapping a little. A highlighter swipe (`.print .mark`) on the one line
-  that matters in a screenshot.
+- Show them as objects: a print (`.prt`, white border, layered shadow), tilted 2-6 degrees, overlapping a little,
+  pinned or sewn on (3f; the tape and the highlighter swipe of the first try are retired).
 - Under each one, a one-line source in Plex Mono (`.src`): where it is from and its date ("x.com/jayclouse, 9:45
   PM, 7/9/26"). Proof without a source reads as made up.
 - More text means a caption per picture (a bold line + one typewriter line), not a paragraph.
@@ -110,6 +109,34 @@ content, more text maybe", then "you can get real pics from online even if they 
   unsharp) and shown no bigger than it reads.
 - Every file and its source: `templates/youtube/art/real/SOURCES.md`. Closed from a cloud session: Unsplash,
   Pexels, Pixabay, Freepik; picjumbo works with curl.
+
+## 3f. Our own hand: needlework, not stationery (rulings 2026-10-29)
+
+Sean on the real-picture slides: "a little bit too simple... they look very AI-edited... I was expecting something
+leaning towards Deya... make it our own... not a fan of putting tapes on the pictures. They're very generic... we
+really need a bit more human touch", then "can you not use Canva elements?". The audit of Deya is
+`sources/inspiration/deya/AUDIT.md`; this is what we take and what we make our own.
+
+Deya's look is stationery: paper, tape labels, binder clips, a pen, her cat. After Harvest's is needlework, because
+the brand already is (the cross-stitch icons; the stitched "AD" struck through with a real red thread). So:
+- **The hand is thread** (`thread.js`): a running-stitch loop round the line that matters, a stitched arrow, one
+  laid red thread joining a claim to its proof, a long straight stitch through what is wrong (the brand's "AD").
+  Never a pen doodle, never a highlighter.
+- **Things are pinned or sewn on**: a pearl-head pin through a print's corner, a running stitch round a print
+  (`data-sew`), one cross-stitch tacking a ticket down. Never tape, never a clip.
+- **Labels are woven**, the kind sewn into a collar (`.wl` + `data-tack`), in mono caps.
+- **The face sits in an embroidery hoop** (`data-hoop`), and things touch it: the seam ends at it, the hem runs
+  behind it, a thread is tied to it.
+- **Numbers are cross-stitched** (`stitch.js`).
+- **Grounds are cloth where it helps**: a sage linen band with a frayed edge and a sewn hem, aida cloth, two
+  pieces of the page sewn together down a seam. Partial, never every slide.
+- **Harvest things carry the content**: a list as seed packets ("sow: day 1, harvest: day 3"), hung from one
+  thread.
+- **One joke per video**: the crow (the brand's character is a scarecrow), standing on the thing it mocks.
+- **No Canva-made elements.** The marks, cloth, pins, labels, packets and hoop are drawn in code (`thread.js`,
+  `sewn.css`); objects are real photos with a licence (pxhere and ISO Republic are CC0; `art/real/SOURCES.md`).
+  The Canva props of the light set (wheat, hat, graph paper, tape, folders, tickets) are retired.
+- The set: `templates/youtube/youtube-sewn.html`.
 
 ## 4. What makes it look human (Deya, the brief, Mino)
 

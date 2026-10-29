@@ -221,7 +221,9 @@ One call to action; no presenter photo; questions answered live, not on the slid
 - The printed sheet, the from/to chart, the lit list (L09), the big total (L05) and the two-tone turn (L04) can be
   Fladdy layouts [Jason new webinar 6:35; Jason new way 2:38; Jason AI 0:29-12:34].
 
-**Ruling 2026-10-29:** real pictures and real screenshots on every story or proof slide, our own first, stock as a marked placeholder, each printed or a polaroid with a one-line source (rules/slide-method.md 3e).
+**Rulings 2026-10-29:** real pictures and real screenshots on every story or proof slide, our own first, stock as
+a marked placeholder, each with a one-line source; marked with thread and pinned or sewn on, never taped; nothing
+made in Canva (rules/slide-method.md 3e, 3f).
 
 **Our reading** (ours): his rules are about function (what is biggest, what is real, what appears when), the rulings
 about finish. Apply both.

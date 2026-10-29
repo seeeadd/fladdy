@@ -1,0 +1,69 @@
+/* The sewn look (Sean 2026-10-29: "not a fan of putting tapes on the pictures... think of non-generic, creative
+   ways"; "can you not use Canva elements?"). Deya's slides are stationery: paper, tape labels, clips, a pen.
+   After Harvest's are needlework: cloth, thread, pins, the hoop. Everything here is drawn in CSS; the marks come
+   from thread.js. Never tape, never a clip, never a pen doodle. */
+
+/* cloth grounds */
+.aida { position: absolute; background-color: #F1E9D7;
+  background-image:
+    radial-gradient(circle, rgba(104,84,56,.40) 0 1.2px, transparent 1.8px),
+    linear-gradient(0deg, rgba(255,255,255,.55) 0 2px, transparent 2px),
+    linear-gradient(90deg, rgba(140,118,86,.12) 0 2px, transparent 2px);
+  background-size: 11px 11px, 11px 5.5px, 5.5px 11px; background-position: 5.5px 5.5px, 0 0, 0 0;
+  box-shadow: 0 18px 30px rgba(38,33,25,.16), 0 2px 3px rgba(38,33,25,.10);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000' preserveAspectRatio='none'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.09' numOctaves='2' seed='4'/><feDisplacementMap in='SourceGraphic' scale='14'/></filter><rect x='9' y='9' width='982' height='982' fill='white' filter='url(%23f)'/></svg>") 0 0 / 100% 100%; }
+.linen { position: absolute; background-color: #8A9068;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(30,30,10,.08) 0 1px, transparent 1px 4px),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.012 .5' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 .1  0 0 0 0 .1  0 0 0 0 .05  0 0 0 .18 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>"); }
+/* a frayed bottom edge for a band of cloth */
+.linen.fray { -webkit-mask: linear-gradient(#000, #000) 0 0 / 100% calc(100% - 14px) no-repeat,
+  url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 14' preserveAspectRatio='none'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.9 .02' numOctaves='1' seed='3'/><feDisplacementMap in='SourceGraphic' scale='16' yChannelSelector='R'/></filter><rect y='-6' width='1920' height='14' fill='white' filter='url(%23f)'/></svg>") 0 100% / 100% 14px no-repeat; }
+
+/* a real screenshot or photo, printed: thin white border, a real shadow, no tape. Pinned (thread.js "pin") or sewn
+   (data-sew). */
+.prt { position: absolute; background: #FFFEFA; padding: 12px; z-index: 12;
+  box-shadow: 0 1px 1px rgba(38,33,25,.10), 0 10px 18px rgba(38,33,25,.14), 0 30px 46px rgba(38,33,25,.14); }
+.prt > img { display: block; width: 100%; }
+.prt.bare { padding: 0; }
+.prt .cap { font-family: var(--label); font-size: 18px; color: #6E6554; padding: 12px 4px 4px; line-height: 1.35; }
+
+/* a woven label, the kind sewn into a collar, sewn down at both ends (data-tack) */
+.wl { position: absolute; display: inline-flex; align-items: center; justify-content: center; z-index: 22;
+  padding: 0 46px; height: 58px; white-space: nowrap; background-color: #F6F1E4;
+  background-image: repeating-linear-gradient(0deg, rgba(90,70,40,.07) 0 1px, transparent 1px 3px),
+                    linear-gradient(90deg, rgba(90,70,40,.16), transparent 7%, transparent 93%, rgba(90,70,40,.16));
+  font-family: var(--label); font-size: 21px; letter-spacing: .2em; text-transform: uppercase; color: #8F4E33;
+  box-shadow: 0 2px 2px rgba(38,33,25,.14), 0 8px 12px rgba(38,33,25,.12); }
+.wl.olive { color: #5E6344; } .wl.dk { background-color: #2E2820; color: #E8DFC9;
+  background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 3px),
+                    linear-gradient(90deg, rgba(0,0,0,.3), transparent 7%, transparent 93%, rgba(0,0,0,.3)); }
+.wl.sage { background-color: #8A9068; color: #FBF8F1;
+  background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0 1px, transparent 1px 3px),
+                    linear-gradient(90deg, rgba(0,0,0,.18), transparent 7%, transparent 93%, rgba(0,0,0,.18)); }
+
+/* a seed packet: kraft paper, a printed border, a window for the real photo, the seed catalogue's mono labels
+   (the brand's own flower set is labelled the same way: SPRAY, POPPY, DAISY) */
+.packet { position: absolute; z-index: 12; width: 360px; padding: 26px 24px 22px; background-color: #DCC7A3;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' seed='2'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .25  0 0 0 0 .12  0 0 0 .22 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>"),
+    linear-gradient(170deg, rgba(255,255,255,.18), transparent 40%, rgba(80,50,20,.10));
+  box-shadow: 0 1px 1px rgba(38,33,25,.15), 0 14px 22px rgba(38,33,25,.18), 0 34px 50px rgba(38,33,25,.12); }
+.packet { padding-top: 50px; }
+.packet::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 34px; z-index: 1;
+  background: linear-gradient(rgba(255,255,255,.16), rgba(255,255,255,.04)), #D3BC95;
+  clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%);
+  box-shadow: 0 3px 5px rgba(70,45,20,.25); border-bottom: 1px solid rgba(70,45,20,.35); }
+.packet .frame { border: 2.5px solid #9C4F31; padding: 14px 14px 16px; }
+.packet .no { font-family: var(--label); font-size: 17px; letter-spacing: .22em; color: #9C4F31; text-transform: uppercase;
+  display: flex; justify-content: space-between; }
+.packet .nm { font-family: var(--display); -webkit-text-stroke: .022em currentColor; font-size: 50px; line-height: 1;
+  color: #2E2820; margin: 8px 0 12px; }
+.packet .win { display: block; width: 100%; height: 190px; object-fit: cover; border: 2px solid #2E2820; }
+.packet .tx { font-family: var(--body); font-weight: 700; font-size: 25px; line-height: 1.2; color: #2E2820; margin-top: 14px; text-wrap: balance; }
+.packet .sm { font-family: var(--label); font-size: 17px; line-height: 1.4; color: #5C4A33; margin-top: 8px; text-wrap: balance; }
+.packet .ft { font-family: var(--label); font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: #9C4F31;
+  display: flex; justify-content: space-between; margin-top: 12px; padding-top: 9px; border-top: 1.5px dashed rgba(156,79,49,.6); }
+
+/* the crow: a real photo (pxhere, CC0), cut out; it sits on things */
+.bird { position: absolute; z-index: 60; filter: drop-shadow(0 12px 10px rgba(38,33,25,.28)); }

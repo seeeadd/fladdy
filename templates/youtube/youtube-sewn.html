@@ -1,0 +1,185 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>YouTube, sewn: launches vs 3-day events</title>
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="sewn.css">
+<script src="ink.js"></script>
+<script src="stitch.js"></script>
+<script src="thread.js"></script>
+<style>
+/* Sean 2026-10-29 on the light set: "a little bit too simple... they look very AI-edited... I was expecting something
+   leaning towards Deya... make it our own... not a fan of putting tapes on the pictures... a bit more human touch",
+   then "can you not use Canva elements?". The audit is sources/inspiration/deya/AUDIT.md. What we keep from her:
+   the face is part of the composition and things overlap it; real things in their own UI; marks ON the real thing;
+   one funny cut-out; type that acts out its meaning; edges that are not straight. What is ours: needlework instead
+   of stationery. The hand is thread (thread.js), things are pinned or sewn on, labels are woven, the face sits in
+   an embroidery hoop, numbers are cross-stitched, the joke is a crow (the brand's character is a scarecrow). */
+.lt { background: #FBF8F1; background-image: none; }
+.lt::before { opacity: .5; }
+.a { position: absolute; z-index: 20; }
+.pre { font-family: var(--sub); font-style: italic; color: #6E6554; }
+.mega { font-family: var(--body); font-weight: 900; text-transform: uppercase; letter-spacing: -.025em; line-height: .88; color: #262119; }
+.ol { font-family: var(--display); -webkit-text-stroke: .022em currentColor; line-height: 1; color: #262119; }
+.sc { font-family: var(--display-italic); -webkit-text-stroke: .02em currentColor; line-height: 1; }
+.ol .ap, .sc .ap { font-family: var(--sub); font-size: .78em; margin: 0 -.05em 0 -.06em; -webkit-text-stroke: .01em currentColor; }
+.ol .pn, .sc .pn { font-family: var(--sub); font-size: .86em; margin-left: -.03em; -webkit-text-stroke: .012em currentColor; }
+.src { position: absolute; z-index: 20; font-family: var(--label); font-size: 18px; color: #6E6554; }
+.cam { position: absolute; overflow: hidden; z-index: 40; background: #d9cdb8; border-radius: 50%; }
+.cam img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* 3. Part title. A band of sage linen sewn across the top (frayed edge, a hem in cream thread), the stitched 2, the
+   face in the hoop over the hem. Below the hem, the real thing: Launch Lab's page pinned up, its ticket tacked on
+   with one cross-stitch, the three days as woven labels. */
+.s3 .band { left: 0; top: 0; width: 1920px; height: 600px; z-index: 2; }
+.s3 .num { left: 112px; top: 112px; z-index: 20; }
+.s3 .pre { left: 430px; top: 132px; font-size: 48px; color: #EDEAD8; }
+.s3 .ol { left: 424px; top: 200px; font-size: 156px; color: #FBF8F1; }
+.s3 .cam { left: 1260px; top: 110px; width: 560px; height: 560px; }
+.s3 .page { left: 104px; top: 540px; width: 660px; transform: rotate(-2.2deg); z-index: 14; }
+.s3 .tkt { position: absolute; left: 640px; top: 800px; width: 380px; transform: rotate(5deg); z-index: 16;
+  filter: drop-shadow(0 2px 2px rgba(38,33,25,.18)) drop-shadow(0 16px 18px rgba(38,33,25,.22)); }
+.s3 .src { left: 124px; top: 1020px; transform: rotate(-2.2deg); }
+.s3 .w1 { left: 1150px; top: 744px; transform: rotate(-2deg); }
+.s3 .w2 { left: 1196px; top: 830px; transform: rotate(1.2deg); }
+.s3 .w3 { left: 1162px; top: 916px; transform: rotate(-1deg); }
+.s3 .and { left: 1590px; top: 980px; font-size: 40px; color: #8F4E33; z-index: 20; }
+
+/* 7. Proof. "proof" runs up the edge, its number stitched. The real post is pinned up, the line that matters
+   ringed in running stitch (not a highlighter); the real chat is sewn on; one red thread runs from the claim to
+   "we did!", knotted at one end and pinned at the other. Each print has its source under it. */
+.s7 .side { position: absolute; left: 44px; top: 330px; height: 720px; writing-mode: vertical-rl; transform: rotate(180deg); text-align: right;
+  font-family: var(--display-italic); font-size: 196px; line-height: 1; color: #A85A3C; -webkit-text-stroke: .02em currentColor; z-index: 20; }
+.s7 .num { left: 66px; top: 150px; z-index: 20; transform: rotate(-90deg); transform-origin: 50% 50%; }
+.s7 .p1 { left: 330px; top: 104px; width: 548px; transform: rotate(-2deg); }
+.s7 .p2 { left: 846px; top: 330px; width: 640px; transform: rotate(2.4deg); z-index: 13; }
+.s7 .s1 { left: 352px; top: 862px; transform: rotate(-2deg); }
+.s7 .s2 { left: 900px; top: 976px; transform: rotate(2.4deg); }
+.s7 .lab { left: 1500px; top: 600px; width: 380px; transform: rotate(4deg); z-index: 14; }
+.s7 .line { left: 350px; top: 1000px; font-size: 40px; z-index: 20; }
+.s7 .cam { left: 1530px; top: 96px; width: 330px; height: 330px; }
+
+/* 8. Which one sells? The page is two pieces sewn together down the middle: a seam, with the stitched "or" on it.
+   Left, a launch: the inbox (a stock photo standing in) pinned up, a crow on it, its two labels. Right, a 3-day
+   event: a real live session sewn on, the real ticket tacked to its corner, the three days as woven labels. */
+.s8 .pre { left: 0; right: 0; top: 92px; text-align: center; font-size: 50px; }
+.s8 .mega { left: 0; right: 0; top: 156px; text-align: center; font-size: 132px; }
+.s8 .right { left: 960px; top: 330px; width: 960px; height: 750px; background: #F1EADB; z-index: 1;
+  background-image: repeating-linear-gradient(0deg, rgba(120,95,60,.05) 0 1px, transparent 1px 3px),
+                    repeating-linear-gradient(90deg, rgba(120,95,60,.05) 0 1px, transparent 1px 4px); }
+.s8 .k1 { left: 150px; top: 340px; font-size: 84px; color: #6E6554; }
+.s8 .k2 { left: 1110px; top: 340px; font-size: 84px; color: #A85A3C; }
+.s8 .pa { left: 150px; top: 470px; width: 600px; transform: rotate(-2.5deg); }
+.s8 .pa img { height: 330px; object-fit: cover; filter: saturate(.7); }
+.s8 .bird { left: 520px; top: 316px; width: 210px; transform: scaleX(-1) rotate(-3deg); }
+.s8 .pb { left: 1120px; top: 470px; width: 640px; transform: rotate(2deg); }
+.s8 .pb img { height: 340px; object-fit: cover; }
+.s8 .tkt { position: absolute; left: 1610px; top: 420px; width: 260px; transform: rotate(10deg); z-index: 18;
+  filter: drop-shadow(0 2px 2px rgba(38,33,25,.18)) drop-shadow(0 14px 16px rgba(38,33,25,.22)); }
+.s8 .l1 { left: 160px; top: 900px; transform: rotate(-1.5deg); } .s8 .l2 { left: 420px; top: 960px; transform: rotate(1deg); }
+.s8 .d1 { left: 1130px; top: 900px; transform: rotate(-1deg); } .s8 .d2 { left: 1420px; top: 912px; transform: rotate(1.4deg); }
+.s8 .d3 { left: 1250px; top: 984px; transform: rotate(-.6deg); }
+.s8 .or { left: 896px; top: 556px; z-index: 50; background: #F7F2E6; padding: 12px 14px; border-radius: 14px; box-shadow: 0 6px 12px rgba(38,33,25,.10); }
+.s8 .cam { left: 820px; top: 760px; width: 280px; height: 280px; }
+
+/* 10. Why events sell more. The whole slide is sage linen. The three reasons are three seed packets pinned in a
+   row (the seed catalogue's labels, a window with the real photo, "sow: day 1, harvest: day 3"), the face in the
+   hoop beside them. */
+.s10 .field { left: 0; top: 0; width: 1920px; height: 1080px; z-index: 0; }
+.s10 .ol { left: 112px; top: 92px; font-size: 112px; color: #FBF8F1; }
+.s10 .pk1 { left: 112px; top: 268px; transform: rotate(-2.4deg); }
+.s10 .pk2 { left: 486px; top: 300px; transform: rotate(1.6deg); }
+.s10 .pk3 { left: 860px; top: 262px; transform: rotate(-1.2deg); }
+.s10 .line { left: 118px; top: 906px; width: 1080px; font-size: 40px; color: #F3EEDF; }
+.s10 .cam { left: 1300px; top: 250px; width: 540px; height: 540px; }
+</style></head><body>
+
+<!-- 3 part title -->
+<section class="slide lt s3" id="s3-part" data-thread='[
+  {"k":"tack","x":742,"y":858,"s":20,"c":"red","tw":5}]'>
+  <div class="linen fray band" data-hem="#EFE8D6" data-hem-inset="34"></div>
+  <div class="a num" data-stitch="2" data-cell="22" data-px="18" data-color="#F3EEDF"></div>
+  <div data-edit class="a pre">part two</div>
+  <div data-edit class="a ol">The 3-day<br>event.</div>
+  <div class="cam" data-hoop><img src="art/sean-cam.jpg" alt=""></div>
+  <div class="prt page" data-thread='[{"k":"pin","x":34,"y":26,"a":120,"c":"rust"},{"k":"pin","x":622,"y":30,"a":60,"c":"gold"}]'>
+    <img src="art/real/launch-lab-registration-page.jpg" alt=""></div>
+  <img class="tkt" src="art/real/launch-lab-ticket.png" alt="">
+  <div class="src">Launch Lab, a 3-day live event, June 9-11 (from the After Harvest VSL)</div>
+  <div class="wl w1" data-tack="olive">Day 1 &middot; you teach</div>
+  <div class="wl w2" data-tack="olive">Day 2 &middot; you teach</div>
+  <div class="wl dk w3" data-tack="red">Day 3 &middot; cart opens</div>
+  <div data-edit class="a pre and">and we run it.</div>
+</section>
+
+<!-- 7 proof -->
+<section class="slide lt s7" id="s7-proof" data-thread='[
+  {"k":"lay","d":[[606,262],[760,330],[884,560],[932,795]],"c":"red","tw":4.5,"knot":true,"seed":2},
+  {"k":"pin","x":936,"y":798,"a":60,"c":"red"}]'>
+  <div class="a num" data-stitch="#1" data-cell="9" data-px="18" data-color="#A85A3C"></div>
+  <div class="side">proof</div>
+  <div class="prt p1" data-thread='[{"k":"loop","x":160,"y":154,"w":244,"h":52,"c":"red","tw":4.5,"seed":5},
+      {"k":"pin","x":30,"y":26,"a":125,"c":"rust"},{"k":"pin","x":520,"y":26,"a":55,"c":"gold"}]'>
+    <img src="art/real/jay-post.png" alt=""></div>
+  <div class="prt p2" data-sew="olive" data-sew-inset="7" data-thread='[{"k":"loop","x":262,"y":477,"w":372,"h":62,"c":"red","tw":4.5,"seed":9}]'>
+    <img src="art/real/jay-chat.png" alt=""></div>
+  <div class="src s1">x.com/jayclouse, 9:45 PM, 7/9/26</div>
+  <div class="src s2">our chat with Jay: 3:57 AM, then 8:47 AM</div>
+  <div class="prt lab" data-thread='[{"k":"pin","x":190,"y":22,"a":80,"c":"olive"}]'>
+    <img src="art/real/jay-the-lab-group.jpg" alt="">
+    <div class="cap">The Lab: Jay's membership, 200 members (his own page)</div></div>
+  <div data-edit class="a pre line">nine years in, and then this.</div>
+  <div class="cam" data-hoop><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- 8 which one sells -->
+<section class="slide lt s8" id="s8-which" data-thread='[
+  {"k":"run","d":[[960,330],[958,560],[960,748]],"c":"olive","tw":5,"len":26,"gap":14,"seed":4},
+  {"k":"tack","x":1622,"y":470,"s":18,"c":"red"}]'>
+  <div class="a right"></div>
+  <div data-edit class="a pre">same list, same offer.</div>
+  <div data-edit class="a mega">which one sells?</div>
+  <div data-edit class="a ol k1">a launch</div>
+  <div data-edit class="a sc k2">a 3-day event</div>
+  <div class="prt pa" data-thread='[{"k":"pin","x":300,"y":20,"a":95,"c":"cream"}]'>
+    <img src="art/real/stock-mail-24-unread.jpg" alt=""></div>
+  <img class="bird a" src="art/real/crow-pxhere-838519.png" alt="">
+  <div class="prt pb" data-sew="rust" data-sew-inset="7"><img src="art/real/jay-unreal-collective-zoom.jpg" alt=""></div>
+  <img class="tkt" src="art/real/launch-lab-ticket.png" alt="">
+  <div class="wl dk l1" data-tack="cream">a replay</div>
+  <div class="wl dk l2" data-tack="cream">cart closes Friday</div>
+  <div class="wl sage d1" data-tack="cream">Day 1 &middot; live</div>
+  <div class="wl sage d2" data-tack="cream">Day 2 &middot; live</div>
+  <div class="wl d3" data-tack="red">Day 3 &middot; the offer</div>
+  <div class="a or" data-stitch="or" data-cell="7" data-px="18" data-color="#A85A3C"></div>
+  <div class="cam" data-hoop><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+
+<!-- 10 why events sell more -->
+<section class="slide lt s10" id="s10-list" data-thread='[
+  {"k":"lay","d":[[-20,232],[140,266],[288,258],[476,300],[670,292],[856,286],[1040,252],[1180,282],[1290,318]],"c":"red","tw":4,"knot":false,"seed":6}]'>
+  <div class="linen a field"></div>
+  <div data-edit class="a ol">Why events sell more</div>
+  <div class="packet pk1" data-thread='[{"k":"pin","x":180,"y":12,"a":100,"c":"cream","tip":0}]'><div class="frame">
+    <div class="no"><span>No. 1</span><span>event seed</span></div>
+    <div class="nm">The date</div>
+    <img class="win" src="art/real/stock-calendar-thursday-31.jpg" alt="">
+    <div class="tx">People show up for a date.</div>
+    <div class="sm">A launch is always open. An event starts at 11.</div>
+    <div class="ft"><span>sow: day 1</span><span>harvest: day 3</span></div></div></div>
+  <div class="packet pk2" data-thread='[{"k":"pin","x":180,"y":12,"a":80,"c":"gold","tip":0}]'><div class="frame">
+    <div class="no"><span>No. 2</span><span>event seed</span></div>
+    <div class="nm">The room</div>
+    <img class="win" src="art/real/stock-whiteboard-teaching.jpg" alt="">
+    <div class="tx">They watch you teach, live.</div>
+    <div class="sm">Trust is built in the room, not in an email.</div>
+    <div class="ft"><span>sow: day 1</span><span>harvest: day 3</span></div></div></div>
+  <div class="packet pk3" data-thread='[{"k":"pin","x":180,"y":12,"a":100,"c":"rust","tip":0}]'><div class="frame">
+    <div class="no"><span>No. 3</span><span>event seed</span></div>
+    <div class="nm">The decision</div>
+    <img class="win" src="art/real/stock-buying-on-laptop.jpg" alt="">
+    <div class="tx">Three days earn one decision.</div>
+    <div class="sm">By day 3 the offer is the next step.</div>
+    <div class="ft"><span>sow: day 1</span><span>harvest: day 3</span></div></div></div>
+  <div data-edit class="a pre line">Same list, same offer. The date, the room and the three days do the selling.</div>
+  <div class="cam" data-hoop><img src="art/sean-cam.jpg" alt=""></div>
+</section>
+</body></html>
