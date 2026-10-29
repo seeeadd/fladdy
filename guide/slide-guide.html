@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Slides That Sell: the Fladdy slide guide</title>
+<style>
+@font-face { font-family: "Olivera"; src: url("../templates/youtube/fonts/Olivera-Demo.ttf"); }
+@font-face { font-family: "Olivera Oblique"; src: url("../templates/youtube/fonts/Olivera-Oblique-Demo.ttf"); }
+@font-face { font-family: "Literata"; src: url("../templates/youtube/fonts/Literata.ttf"); }
+@font-face { font-family: "Literata"; font-style: italic; src: url("../templates/youtube/fonts/Literata-Italic.ttf"); }
+@font-face { font-family: "Hanken"; src: url("../templates/youtube/fonts/HankenGrotesk-Variable.ttf"); font-weight: 100 900; }
+@font-face { font-family: "Plex Mono"; src: url("../templates/youtube/fonts/IBMPlexMono-Medium.ttf"); }
+:root { --paper:#FBF8F1; --card:#FFFEFA; --ink:#262119; --quiet:#6E6554; --rust:#B06A4A; --sage:#8A9068;
+  --cream:#F3EEDF; --olive:#6F7452; --line:#E2D9C6; }
+@page { size: A4; margin: 17mm 16mm 19mm 16mm; }
+html { background: var(--paper); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; font-family: "Hanken", system-ui, sans-serif; font-size: 10.2pt; line-height: 1.52; color: var(--ink); }
+.disp { font-family: "Olivera", "Literata", serif; -webkit-text-stroke: .022em currentColor; font-weight: 400; }
+.scr { font-family: "Olivera Oblique", "Literata", serif; -webkit-text-stroke: .02em currentColor; }
+.mono { font-family: "Plex Mono", monospace; }
+.lead { font-family: "Literata", serif; font-style: italic; color: var(--quiet); }
+h1, h2, h3 { margin: 0; font-weight: 400; }
+.part { break-before: page; }
+.part-head { border-bottom: 1.2px solid var(--ink); padding-bottom: 6mm; margin-bottom: 6mm; }
+.part-head .no { font-family: "Plex Mono"; font-size: 9pt; letter-spacing: .18em; color: var(--rust); text-transform: uppercase; }
+.part-head h1 { font-family: "Olivera", "Literata", serif; -webkit-text-stroke: .022em currentColor; font-size: 38pt; line-height: 1; margin-top: 3mm; }
+.part-head p { font-family: "Literata"; font-style: italic; color: var(--quiet); font-size: 12pt; margin: 3mm 0 0; max-width: 150mm; }
+h2 { font-family: "Hanken"; font-weight: 800; font-size: 15pt; letter-spacing: -.01em; margin: 8mm 0 3mm; break-after: avoid; }
+h2 .k { font-family: "Plex Mono"; font-weight: 400; font-size: 9pt; color: var(--rust); letter-spacing: .1em; margin-right: 3mm; }
+h3 { font-family: "Hanken"; font-weight: 750; font-size: 11pt; margin: 0 0 1.5mm; }
+p { margin: 0 0 2.6mm; }
+.small { font-size: 8.8pt; color: var(--quiet); }
+.src { font-family: "Plex Mono"; font-size: 8pt; color: var(--quiet); }
+.t { font-family: "Plex Mono"; font-size: 8.4pt; color: var(--rust); white-space: nowrap; }
+.rule { break-inside: avoid; border-top: 1px solid var(--line); padding: 3.4mm 0 2.6mm; display: grid; grid-template-columns: 13mm 1fr; column-gap: 3mm; }
+.rule .n { font-family: "Plex Mono"; font-size: 9pt; color: var(--rust); padding-top: .6mm; }
+.rule blockquote { margin: 1mm 0 2mm; font-family: "Literata"; font-style: italic; font-size: 10.4pt; color: #3A3329; }
+.rule .lab { font-family: "Plex Mono"; font-size: 7.6pt; letter-spacing: .12em; text-transform: uppercase; color: var(--quiet); margin-right: 1.5mm; }
+.rule .do { color: #4E5A2F; } .rule .dont { color: #8E3F2A; }
+.rule ul { margin: .5mm 0 1mm; padding-left: 4.5mm; } .rule li { margin: .3mm 0; }
+.callout { background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--rust); padding: 3.5mm 4.5mm; margin: 4mm 0; break-inside: avoid; }
+.callout.sage { border-left-color: var(--sage); }
+.callout h3 { margin-bottom: 1mm; }
+table { width: 100%; border-collapse: collapse; margin: 2mm 0 4mm; font-size: 8.9pt; line-height: 1.38; }
+th { text-align: left; font-family: "Plex Mono"; font-weight: 400; font-size: 7.6pt; letter-spacing: .1em; text-transform: uppercase; color: var(--quiet); border-bottom: 1.2px solid var(--ink); padding: 1.6mm 2mm 1.4mm 0; }
+td { vertical-align: top; border-bottom: 1px solid var(--line); padding: 1.8mm 2mm 1.8mm 0; }
+tr { break-inside: avoid; }
+.fig { break-inside: avoid; margin: 3mm 0 4mm; }
+.fig img { display: block; width: 100%; border: 1px solid var(--line); }
+.fig .cap { font-size: 8.4pt; color: var(--quiet); margin-top: 1.5mm; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+.three { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; }
+.swatch { break-inside: avoid; }
+.swatch .chip { height: 16mm; border: 1px solid rgba(0,0,0,.08); }
+.swatch b { display: block; margin-top: 1.5mm; font-size: 9.4pt; }
+.swatch span { font-family: "Plex Mono"; font-size: 8pt; color: var(--quiet); }
+.props { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 5mm; margin: 3mm 0; }
+.props figure { margin: 0; text-align: center; }
+.props img { display: block; height: 22mm; margin: 0 auto; }
+.props figcaption { font-family: "Plex Mono"; font-size: 7.2pt; color: var(--quiet); margin-top: 1mm; }
+.layout { break-inside: avoid; display: grid; grid-template-columns: 74mm 1fr; gap: 5mm; border-top: 1px solid var(--line); padding: 4mm 0; }
+.layout img { width: 100%; border: 1px solid var(--line); display: block; }
+.layout h3 { font-size: 11.5pt; }
+.layout .meta { font-family: "Plex Mono"; font-size: 8pt; color: var(--rust); margin-bottom: 1.5mm; }
+ol.steps { padding-left: 6mm; } ol.steps > li { margin-bottom: 2.4mm; }
+ul.check { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 8mm; }
+ul.check li { break-inside: avoid; padding: 1.2mm 0 1.2mm 6mm; position: relative; border-bottom: 1px solid var(--line); font-size: 9.2pt; }
+ul.check li::before { content: ""; position: absolute; left: 0; top: 2.4mm; width: 3mm; height: 3mm; border: 1.2px solid var(--ink); }
+.card { break-inside: avoid; background: var(--card); border: 1px solid var(--line); padding: 4mm 5mm; font-family: "Plex Mono"; font-size: 8.6pt; line-height: 1.6; white-space: pre-wrap; margin: 3mm 0 5mm; }
+.toc { columns: 1; font-size: 9.8pt; }
+.toc div { display: flex; gap: 4mm; padding: 1mm 0; border-bottom: 1px solid var(--line); }
+.toc .k { font-family: "Plex Mono"; color: var(--rust); width: 14mm; font-size: 9pt; padding-top: .5mm; }
+.toc .d { color: var(--quiet); font-size: 9pt; margin-left: auto; text-align: right; max-width: 95mm; }
+/* cover */
+.cover { height: 258mm; position: relative; }
+.cover .kicker { font-family: "Plex Mono"; font-size: 9pt; letter-spacing: .2em; color: var(--rust); text-transform: uppercase; }
+.cover h1 { font-family: "Olivera", serif; -webkit-text-stroke: .022em currentColor; font-size: 66pt; line-height: .95; margin: 6mm 0 0; }
+.cover h1 i { font-family: "Olivera Oblique", serif; font-style: normal; color: var(--rust); }
+.cover .sub { font-family: "Literata"; font-style: italic; font-size: 14pt; color: var(--quiet); margin-top: 6mm; max-width: 140mm; }
+.cover .shot { position: absolute; left: 0; right: 0; top: 112mm; }
+.cover .shot img { width: 100%; border: 1px solid var(--line); box-shadow: 0 6mm 10mm rgba(38,33,25,.12); }
+.cover .crow { position: absolute; right: -2mm; top: 82mm; height: 46mm; }
+.cover .foot { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; font-family: "Plex Mono"; font-size: 8.4pt; color: var(--quiet); border-top: 1px solid var(--ink); padding-top: 3mm; }
+.q { font-family: "Literata"; font-style: italic; }
+</style></head><body>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="kicker">After Harvest · Fladdy</div>
+  <h1>Slides that <i>sell</i></h1>
+  <div class="sub">The slide guide: Jason Fladlien's method, our look, and how to build every slide, step by step.</div>
+  <img class="crow" src="img/scarecrow-brown-coat.png" alt="">
+  <div class="shot"><img src="img/s1-title.jpg" alt=""></div>
+  <div class="foot"><span>Version 1 · 29 October 2026</span><span>github.com/seeeadd/fladdy · guide/</span></div>
+</section>
+
+<!-- HOW TO USE + CONTENTS -->
+<section class="part">
+  <div class="part-head"><div class="no">Start here</div><h1>How to use this guide</h1>
+    <p>Read it once, front to back. After that you only need part 4 (the process) and part 5 (the checklists) open while you work.</p></div>
+
+  <p>This guide is for anyone who makes slides for After Harvest: the YouTube videos, the VSL, webinar decks and the
+  Day 1-3 decks we build for clients. It puts three things in one place:</p>
+  <ul>
+    <li><b>The method</b> (part 1): how Jason Fladlien designs slides that sell, rule by rule, in his own words, each
+      with the minute and second in his video so you can watch him say it.</li>
+    <li><b>Our look</b> (parts 2 and 3): the After Harvest brand kit and the eleven slide layouts that Sean approved as the
+      base (the light set).</li>
+    <li><b>The work</b> (parts 4 to 7): the step-by-step process, the checklists, the audit of our current slides against
+      Jason's method, and the decisions that are still Sean's to make.</li>
+  </ul>
+
+  <div class="callout"><h3>Three things to remember if you remember nothing else</h3>
+    <p>1. Ask <span class="q">"How do we show this?"</span> of every line, and answer with a real thing: a screenshot, a
+    receipt, a real photo <span class="t">[37:09]</span>.</p>
+    <p>2. The most important words are the biggest. Titles, names, numbers and prices usually are not
+    <span class="t">[1:55]</span>.</p>
+    <p style="margin:0">3. Slides are free. One idea per slide, each part appearing as it is said
+    <span class="t">[6:09, 21:18]</span>.</p></div>
+
+  <h2>Where the rules come from, and which one wins</h2>
+  <p>Jason's rules come from his video <i>How to Design Webinar Slides (Nobody Does This Right)</i> (43 min,
+  youtube.com/watch?v=rAwgv2hThVw), torn down line by line in the repo. Timestamps like <span class="t">[24:35]</span>
+  point into that video. A few rules come from his other three videos and are marked with the video's name. Sean's
+  rulings (in his words, dated) sit in <span class="mono">rulings.md</span>.</p>
+  <p><b>When they disagree, Sean's ruling wins</b> until he decides otherwise. Every disagreement is listed in part 7.</p>
+
+  <h2>Contents</h2>
+  <div class="toc">
+    <div><span class="k">Part 1</span>The method: Jason Fladlien's rules for slides<span class="d">34 rules in seven groups</span></div>
+    <div><span class="k">Part 2</span>Our look: the After Harvest brand kit<span class="d">colour, type, the face, real pictures, props, marks, never</span></div>
+    <div><span class="k">Part 3</span>The layouts<span class="d">the eleven approved slides, and the six still to make</span></div>
+    <div><span class="k">Part 4</span>The process<span class="d">from a script line to a finished slide, ten steps</span></div>
+    <div><span class="k">Part 5</span>Checklists<span class="d">per slide, per deck, before it goes to Sean</span></div>
+    <div><span class="k">Part 6</span>Audit of the current slides<span class="d">the light set against Jason's method</span></div>
+    <div><span class="k">Part 7</span>Decisions for Sean<span class="d">where Jason and our look disagree</span></div>
+  </div>
+</section>
+
+<!-- PART 1 -->
+<section class="part">
+  <div class="part-head"><div class="no">Part 1</div><h1>The method</h1>
+    <p>Jason Fladlien has designed "32 PowerPoint presentations that have generated over seven figures a piece"
+    <span class="t">[0:00]</span>. In this video he redesigns nine of his followers' decks, before and after. These are his rules.</p></div>
+
+  <p>His whole argument in one line: designers <span class="q">"go for form and not function. See, you'll get something
+  that looks really nice, but will also crush your conversions"</span> <span class="t">[0:18]</span>. Every rule below is
+  about function: what is biggest, what is real, and what appears when.</p>
+
+  <h2><span class="k">1.1</span>The mindset</h2>
+
+  <div class="rule"><div class="n">R1</div><div><h3>Design to persuade, not to decorate</h3>
+    <blockquote>"These are design principles that are functional. They're made to persuade. They augment the information
+    and the education that you're using to have the transformation occur." <span class="t">[42:18]</span></blockquote>
+    <p><span class="lab">What it means</span>A slide exists to move the viewer one step closer to a belief. Anything on
+    it either helps that or gets in the way.</p>
+    <p><span class="lab">In Fladdy</span>Before you design, write the belief the slide must leave (part 4, step 2). Judge
+    the finished slide against that belief, not against how nice it looks.</p></div></div>
+
+  <div class="rule"><div class="n">R2</div><div><h3>Too pretty can cost trust</h3>
+    <blockquote>"If you look too professional on the designs, you're less trustworthy on the webinar ... It's better to
+    look ugly with design than it is to look pretty because they'll get distracted by the glitz and the glamour and
+    they'll also trust you less." <span class="t">[15:46-16:12]</span></blockquote>
+    <p><span class="lab">What it means</span>"You are not selling design to designers." Glossy, agency-style slides read
+    as marketing.</p>
+    <p><span class="lab">In Fladdy</span>Sean's ruling is "nicely made, not messy", so we do not go ugly. We keep the
+    spirit: crafted, but warm and real, never slick (no gradients, glows, neon, stock models). See part 7, question 1.</p></div></div>
+
+  <div class="rule"><div class="n">R3</div><div><h3>Functional beats cool, and pretty has a price</h3>
+    <blockquote>"This looks cool but it's not functional. This looks less cool but it is way more functional and it's
+    also easier to design." <span class="t">[12:45]</span> "Making it look pretty like this takes like 10 more minutes or 30
+    more minutes per slide." <span class="t">[36:47-37:06]</span></blockquote>
+    <p><span class="lab">In Fladdy</span>Spend design time where it moves the belief: the mechanism slide, the proof, the
+    reveal. A plain list is fine for a plain point.</p></div></div>
+
+  <div class="rule"><div class="n">R4</div><div><h3>They came for the information</h3>
+    <blockquote>"When people are on webinars, they care about information. They don't care about design."
+    <span class="t">[40:15]</span></blockquote>
+    <p><span class="lab">In Fladdy</span>If a design choice makes the information slower to read, the information wins.</p></div></div>
+
+  <h2><span class="k">1.2</span>Show, don't tell</h2>
+
+  <div class="rule"><div class="n">R5</div><div><h3>Ask "How do we show this?" of every slide</h3>
+    <blockquote>"'How do we show this?' This is always the question I ask myself when I design slides."
+    <span class="t">[37:09]</span></blockquote>
+    <p><span class="lab">What it means</span>For "12 weekly live build sessions every single Wednesday" he did not write
+    the sentence. He drew the weeks, the days, and the 12 sessions popping into the calendar, then the calendar
+    "getting filled with more more more value" <span class="t">[37:09-37:31]</span>.</p>
+    <p><span class="lab">In Fladdy</span>Every slide spec has a "how do we show this" line (part 4). For After Harvest
+    the answers are usually things we already have: a lead's real landing page, a dream page, the revenue calculator,
+    a real email, a real registrant number, a real chat.</p></div></div>
+
+  <div class="rule"><div class="n">R6</div><div><h3>Show the thing itself</h3>
+    <blockquote>"I didn't say you post. I showed the post from LinkedIn." <span class="t">[17:35]</span> "We use words too
+    much and we use visuals too little." <span class="t">[4:19]</span></blockquote>
+    <p><span class="lab">Do</span>Show the post, the inbox, the page, the receipt. <span class="lab dont">Don't</span>Write
+    "you post on LinkedIn" over an icon.</p></div></div>
+
+  <div class="rule"><div class="n">R7</div><div><h3>Real proof first; stock last; AI almost never</h3>
+    <blockquote>"I do not like AI for design hardly at all. But there's a couple instances where it's okay"
+    <span class="t">[7:22]</span> ... "We only go to stock when we really don't have anything else."
+    <span class="t">[9:07]</span></blockquote>
+    <p><span class="lab">What it means</span>For Marvin's story he wanted the real photos of him in the seminar rooms,
+    the real receipts ("the amounts of money that he paid because this will become a price anchor later"
+    <span class="t">[8:16-8:29]</span>), the real houses before and after. AI was allowed only to fill a missing real
+    photo or to animate a real document <span class="t">[7:29-7:46, 10:07]</span>.</p>
+    <p><span class="lab">In Fladdy</span>Order of choice: our own real thing, then a real thing from the person we are
+    talking about (their page, their post), then a licensed stock photo marked as a placeholder (file name starts
+    <span class="mono">stock-</span>), which gets replaced before the video ships.</p></div></div>
+
+  <div class="rule"><div class="n">R8</div><div><h3>Screenshot the reality, and show the source</h3>
+    <blockquote>"We want to show it in the real world visually as much as possible. Not metaphorically, not conceptually,
+    not with AI generated images. Screenshots are your best friend on a webinar." <span class="t">[20:05-20:17]</span>
+    "I go to the actual source and I screenshot it. I still put the source underneath of it. I highlight the key part."
+    <span class="t">[20:43-20:50]</span></blockquote>
+    <p><span class="lab">How</span></p>
+    <ul><li>Do the real search or open the real page; screenshot the pieces.</li>
+      <li>Remove the noise (sidebars, browser chrome); combine pieces on one slide if needed <span class="t">[19:36-19:43]</span>.</li>
+      <li>Put the source line under it: where it is from and the date.</li>
+      <li>Highlight only the key line.</li></ul></div></div>
+
+  <div class="rule"><div class="n">R9</div><div><h3>Make numbers countable</h3>
+    <blockquote>"People don't understand numbers very well ... if I tell you think of 30, you have trouble thinking of it."
+    <span class="t">[9:39]</span></blockquote>
+    <p><span class="lab">What it means</span>30 houses lost became 30 house emojis, or "a house a day for 30 days" on a
+    calendar <span class="t">[9:58]</span>; 350 build hours became 350 clocks <span class="t">[35:42]</span>; 100 viewers
+    became a grid of 100 faces <span class="t">[18:42]</span>. A changed number can be shown on the real document: the 8 of
+    a credit score 820 crossed out, a 5 written in <span class="t">[10:15]</span>.</p>
+    <p><span class="lab">In Fladdy</span>Registrants, buyers, days and years are all countable. "Nine years" is nine
+    crossed-off calendars before the one launch.</p></div></div>
+
+  <div class="rule"><div class="n">R10</div><div><h3>Carry a metaphor all the way, or drop it</h3>
+    <blockquote>"If we're going to use the metaphor of the hamster wheel, then visually we have to stay consistent with
+    it." <span class="t">[16:20]</span> "He's using the word levels, but he's not showing it in levels."
+    <span class="t">[24:19]</span> "I don't think we need a metaphor at all." <span class="t">[32:08]</span></blockquote>
+    <p><span class="lab">In Fladdy</span>The harvest is our brand metaphor. Where it fits the point (sow on Day 1,
+    harvest on Day 3), carry it fully. Where it does not, show the real thing instead. Never mix two metaphors on
+    one slide.</p></div></div>
+
+  <div class="rule"><div class="n">R11</div><div><h3>Storyboard: extend the same visuals across slides</h3>
+    <blockquote>"You can do so much with arrows and screenshots that it's insane." <span class="t">[18:54]</span></blockquote>
+    <p><span class="lab">What it means</span>Andrew's LinkedIn post became "RIP" after 6 hours, then seven posts for
+    seven days each to RIP, then calendars and a hundred people <span class="t">[16:52-18:42]</span>. The same pictures
+    return and change, so the slides tell one story.</p>
+    <p><span class="lab">In Fladdy</span>The Launch Lab ticket, the Jay chat and the three days should each return and
+    change rather than appear once.</p></div></div>
+
+  <h2><span class="k">1.3</span>Hierarchy and type</h2>
+
+  <div class="rule"><div class="n">R12</div><div><h3>Never make the least important thing the biggest</h3>
+    <blockquote>"They make the least important thing the biggest thing and therefore the center and focus of attention
+    when it should be the other way around." <span class="t">[1:55]</span> "You've been taught wrong about PowerPoint your
+    whole life." <span class="t">[13:09]</span></blockquote>
+    <p><span class="lab">Usually least important</span>the title <span class="t">[13:18]</span>, the presenter's name
+    ("they already know who he is" <span class="t">[11:31]</span>), the system's name <span class="t">[23:42]</span>,
+    numbers ("Why we like to make numbers the biggest thing on our slide? I will never understand"
+    <span class="t">[35:13]</span>), step numbers <span class="t">[33:24]</span>, the price <span class="t">[41:22]</span>.</p>
+    <p><span class="lab">In Fladdy</span>Ask: which words carry the belief? Those are the biggest. A section title
+    like "step 3:" goes small top left.</p></div></div>
+
+  <div class="rule"><div class="n">R13</div><div><h3>Titles tell the story, in active voice</h3>
+    <blockquote>"You want to tell a story with the titles as much as possible." <span class="t">[22:52]</span></blockquote>
+    <p><span class="lab">What it means</span>Alex's label became a question: "If you know what to do, why doesn't it
+    stick?" "This progresses the story in an active voice" <span class="t">[26:05-26:16]</span>.</p>
+    <p><span class="lab">Do</span>"Same list. Why does the event sell more?" <span class="lab dont">Don't</span>"Why events
+    sell more".</p></div></div>
+
+  <div class="rule"><div class="n">R14</div><div><h3>Read top to bottom</h3>
+    <blockquote>"We should not design things to go from left to right when it comes to list and bullet points and such.
+    We should design them from go from top to bottom." <span class="t">[1:26]</span></blockquote>
+    <p>Side by side is fine only for a true sequence of events <span class="t">[32:52]</span>. No sideways text, no ladders
+    that read bottom up <span class="t">[32:12]</span>.</p></div></div>
+
+  <div class="rule"><div class="n">R15</div><div><h3>Two colours</h3>
+    <blockquote>"This is a great way to keep design simple but make the important information that you want to convey
+    stand out." <span class="t">[7:06]</span></blockquote>
+    <p>The key piece is bolder, a little bigger, and in the second colour <span class="t">[10:44]</span>. Colours may
+    separate the steps of a process <span class="t">[33:37]</span>.</p>
+    <p><span class="lab">In Fladdy</span>Ink plus rust. Sage is a ground (a band or a field), not a second accent.
+    The props keep their own colours but stay small and at the edges.</p></div></div>
+
+  <div class="rule"><div class="n">R16</div><div><h3>Design inside one sentence</h3>
+    <blockquote>"Even though it's one sentence, I'm making it as easy as possible for the audience to take in."
+    <span class="t">[7:55-8:06]</span></blockquote>
+    <p>The less important half of a line goes smaller, same font, maybe a lighter weight.</p></div></div>
+
+  <div class="rule"><div class="n">R17</div><div><h3>One font, a few faces</h3>
+    <blockquote>"Just one font. Couple different faces. So there's bold, there's semibold, and then there's normal. And
+    then that's it." <span class="t">[33:10]</span> Italics: "I tend to not use them." <span class="t">[13:35]</span></blockquote>
+    <p><span class="lab">In Fladdy</span>Sean's ruling gives us three type voices (part 2.3). House rule: at most two
+    voices on one slide, plus the small source line. See part 7.</p></div></div>
+
+  <div class="rule"><div class="n">R18</div><div><h3>Bigger fonts</h3>
+    <blockquote>"Bigger fonts are better than smaller fonts functionally. Design-wise, they don't look as nice."
+    <span class="t">[14:02]</span> The best buyers are "30, 40, 50 plus" with worse eyesight, "including me"
+    <span class="t">[14:17-14:33]</span>.</blockquote>
+    <p><span class="lab">In Fladdy</span>At 1920 x 1080: headline 112-176px, the key line 56px or more, a supporting line
+    40px or more, source lines 18-20px. YouTube is watched on phones.</p></div></div>
+
+  <div class="rule"><div class="n">R19</div><div><h3>No abbreviations, no numbering you can count</h3>
+    <p>"I would not make it sig speech because they don't know what sig necessarily is" <span class="t">[40:45]</span>. No
+    numbering when "you can count three" <span class="t">[28:10]</span>; step numbers stay tiny <span class="t">[33:32]</span>.</p></div></div>
+
+  <h2><span class="k">1.4</span>Cut what does not persuade</h2>
+
+  <div class="rule"><div class="n">R20</div><div><h3>Minimalism: remove what does not persuade</h3>
+    <blockquote>Elements that "don't add to the persuasive capabilities and so therefore they detract."
+    <span class="t">[5:34-5:52]</span></blockquote>
+    <p><span class="lab">What he removes</span>decorative swooshes and logos, stock photos, taglines (keep one on the
+    title slide at most), the presenter's name, highlighter graphics, icons, glows, background images, "level" labels,
+    step numbers, the presenter's photo on the CTA, extra calls to action <span class="t">[5:37-41:34]</span>.</p>
+    <p><span class="lab">In Fladdy</span>Our props are a deliberate exception (Sean wants slides full and a little
+    playful). The limit: two props a slide, at the edges, never near the key words, and each should mean something.</p></div></div>
+
+  <div class="rule"><div class="n">R21</div><div><h3>Noise only as overwhelming proof</h3>
+    <blockquote>"If I'm going to use a lot of noise on a slide, which I tend to avoid, it's going to be overwhelming
+    proof." <span class="t">[27:57]</span></blockquote>
+    <p>A wall of before-and-after photos or results is the one place where a crowded slide is right.</p></div></div>
+
+  <div class="rule"><div class="n">R22</div><div><h3>Elaborate designs trap you</h3>
+    <blockquote>"If you have a very elaborate design, you have to stay within the containment of that design."
+    <span class="t">[33:47]</span></blockquote>
+    <p>A step slide reuses the mechanism slide's own element instead of a new decoration <span class="t">[34:25]</span>.</p></div></div>
+
+  <div class="rule"><div class="n">R23</div><div><h3>Type over a photo, done right</h3>
+    <p>Nothing key in the photo behind the words; put a black box over it at lowered opacity so the image "peaks
+    through" and the type lives on top <span class="t">[39:22-40:01]</span>.</p></div></div>
+
+  <h2><span class="k">1.5</span>Many slides, built in order</h2>
+
+  <div class="rule"><div class="n">R24</div><div><h3>Slides are free</h3>
+    <blockquote>"I don't use just one slide to tell a story. Slides are free. So, we should use as many of them as we
+    possibly can." <span class="t">[6:05-6:09]</span></blockquote>
+    <p>Marvin's one bio slide became eight, one line each <span class="t">[6:45]</span>. The exception: keep two things
+    on one slide when splitting would break the context ("Two words, two dollar figures, one slide"
+    <span class="t">[28:57-29:28]</span>).</p></div></div>
+
+  <div class="rule"><div class="n">R25</div><div><h3>Motion every six seconds</h3>
+    <blockquote>"My average webinar presentation is about 500 slides ... Typically you see motion on my designs every six
+    seconds." <span class="t">[28:44-28:52]</span></blockquote>
+    <p><span class="lab">In Fladdy</span>In a teaching stretch, something new appears every 5-10 seconds: a new slide, a
+    new line, a highlight that moves.</p></div></div>
+
+  <div class="rule"><div class="n">R26</div><div><h3>Functional animation: one thing at a time, as it is said</h3>
+    <blockquote>"The beauty of animation isn't because it looks cool. It's because it can focus the attention on the
+    information sequentially." <span class="t">[21:18]</span></blockquote>
+    <p>Bullet one appears, then two, then three <span class="t">[12:14]</span>. If the whole list must stay up, "animate the
+    highlight behind it" instead <span class="t">[12:10]</span>.</p></div></div>
+
+  <div class="rule"><div class="n">R27</div><div><h3>Tables, and the dramatic reveal</h3>
+    <blockquote>"Tables are great at communicating information, especially when you animate them." <span class="t">[29:59]</span>
+    "You can lay new information on top of old information. And this is really like a dramatic reveal." <span class="t">[31:38]</span></blockquote>
+    <p><span class="lab">The reveal, step by step</span>duplicate the slide; remove what you no longer need; put a 100%
+    solid white box over what should fade; bring its opacity to about 80%; lay the new line on top
+    <span class="t">[31:00-31:48]</span>.</p>
+    <p><span class="lab">In Fladdy</span>Our revenue calculator is made for this: list, registrants, show-up, buyers,
+    built row by row, then the "+$XK" revealed over the faded table.</p></div></div>
+
+  <div class="rule"><div class="n">R28</div><div><h3>Compare in threes</h3>
+    <blockquote>"For some reason people pick up on three. I think two is a coincidence, but three is a pattern."
+    <span class="t">[38:45-38:53]</span></blockquote></div></div>
+
+  <div class="rule"><div class="n">R29</div><div><h3>Emojis as type</h3>
+    <blockquote>"I use a lot of emojis these days for design, not because they're cute, but because they're functional."
+    <span class="t">[38:16]</span></blockquote>
+    <p>Copy, paste, set the size like a letter (24, 36, 48, 72 points). For us this is open: emojis, or our own stitch
+    icons for counts (part 7).</p></div></div>
+
+  <h2><span class="k">1.6</span>Slides that come back</h2>
+
+  <div class="rule"><div class="n">R30</div><div><h3>Three exposures</h3>
+    <blockquote>"The first time somebody sees it, they're likely to forget it ... Seeing it in three different ways from
+    three different angles and three different perspectives massively increases the buyin." <span class="t">[3:37-3:58]</span></blockquote>
+    <p>Show a key slide as a setup in the intro, again in the teaching, and a third time in the recap ("so far today
+    we've discussed").</p></div></div>
+
+  <div class="rule"><div class="n">R31</div><div><h3>The intro tease: a slide inside a slide</h3>
+    <blockquote>"So much of what you can do in the introduction to tease an audience is to just literally show a slide
+    inside of a slide." <span class="t">[2:58]</span></blockquote>
+    <p>Screenshot the later slides that teach each promised point, "very visual at a glance", one per slide under a small
+    title <span class="t">[3:24]</span>. End on a wall of every slide that fits, the last row cut off at the bottom
+    <span class="t">[4:07-4:38]</span>.</p></div></div>
+
+  <div class="rule"><div class="n">R32</div><div><h3>The mechanism slide, and how it runs live</h3>
+    <blockquote>"From a content perspective, these are the most important slides that you can have and I spend a lot of
+    time designing on them because I'm going to be using them over and over again." <span class="t">[23:04]</span></blockquote>
+    <p><span class="lab">How it looks</span>the name very small and off-centre <span class="t">[23:45]</span>, small arrows,
+    no "level 1, level 2", a short tagline under each step, built to be "flexible and easy to adjust" <span class="t">[24:31]</span>.</p>
+    <p><span class="lab">How it runs</span></p>
+    <ol class="steps"><li>The first point is the biggest.</li>
+      <li>When it is done, tick it and make it smaller.</li>
+      <li>The next point becomes the biggest; the one after is "a little opaque" as a tease.</li>
+      <li>A coloured arrow points to where we are: "So now they always know where they're at. They always know where
+        they're going" <span class="t">[24:35-25:00]</span>.</li></ol>
+    <p><span class="lab">In Fladdy</span>Our mechanism is the 3-day event: Day 1 you teach, Day 2 you teach, Day 3 the
+    cart opens, and we run it. It deserves the most design time of any slide, and it comes back in every section.</p></div></div>
+
+  <div class="rule"><div class="n">R33</div><div><h3>Two speeds for a crowded bullet slide</h3>
+    <p><span class="lab">Under a deadline</span>small title, regular bullets, bold lead-in words, no italics.
+    <span class="lab">Advanced</span>one point per slide, large in the centre; the finished points stack small at the top
+    left, ticked, "so you can know which one you are on" <span class="t">[13:43-15:22]</span>.</p></div></div>
+
+  <h2><span class="k">1.7</span>The call to action slide</h2>
+  <div class="rule"><div class="n">R34</div><div><h3>"My favorite slide ... Everybody should have it"</h3>
+    <blockquote>"You see all of what you get over here. You see the value stack. You see the total. The total is big. This
+    font is bigger than the investment font. This is the most important information which it's countdown to being
+    unavailable. And then the call to action is impossible to miss. You see it at the bottom. It's in yellow. It's got a
+    blue font because people are used to clicking through on blue links like that." <span class="t">[41:47-42:14]</span></blockquote>
+    <div class="card">Everything you get:                    Only available for: [countdown, never covered]
+[item] ............ [value]           [guarantee]
+[item] ............ [value]
+Total value  [$X]   (big)             Your investment: [price, smaller]
+[ one full-width bar:   Get started now ->   theurl.com (link blue) ]</div>
+    <p>One call to action only <span class="t">[41:34]</span>; no presenter photo ("He's big. We don't need him"
+    <span class="t">[41:10]</span>); questions answered live, not in a box <span class="t">[41:39]</span>; the price not giant,
+    because "$10,000 in a giant font seems more expensive than $10,000 in a smaller font" <span class="t">[41:22]</span>.</p>
+    <p><span class="lab">In Fladdy</span>On YouTube there is no price: the stack is what is in the free event plan, and
+    the bar is theafterharvest.com. On a client's Day 3 deck this is the checkout slide exactly as he lays it out.</p></div></div>
+
+  <h2><span class="k">1.8</span>From his other three videos</h2>
+  <table style="font-size:8.4pt">
+    <tr><th style="width:42%">device</th><th>where</th></tr>
+    <tr><td>A printed sheet shot from above, his hand in frame, instead of a slide</td><td>The New Webinar 0:59</td></tr>
+    <tr><td>A table that grows or returns (old vs new, the covered rows highlighted); a from/to chart gaining a row per point, the finished chart as the recap</td><td>The New Webinar 6:35; The New Way to Sell 2:38-12:26</td></tr>
+    <tr><td>The turn as two-tone type ("all is not / lost"); the anti-pitch as a struck-through list</td><td>AI is mostly Bullshit 0:29, 0:39</td></tr>
+    <tr><td>A real list with the current row lit as he names it; one big total over its working; a report card, a grade per option ("C+ MVP")</td><td>AI is mostly Bullshit 10:34-16:32</td></tr>
+    <tr><td>On YouTube: teach first, sell soft and throughout, more than one kind of call to action, no invented scarcity</td><td>The New Webinar 7:18-11:08</td></tr>
+  </table>
+</section>
+
+<!-- PART 2 -->
+<section class="part">
+  <div class="part-head"><div class="no">Part 2</div><h1>Our look</h1>
+    <p>The After Harvest brand kit for slides. Everything here is in the brand kit folder (see the last page).</p></div>
+
+  <h2><span class="k">2.1</span>Sean's standards, in his words</h2>
+  <table>
+    <tr><th style="width:24%">date</th><th style="width:44%">what he said</th><th>what it means for a slide</th></tr>
+    <tr><td>28 Oct 2026</td><td class="q">"too much like Claude... templateized... doesn't feel human-touched"</td><td>No templated stacks; every slide composed from its line</td></tr>
+    <tr><td>28 Oct 2026</td><td class="q">"It looks messy... It doesn't look nicely made"</td><td>Crafted, clean, wide margins; a tilt reads human, disorder reads unfinished</td></tr>
+    <tr><td>28 Oct 2026</td><td class="q">"a little bit simpler and not overly after-harvest... just the foundations"</td><td>The YouTube look adapts to any topic</td></tr>
+    <tr><td>28 Oct 2026</td><td class="q">"we're using a grotesque on our website ... body text and just use literata for a subheading"</td><td>Hanken Grotesk body, Literata subheads, Olivera headlines</td></tr>
+    <tr><td>29 Oct 2026</td><td class="q">"in my slides, there to be real pictures, real screenshots"</td><td>Every story or proof slide carries a real picture with its source</td></tr>
+    <tr><td>29 Oct 2026</td><td class="q">"I'm not a fan of putting tapes on the pictures. They're very generic"</td><td>Never tape stuck on a photo</td></tr>
+    <tr><td>29 Oct 2026</td><td class="q">"they look like a very bad recreation of Deya's"</td><td>Learn from Deya's tricks, never copy her layouts</td></tr>
+    <tr><td>29 Oct 2026</td><td class="q">"Let's just use HTML because you design better using HTML"</td><td>Slides are built in HTML; the light set is the base</td></tr>
+  </table>
+  <p class="small">The designer brief for the VSL (Canva, "VSL ASSETS UPDATE"): Deya's peg, "but in our brand ... not
+  girly ... a bit more neutral and connected to afterharvest branding", and "always add a space for Sean's facecard".</p>
+
+  <h2><span class="k">2.2</span>Colour</h2>
+  <div class="three">
+    <div class="swatch"><div class="chip" style="background:#FBF8F1"></div><b>Paper</b><span>#FBF8F1 · the ground</span></div>
+    <div class="swatch"><div class="chip" style="background:#262119"></div><b>Ink</b><span>#262119 · all main text</span></div>
+    <div class="swatch"><div class="chip" style="background:#B06A4A"></div><b>Rust</b><span>#B06A4A · THE accent</span></div>
+    <div class="swatch"><div class="chip" style="background:#8A9068"></div><b>Sage</b><span>#8A9068 · a band or a field</span></div>
+    <div class="swatch"><div class="chip" style="background:#6E6554"></div><b>Quiet</b><span>#6E6554 · lead-ins, sources</span></div>
+    <div class="swatch"><div class="chip" style="background:#F3EEDF"></div><b>Cream</b><span>#F3EEDF · type on sage or rust</span></div>
+    <div class="swatch"><div class="chip" style="background:#FFFEFA"></div><b>Card</b><span>#FFFEFA · prints, raised paper</span></div>
+    <div class="swatch"><div class="chip" style="background:#6F7452"></div><b>Olive</b><span>#6F7452 · hand marks</span></div>
+    <div class="swatch"><div class="chip" style="background:#C98A1E"></div><b>Stitch gold</b><span>#C98A1E · a stitched number</span></div>
+  </div>
+  <div class="callout"><h3>The colour rule</h3><p style="margin:0">Two colours per slide: ink, and rust on the one word or
+  line that matters (Jason R15). Sage is only ever a ground. A rust panel (#9A5A3F) can be a ground too. The spark yellow
+  (#E8A100) is for at most one tiny moment.</p></div>
+
+  <h2><span class="k">2.3</span>Type</h2>
+  <table>
+    <tr><th style="width:26%">voice</th><th style="width:38%">sample</th><th>use</th></tr>
+    <tr><td>Olivera (demo)</td><td><span class="disp" style="font-size:22pt">The 3-day event</span></td><td>headlines; thickened with a 0.022em stroke. The demo has no punctuation: a Literata glyph stands in</td></tr>
+    <tr><td>Olivera Oblique</td><td><span class="scr" style="font-size:22pt;color:#B06A4A">for 3-day events</span></td><td>the script line or word in a headline</td></tr>
+    <tr><td>Literata italic</td><td><span class="lead" style="font-size:14pt">why creators are</span></td><td>the small lead-in above a headline, sentence case</td></tr>
+    <tr><td>Hanken Grotesk 900</td><td><span style="font-weight:900;font-size:18pt;letter-spacing:-.02em">WHICH ONE SELLS?</span></td><td>the shout; bold lines</td></tr>
+    <tr><td>IBM Plex Mono</td><td><span class="mono" style="font-size:10pt">theafterharvest.com</span></td><td>typewriter lines, labels, source lines</td></tr>
+  </table>
+  <div class="callout sage"><h3>The type rules</h3>
+    <p>At most two voices per slide, plus the source line. Sizes at 1920 x 1080: headline 112-176px, key line 56px+,
+    supporting line 40px+, source 18-20px. Headlines are broken by hand, never by the browser. Sentence case. No em
+    dashes in our copy.</p></div>
+
+  <h2><span class="k">2.4</span>The face</h2>
+  <div class="two"><div>
+    <p>Sean's face cam is part of every slide, the way Deya's is: a big circle (or a rounded box), roughly a third of the
+    frame, placed by the composition, not in a fixed corner. Things can touch it (the scarecrow stands beside it, a prop
+    tucks behind it, a hat sits on it on a story slide), but nothing covers the key words, and the face never covers the
+    highlight.</p>
+    <p>In the HTML the circle holds a placeholder photo (<span class="mono">sean-cam.jpg</span>); in the edit, the live
+    camera replaces it.</p>
+  </div><div class="fig"><img src="img/s4-the-problem.jpg" alt=""><div class="cap">The face as a rounded box on a rust
+  panel, the stitched scarecrow standing beside it (s4).</div></div></div>
+
+  <h2><span class="k">2.5</span>Real pictures</h2>
+  <p><b>Best first:</b> our own (the VSL Figma file holds many: the Launch Lab page and ticket, Jay's post and our chat
+  with him, The Lab photos), then the real thing from the person we talk about, then licensed stock as a marked
+  placeholder (<span class="mono">stock-*</span>), replaced before shipping.</p>
+  <ul>
+    <li>Shown as a print: a thin white border and a real shadow, tilted 2-6 degrees, overlapping a little.</li>
+    <li><b>Never tape.</b> Pin it, let it sit on the page, or let it run off the edge.</li>
+    <li>One line of source under it, in Plex Mono: where it is from and the date ("x.com/jayclouse, 9:45 PM, 7/9/26").</li>
+    <li>The key line highlighted, and only that line.</li>
+    <li>Never retype a screenshot as boxes or fake a UI. A small source image is upscaled once and shown no bigger than it reads.</li>
+  </ul>
+  <div class="two">
+    <div class="fig"><img style="width:auto;max-height:78mm" src="img/real-jay-post.png" alt=""><div class="cap">Real: Jay Clouse's post.</div></div>
+    <div class="fig"><img style="width:auto;max-height:78mm" src="img/real-jay-chat.png" alt=""><div class="cap">Real: our chat with Jay.</div></div>
+  </div>
+
+  <h2><span class="k">2.6</span>Props and stitch art</h2>
+  <p>The props are photo cut-outs made in Canva; the stitch art is After Harvest's own cross-stitch (the same family as
+  the website). Use at most two per slide, at the edges, never touching the key words. Each should mean something: wheat
+  is the harvest (results), the ticket is the event, the folders are chapters, the scarecrow is us.</p>
+  <div class="props">
+    <figure><img src="img/prop-wheat.png"><figcaption>wheat</figcaption></figure>
+    <figure><img src="img/prop-tickets.png"><figcaption>tickets</figcaption></figure>
+    <figure><img src="img/prop-folder.png"><figcaption>folder</figcaption></figure>
+    <figure><img src="img/prop-hat.png"><figcaption>straw hat</figcaption></figure>
+    <figure><img src="img/prop-graph.png"><figcaption>graph paper</figcaption></figure>
+    <figure><img src="img/prop-receipt.png"><figcaption>receipt</figcaption></figure>
+    <figure><img src="img/prop-envelope.png"><figcaption>envelope</figcaption></figure>
+  </div>
+  <div class="props">
+    <figure><img src="img/scarecrow-brown-coat.png"><figcaption>scarecrow</figcaption></figure>
+    <figure><img src="img/scarecrow-black-coat.png"><figcaption>scarecrow</figcaption></figure>
+    <figure><img src="img/stitch-wheat-bundle.png"><figcaption>wheat bundle</figcaption></figure>
+    <figure><img src="img/stitch-rose.png"><figcaption>rose</figcaption></figure>
+    <figure><img src="img/stitch-pink-flower.png"><figcaption>flower</figcaption></figure>
+    <figure><img src="img/stitch-lavender.png"><figcaption>lavender</figcaption></figure>
+    <figure><img src="img/stitch-gold-coin.png"><figcaption>coin</figcaption></figure>
+    <figure><img src="img/stitch-check-olive-cut.png"><figcaption>check</figcaption></figure>
+  </div>
+  <p>Numbers and short words can be cross-stitched in code: <span class="mono">&lt;div data-stitch="$100K"
+  data-cell="15" data-color="#C98A1E"&gt;</span> (<span class="mono">stitch.js</span>).</p>
+
+  <h2><span class="k">2.7</span>Hand marks</h2>
+  <div class="props"><figure><img src="img/hand-circle-olive-cut.png"><figcaption>circle</figcaption></figure>
+    <figure><img src="img/hand-arrow-loop-olive-cut.png"><figcaption>loop arrow</figcaption></figure></div>
+  <p>One precise mark per slide at most: the olive circle or loop arrow, or a mark drawn with <span class="mono">ink.js</span>
+  (a wobbly underline, circle, arrow or cross-out). A circle never crosses the letters it marks. No handwriting font on
+  slides.</p>
+
+  <h2><span class="k">2.8</span>Never</h2>
+  <table>
+    <tr><th style="width:50%">never</th><th>why</th></tr>
+    <tr><td>Tape stuck on a photo</td><td>Sean, 29 Oct: "very generic"</td></tr>
+    <tr><td>The caps label / serif headline / italic line stack on every slide</td><td>Sean, 28 Oct: "very Claude"</td></tr>
+    <tr><td>A row of identical cards, evenly spaced; the same shadow on everything; confetti</td><td>template tells</td></tr>
+    <tr><td>Website parts rebuilt as boxes; a fake UI</td><td>show the real screenshot instead (R8)</td></tr>
+    <tr><td>Office stock photos as if they were ours</td><td>R7: stock only as a marked placeholder</td></tr>
+    <tr><td>Gradients, glows, neon, gears, AI-busy pictures</td><td>Jason's "before" slides <span class="t">[23:31, 35:03]</span></td></tr>
+    <tr><td>The number, the title or the price as the biggest thing</td><td>R12</td></tr>
+    <tr><td>Numbering 1, 2, 3 on three items</td><td>R19</td></tr>
+    <tr><td>Invented copy, a fake fact, a fake testimonial or count</td><td>facts only, each with a source</td></tr>
+    <tr><td>Copying Deya's compositions</td><td>Sean, 29 Oct: "a very bad recreation of Deya's"</td></tr>
+  </table>
+</section>
+
+<!-- PART 3 -->
+<section class="part">
+  <div class="part-head"><div class="no">Part 3</div><h1>The layouts</h1>
+    <p>The eleven slides of the light set are the base. Use them as templates: pick by the job the line has to do, never
+    the same layout twice in a row.</p></div>
+  <p class="small">File: <span class="mono">templates/youtube/youtube-light.html</span>. Each slide is one
+  <span class="mono">&lt;section&gt;</span>; copy it, change the words and pictures, render. The "audit" line is what part 6
+  says still needs fixing on that slide.</p>
+
+  <div class="layout"><img src="img/s1-title.jpg"><div><div class="meta">s1 · title · job: the promise</div><h3>Title</h3>
+    <p>Three voices: a Literata lead-in, a Hanken shout, an Olivera script line, and a small aside. The face big on the
+    right; props at the edges (wheat, tickets).</p>
+    <p><span class="lab">Build</span>lead-in, shout, script line, aside.</p>
+    <p class="small">Audit: five colours on it; keep rust only on the script line.</p></div></div>
+
+  <div class="layout"><img src="img/s2-agenda.jpg"><div><div class="meta">s2 · agenda · job: where we are going</div><h3>Agenda (the map)</h3>
+    <p>Kraft folders for the chapters, a tick on the finished one, a hand arrow "we are here". It returns at every
+    chapter (R30, R32).</p>
+    <p><span class="lab">Build</span>folder 1, 2, 3; on each return the tick and arrow move.</p>
+    <p class="small">Audit: make the current folder biggest and lifted, the done one small and ticked, the next faded.</p></div></div>
+
+  <div class="layout"><img src="img/s3-part.jpg"><div><div class="meta">s3 · part title · job: a new chapter</div><h3>Part title</h3>
+    <p>A sage band across the top, a stitched number, the title in cream, the face over the band edge; the real thing
+    for the chapter under the band.</p>
+    <p><span class="lab">Build</span>band and title, then the real thing, then its note.</p>
+    <p class="small">Audit: remove the tape; title as a sentence ("Three days, then the cart opens.").</p></div></div>
+
+  <div class="layout"><img src="img/s4-the-problem.jpg"><div><div class="meta">s4 · the turn · job: name the real problem</div><h3>The actual problem</h3>
+    <p>A two-weight headline with the turn word in rust, a full-height rust panel, the face in a rounded box, the
+    scarecrow beside it.</p>
+    <p><span class="lab">Build</span>headline, then the evidence.</p>
+    <p class="small">Audit: it tells; show the real 7 launch emails, then the lone sales page.</p></div></div>
+
+  <div class="layout"><img src="img/s5-number.jpg"><div><div class="meta">s5 · the number · job: one fact that lands</div><h3>The number</h3>
+    <p>A stitched figure on torn graph paper, a lead-in above, the source line under it.</p>
+    <p><span class="lab">Build</span>lead-in, then the figure, then the source.</p>
+    <p class="small">Audit: the number is the biggest thing (R12); make the meaning big and show the real post.</p></div></div>
+
+  <div class="layout"><img src="img/s6-step.jpg"><div><div class="meta">s6 · step + screen · job: one step, shown</div><h3>Step and screen</h3>
+    <p>A tiny "step 3:", a huge lowercase line, the real screen on the right, a sticker carrying one fact.</p>
+    <p><span class="lab">Build</span>label, line, screen, the fact.</p>
+    <p class="small">Audit: confirm the plan card is a real client's, or label it a sample.</p></div></div>
+
+  <div class="layout"><img src="img/s7-proof.jpg"><div><div class="meta">s7 · proof · job: show it happened</div><h3>Proof</h3>
+    <p>"proof #1" up the edge, the real post with the key line highlighted, the chat, the source lines.</p>
+    <p><span class="lab">Build</span>the post, the highlight; next slide the chat lines one by one.</p>
+    <p class="small">Audit: three proofs on one slide; split into three; no tape.</p></div></div>
+
+  <div class="layout"><img src="img/s8-which.jpg"><div><div class="meta">s8 · split · job: a contrast</div><h3>Which one?</h3>
+    <p>A question title, two sides (the old way faded, the new way lit), "or" stitched between, short chips.</p>
+    <p><span class="lab">Build</span>question, left side, "or", right side, chips.</p>
+    <p class="small">Audit: replace the stock inbox with our real one; plain prints, not polaroids.</p></div></div>
+
+  <div class="layout"><img src="img/s9-story.jpg"><div><div class="meta">s9 · story break · job: a story starts</div><h3>Story time</h3>
+    <p>A pill, a centred title, the real line from the story, the face below wearing the straw hat.</p>
+    <p><span class="lab">Build</span>pill, title, then the real message.</p>
+    <p class="small">Audit: show the real chat message instead of typing it.</p></div></div>
+
+  <div class="layout"><img src="img/s10-list.jpg"><div><div class="meta">s10 · list · job: reasons</div><h3>The list</h3>
+    <p>A sage field, a title, the reasons each with a picture, a closing line, the face on the right.</p>
+    <p><span class="lab">Build</span>one reason per slide, then all three together as the recap.</p>
+    <p class="small">Audit: stock photos, numbering, label title. Question title; real things; no numbers.</p></div></div>
+
+  <div class="layout"><img src="img/s11-end.jpg"><div><div class="meta">s11 · end screen · job: the one next step</div><h3>End screen</h3>
+    <p>The soft call to action, the URL, the time it takes, and the two video tiles YouTube fills in the last 20 seconds.</p>
+    <p><span class="lab">Build</span>the question, the stack of what is in the plan, then the URL bar.</p>
+    <p class="small">Audit: show what is in the plan, as Jason's stack without a price (R34).</p></div></div>
+
+  <h2><span class="k">3.2</span>Six layouts still to make</h2>
+  <p>Jason's method needs these and the light set does not have them yet. Build them in the light set's style.</p>
+  <table>
+    <tr><th style="width:24%">layout</th><th style="width:46%">what it is</th><th>rule</th></tr>
+    <tr><td><b>The mechanism</b></td><td>Day 1 you teach, Day 2 you teach, Day 3 the cart opens; four states: all
+      even, Day 1 current, Day 2 current (Day 1 ticked small, Day 3 faded), Day 3 current; a rust arrow on the current day</td><td>R32</td></tr>
+    <tr><td><b>The intro tease</b></td><td>later slides shown as slides inside a slide, one per point, then a wall of
+      slides cut off at the bottom</td><td>R31</td></tr>
+    <tr><td><b>The recap</b></td><td>"So far:" the mechanism and the proof brought back, smaller, ticked</td><td>R30</td></tr>
+    <tr><td><b>Table + reveal</b></td><td>the revenue calculator built row by row, then the white veil and "+$XK" on top</td><td>R27</td></tr>
+    <tr><td><b>The countable grid</b></td><td>a number shown as things: registrants as people, years as calendars</td><td>R9</td></tr>
+    <tr><td><b>The plan stack (CTA)</b></td><td>what is in the free event plan, one bar with theafterharvest.com</td><td>R34</td></tr>
+  </table>
+</section>
+
+<!-- PART 4 -->
+<section class="part">
+  <div class="part-head"><div class="no">Part 4</div><h1>The process</h1>
+    <p>From a line in the script to a finished slide. Do the steps in order; most mistakes come from skipping step 3.</p></div>
+
+  <ol class="steps">
+    <li><b>Get the script, line by line.</b> The video's script or its transcript. Number the lines. Each slide starts
+      from one exact line, never from a layout.</li>
+    <li><b>Fill one slide card per line</b> (below). The belief comes first: what must the viewer believe after this
+      slide that they did not before?</li>
+    <li><b>Ask "How do we show this?"</b> (R5) and find the real thing. Where to look: the VSL Figma file, our Drive,
+      the lead's own pages, our chats and emails, the calculator, screenshots you take now. Write the source line
+      while you have it.</li>
+    <li><b>Split.</b> One idea per slide (R24). If the card has two beliefs, it is two cards.</li>
+    <li><b>Pick the layout by the job</b> (part 3): promise, map, chapter, turn, number, step, proof, contrast, story,
+      list, call to action. Never the same layout twice in a row.</li>
+    <li><b>Decide what is biggest</b> (R12): the words that carry the belief. The title goes small unless it is the
+      belief.</li>
+    <li><b>Write the build</b> (R25, R26): the order things appear, matched to the words as they are said. In teaching,
+      something new every 5-10 seconds.</li>
+    <li><b>Build it in HTML.</b> Copy the layout's <span class="mono">&lt;section&gt;</span> from
+      <span class="mono">templates/youtube/youtube-light.html</span> into the video's own file; put new pictures in
+      <span class="mono">templates/youtube/art/real/</span> with a row in its <span class="mono">SOURCES.md</span>; render
+      with <span class="mono">python3 scripts/render_slides.py &lt;file.html&gt;</span>.</li>
+    <li><b>Check it</b> against the per-slide checklist (part 5). Look at the render at full size and at phone size.</li>
+    <li><b>The deck pass.</b> The mechanism returns with its states, the agenda returns, there is an intro tease and a
+      recap, the call to action is one slide with one action (part 5, deck checklist). Then send the slides to Sean one
+      by one, full size, no contact sheet. Write any new standard he sets into <span class="mono">rulings.md</span> the
+      same day.</li>
+  </ol>
+
+  <h2><span class="k">4.1</span>The slide card</h2>
+  <div class="card">SLIDE  [number]                         LINE  [the exact words from the script]
+
+BELIEF    what they must believe after this slide
+SHOW      "How do we show this?"  the real thing (file + source line)
+BIGGEST   the words that carry the belief
+JOB       promise / map / chapter / turn / number / step / proof / contrast / story / list / CTA
+LAYOUT    s1-s11, or a new one (part 3.2)
+BUILD     1. ...  2. ...  3. ...   (as said; every 5-10 s)
+PROPS     at most two, at the edges, each meaning something (or none)
+CHECK     part 5 per-slide checklist done</div>
+
+  <h2><span class="k">4.2</span>A worked example</h2>
+  <div class="card">LINE      "It took Jay nine years to get to his first $100K launch."
+BELIEF    a creator with a real audience can still wait years for one big launch
+SHOW      nine crossed-off calendar years, then Jay's real post (x.com/jayclouse, 9:45 PM, 7/9/26)
+BIGGEST   "nine years" and "his first $100K launch" (not the number alone)
+JOB       number
+LAYOUT    s5, with the calendars instead of the stitched figure
+BUILD     1. the nine calendars appear  2. they cross off one by one  3. the post slides in
+          4. the key line highlights
+PROPS     none (the calendars are the picture)</div>
+
+  <h2><span class="k">4.3</span>Building the steps in HTML</h2>
+  <p>Until the build tool is written, make one copy of the slide per step (s5a, s5b, s5c), each adding one element,
+  and render them all; they play as the build when cut into the video. The planned tool: a <span class="mono">data-step</span>
+  number on each element and a render per step.</p>
+</section>
+
+<!-- PART 5 -->
+<section class="part">
+  <div class="part-head"><div class="no">Part 5</div><h1>Checklists</h1>
+    <p>Tick every box before a slide or a deck goes to Sean.</p></div>
+  <h2>Every slide</h2>
+  <ul class="check">
+    <li>It starts from one exact line of the script</li>
+    <li>One idea; one belief written down</li>
+    <li>"How do we show this?" answered with a real thing</li>
+    <li>Every real picture has a source line under it</li>
+    <li>Only the key line is highlighted</li>
+    <li>No stock photo, unless marked as a placeholder</li>
+    <li>No tape on any photo</li>
+    <li>The biggest words carry the belief</li>
+    <li>Not the title, the number or the price as the biggest thing</li>
+    <li>The title tells the story (a sentence or a question)</li>
+    <li>Reads top to bottom</li>
+    <li>Two colours: ink and rust (sage only as ground)</li>
+    <li>At most two type voices, plus the source line</li>
+    <li>Key line 56px+, supporting 40px+</li>
+    <li>No numbering on three items; no abbreviations</li>
+    <li>At most two props, at the edges, each meaning something</li>
+    <li>One hand mark at most; it never crosses letters</li>
+    <li>The face is there; nothing covers the key words</li>
+    <li>Nothing collides; margins about 112px</li>
+    <li>The build order is written</li>
+    <li>No invented fact, count or quote</li>
+    <li>No em dashes; sentence case</li>
+  </ul>
+  <h2>Every deck</h2>
+  <ul class="check">
+    <li>An intro tease (slides inside a slide)</li>
+    <li>The agenda returns at each chapter, with progress</li>
+    <li>The mechanism slide exists and returns with its states</li>
+    <li>Each key slide is seen three times</li>
+    <li>A recap ("so far")</li>
+    <li>Never the same layout twice in a row</li>
+    <li>Something new every 5-10 seconds in teaching</li>
+    <li>One call to action slide, one action</li>
+    <li>The same pictures return and change (storyboard)</li>
+    <li>Every new picture has a row in SOURCES.md</li>
+  </ul>
+  <h2>Before it goes to Sean</h2>
+  <ul class="check">
+    <li>Rendered at full size and looked at</li>
+    <li>Looked at again at phone size</li>
+    <li>Sent one by one, full size, no contact sheet</li>
+    <li>Any new standard he sets goes in rulings.md the same day</li>
+  </ul>
+</section>
+
+<!-- PART 6 -->
+<section class="part">
+  <div class="part-head"><div class="no">Part 6</div><h1>Audit of the current slides</h1>
+    <p>The light set (11 slides) checked against Jason's method. Full version: <span class="mono">audits/2026-10-29-light-set-vs-jason.md</span>.</p></div>
+  <p>The light set already does several things Jason asks for: real screenshots with the source under them, a question
+  as a title, an agenda that shows where we are. What it misses is everything that happens <i>over time</i>: it is 11
+  still pictures, when his decks are hundreds of slides built one line at a time, with a mechanism slide that comes
+  back and a recap. <b>The look is the strong part; the method is the missing part.</b></p>
+  <h2>The six fixes that matter most</h2>
+  <ol class="steps">
+    <li><b>Design the builds</b>: one idea per slide, each with its build order; the 11 become about 40 (R24-R26).</li>
+    <li><b>Make the 3-day event the mechanism slide</b>, the most designed slide, back with progress in every section (R32).</li>
+    <li><b>Replace every stock photo</b> with a real thing of ours (s8, s10) (R7, R8).</li>
+    <li><b>Never make the number the biggest thing</b> (s5): the meaning big, the number as the real screenshot (R12).</li>
+    <li><b>Two colours per slide</b>: ink plus rust; props at the edges (R15, R20).</li>
+    <li><b>Bigger type</b>: key line 56px+, support 40px+ (R18).</li>
+  </ol>
+  <h2>Deck-level findings</h2>
+  <table>
+    <tr><th style="width:30%">rule</th><th style="width:34%">the light set</th><th>fix</th></tr>
+    <tr><td>Slides are free (R24)</td><td>several slides carry 2-3 ideas</td><td>s7 into 3, s10 into 4</td></tr>
+    <tr><td>Motion every 6 s; build as said (R25, R26)</td><td>no builds designed</td><td>a build order for every slide</td></tr>
+    <tr><td>The mechanism slide (R32)</td><td>the 3 days only as a note and chips</td><td>build it with its four states</td></tr>
+    <tr><td>Three exposures; recap (R30)</td><td>no recap</td><td>add "so far"</td></tr>
+    <tr><td>Intro tease (R31)</td><td>agenda is a list of names</td><td>slides inside a slide after s1</td></tr>
+    <tr><td>Least important not biggest (R12)</td><td>s5 number biggest; s10 numbers</td><td>see slides</td></tr>
+    <tr><td>Titles tell the story (R13)</td><td>s3, s4, s10 are labels</td><td>sentences or questions</td></tr>
+    <tr><td>Two colours (R15)</td><td>up to five colours (s1)</td><td>ink + rust</td></tr>
+    <tr><td>Bigger fonts (R18)</td><td>body 27-32px, captions 19px</td><td>56/40px</td></tr>
+    <tr><td>Real proof, no stock (R7)</td><td>stock on s8, s10</td><td>our inbox, Zoom, calendar invite, checkout</td></tr>
+    <tr><td>Screenshot + source (R8)</td><td>sources on s3, s5, s7, s8</td><td>keeps; add highlights on s3, s6</td></tr>
+    <tr><td>Metaphors (R10)</td><td>"harvest" over office folders</td><td>one or the other</td></tr>
+    <tr><td>Countable numbers (R9)</td><td>none</td><td>nine years as calendars</td></tr>
+    <tr><td>The CTA slide (R34)</td><td>URL and time, no stack</td><td>what is in the plan, one bar</td></tr>
+  </table>
+  <h2>Slide by slide</h2>
+  <table>
+    <tr><th style="width:14%">slide</th><th style="width:26%">keeps</th><th style="width:30%">breaks</th><th>fix</th></tr>
+    <tr><td>s1 title</td><td>the face big; the promise</td><td>five colours</td><td>rust only on the script line; fewer props</td></tr>
+    <tr><td>s2 agenda</td><td>a tick and "we are here"</td><td>all folders equal; mixed metaphor</td><td>current biggest, done small, next faded</td></tr>
+    <tr><td>s3 part two</td><td>real page and ticket, source</td><td>tape; label title; days as a note</td><td>no tape; a sentence title; then the mechanism</td></tr>
+    <tr><td>s4 problem</td><td>the turn word in rust</td><td>all telling; small mono text</td><td>show the 7 emails, then the lone sales page</td></tr>
+    <tr><td>s5 number</td><td>source line; stitch</td><td>the number is biggest</td><td>meaning big; calendars; the real post</td></tr>
+    <tr><td>s6 step</td><td>real artefact; small step label</td><td>plan card origin unchecked</td><td>confirm real or label sample</td></tr>
+    <tr><td>s7 proof</td><td>real screenshots, sources, highlight</td><td>three proofs on one slide; tape</td><td>split into three; no tape</td></tr>
+    <tr><td>s8 which</td><td>question title; contrast on one slide</td><td>stock inbox; crowded</td><td>our inbox; plain prints</td></tr>
+    <tr><td>s9 story</td><td>story break; real quote</td><td>quote typed</td><td>the real chat message</td></tr>
+    <tr><td>s10 list</td><td>rule of three</td><td>stock; numbering; three at once</td><td>one per slide, then together; no numbers</td></tr>
+    <tr><td>s11 end</td><td>one soft CTA, no scarcity</td><td>plan contents not shown</td><td>the plan stack, one URL bar</td></tr>
+  </table>
+  <h2>What to make next, in order</h2>
+  <ol class="steps">
+    <li>The mechanism slide and its four states; the agenda with its progress states.</li>
+    <li>s4, s5, s7 and s10 rebuilt, one idea per slide, with real things.</li>
+    <li>The builds for every slide.</li>
+    <li>The intro tease and the recap.</li>
+    <li>s11 as the plan stack.</li>
+    <li>Type sizes and colours checked on every render.</li>
+  </ol>
+</section>
+
+<!-- PART 7 -->
+<section class="part">
+  <div class="part-head"><div class="no">Part 7</div><h1>Decisions for Sean</h1>
+    <p>Where Jason's method and our look disagree. Until Sean answers, the house rule in the last column applies.</p></div>
+  <table>
+    <tr><th style="width:5%">#</th><th style="width:33%">Jason</th><th style="width:30%">our look today</th><th>house rule until decided</th></tr>
+    <tr><td>1</td><td>"better to look ugly than pretty" <span class="t">[16:06]</span></td><td>"nicely made" (28 Oct)</td><td>crafted and warm, never slick</td></tr>
+    <tr><td>2</td><td>cut what does not persuade <span class="t">[5:34]</span></td><td>full and a little playful (28 Oct)</td><td>two props at most, at the edges</td></tr>
+    <tr><td>3</td><td>one font, three faces, no italics <span class="t">[13:35, 33:10]</span></td><td>three type voices (28 Oct)</td><td>two voices per slide at most</td></tr>
+    <tr><td>4</td><td>the webcam beside the slide; no presenter photo <span class="t">[11:58]</span></td><td>the face circle on every slide (brief)</td><td>keep for YouTube; webinar decks to decide</td></tr>
+    <tr><td>5</td><td>~500 slides, motion every 6 s <span class="t">[28:44]</span></td><td>11 still slides</td><td>builds every 5-10 s in teaching</td></tr>
+    <tr><td>6</td><td>emojis as count icons <span class="t">[37:54]</span></td><td>stitch icons and props</td><td>our stitch icons</td></tr>
+    <tr><td>7</td><td>no AI pictures <span class="t">[20:05]</span></td><td>Canva-made props</td><td>props yes, as props only; never as proof</td></tr>
+    <tr><td>8</td><td>CTA in a yellow bar, blue link <span class="t">[41:47]</span></td><td>our colours</td><td>our colours; the link in rust, underlined</td></tr>
+  </table>
+</section>
+
+<!-- FILES -->
+<section class="part">
+  <div class="part-head"><div class="no">Files</div><h1>Where everything lives</h1>
+    <p>The repo is github.com/seeeadd/fladdy (branch main).</p></div>
+  <table>
+    <tr><th style="width:44%">what</th><th>where</th></tr>
+    <tr><td>This guide (HTML source and PDF)</td><td class="mono">guide/</td></tr>
+    <tr><td>The brand kit (fonts, colours, props, stitch art, marks, real pictures, face, slide references)</td><td class="mono">brand-kit/</td></tr>
+    <tr><td>The light set (the base layouts)</td><td class="mono">templates/youtube/youtube-light.html</td></tr>
+    <tr><td>Rendering slides</td><td class="mono">python3 scripts/render_slides.py &lt;file.html&gt;</td></tr>
+    <tr><td>Real pictures and their sources</td><td class="mono">templates/youtube/art/real/SOURCES.md</td></tr>
+    <tr><td>Jason's slide video, torn down</td><td class="mono">jason-fladlien-videos/01 .../teardown.md</td></tr>
+    <tr><td>All teardowns</td><td class="mono">TEARDOWNS.md</td></tr>
+    <tr><td>The method, short (read first)</td><td class="mono">playbooks/core.md, playbooks/slides.md</td></tr>
+    <tr><td>Sean's rulings</td><td class="mono">rulings.md</td></tr>
+    <tr><td>The slide rules</td><td class="mono">rules/slide-method.md</td></tr>
+    <tr><td>This audit, full</td><td class="mono">audits/2026-10-29-light-set-vs-jason.md</td></tr>
+    <tr><td>Deya's audit</td><td class="mono">sources/inspiration/deya/AUDIT.md</td></tr>
+  </table>
+  <p class="small">Fonts: Olivera is the free demo from dafont (Sean, 28 Oct: use the demo); Literata, Hanken Grotesk and
+  IBM Plex Mono are open-source (SIL Open Font License).</p>
+</section>
+</body></html>

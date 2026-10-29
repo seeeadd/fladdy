@@ -1,0 +1,11 @@
+/* Fladdy / After Harvest YouTube slides: colour and type tokens (the light set). */
+:root {
+  --paper: #FBF8F1; --card: #FFFEFA; --ink: #262119; --quiet: #6E6554;
+  --rust: #B06A4A; --rust-deep: #9A5A3F; --sage: #8A9068; --cream: #F3EEDF;
+  --olive: #6F7452; --stitch-gold: #C98A1E; --spark: #E8A100;
+  --display: "Olivera", "Literata", Georgia, serif;
+  --display-italic: "Olivera Oblique", "Literata", Georgia, serif;
+  --sub: "Literata", Georgia, serif;          /* italic */
+  --body: "Hanken Grotesk", system-ui, sans-serif;
+  --label: "IBM Plex Mono", ui-monospace, monospace;
+}

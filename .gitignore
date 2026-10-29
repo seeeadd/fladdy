@@ -6,3 +6,6 @@
 .DS_Store
 __pycache__/
 .ingest-tmp/
+
+# built by scripts/make_brand_kit.py
+brand-kit/
