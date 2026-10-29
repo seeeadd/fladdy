@@ -7,10 +7,16 @@ really want it in an SOP. Before we do anything, I want Claude to be able to go 
 finish without asking. The skill `.claude/skills/video-teardown/` runs this SOP.
 
 **Output, per video:** one folder `<coach>-videos/NN Title (id)/` holding `transcript.md`, `study.md`, `sheets/`,
-`meta.json`, and `teardown.md` (the analysis), on GitHub `main`, plus the links sent to Sean.
+`distinct/` + `distinct.md` (only the frames worth reading), `meta.json`, and `teardown.md` (the analysis), on
+GitHub `main`, plus the links sent to Sean.
 
-**Time:** about 2 minutes to ingest, then 10-20 minutes to tear down a 1-hour video (the frames are read by 4
-agents at once). Say the estimate when the video is over 1 hour.
+**Two modes** (Sean, 2026-10-29: "Is there any way to make this whole thing faster?"):
+- **Full** (the default): everything below. About 2 minutes to ingest, then about 10 minutes for a 1-hour video.
+- **Quick** (Sean says "quick", or he needs the notes now): steps 1, 2 and 5 as written; in step 3 the main chat
+  reads `distinct/` itself (no agents) and logs only what changes the teardown; step 4 fills every section but the
+  appendix holds that short log. About 5 minutes for a talk-to-camera video. `check_teardown.py --quick` is its gate.
+
+Say the estimate first when the video is over 1 hour.
 
 ---
 
@@ -22,7 +28,11 @@ python3 scripts/add_video.py <youtube url or id>
 
 It downloads the captions and the storyboard frames (`scripts/ingest_youtube.py`), reads the channel, and files
 the video as `<channel>-videos/NN Title (id)/`, numbered after the ones already there, with its row added to that
-folder's `README.md`. It prints the frame-sheet chunks for step 3.
+folder's `README.md`. Then it runs `scripts/distinct_sheets.py`, which keeps only the frames worth reading (one
+frame per stretch of talking head, every new page or slide, and drawings as they build up) and repacks them as
+`distinct/D00.jpg ...` with `distinct.md`. On the first five videos that halved the frames to read (74 sheets
+instead of 150; talk-to-camera videos lost 55-80% of theirs, Jeremy's pad-heavy video 46%). It prints the
+distinct-sheet chunks for step 3.
 
 Check what it prints:
 - `OK ...` with a sheet count of about (length / 90 s) and a transcript word count. `ALREADY ...` means the video
@@ -52,34 +62,39 @@ Read `transcript.md` from start to end. While reading, collect:
 
 Every item gets its timestamp. Nothing is paraphrased into a claim he did not make.
 
-## 3. Read the frames (4 agents in parallel)
+## 3. Read the frames (agents in parallel)
 
-For a video over 30 minutes, start one background agent per chunk printed in step 1 (about 17 sheets each), all
-in the same message. Under 30 minutes, read the sheets yourself with the same brief. The brief, with the folder,
-the title and the range filled in:
+Read `distinct/`, not `sheets/`: it holds the same information in about half the sheets. Start one background
+agent per chunk printed in step 1 (about 12 distinct sheets each), all in the same message, and do step 2 while
+they run. One chunk only (a short or talk-to-camera video): read it yourself with the same brief. When Sean wants
+every frame (a slide-design video he will study closely), use `sheets/` + `study.md` in the brief instead.
+
+The brief, with the folder, the title and the range filled in:
 
 > You are logging what is ON SCREEN in a YouTube video, from storyboard frame sheets, for a slide-design teardown.
 > Video: <coach>, "<title>" (<length>).
 > Folder: `<absolute path to the video folder>/`
-> - `sheets/SNN.jpg`: 960x540 images, each a 3x3 grid of 320x180 frames, read left to right, top to bottom, about
->   10 s apart.
-> - `study.md`: for each sheet (heading `## sheets/SNN.jpg [m:ss - m:ss]`), each frame's timestamp (row/col) and the
->   words said while it was on screen.
+> - `distinct/DNN.jpg`: 960x540 images, each a 3x3 grid of 320x180 frames, read left to right, top to bottom. Each
+>   frame is stamped with its time at top left. They are the frames worth reading: one per stretch of talking head
+>   (then one a minute), every new page or slide, and drawings as they build up (about every 30 s, plus the
+>   finished state). Frames in between were left out because they repeat.
+> - `distinct.md`: for each sheet (heading `## distinct/DNN.jpg [m:ss - m:ss]`), each frame's time, its kind
+>   (camera or content), the storyboard frame it came from, and the words said until the next kept frame.
 >
-> Your range: sheets <SAA> to <SBB> (inclusive). For each sheet, Read the sheet image with the Read tool and read
-> that sheet's section of study.md. Report what is visually on screen. The frames are small: write only text you
+> Your range: sheets <DAA> to <DBB> (inclusive). For each sheet, Read the sheet image with the Read tool and read
+> that sheet's section of distinct.md. Report what is visually on screen. The frames are small: write only text you
 > can actually read; never guess; write "(unreadable)" otherwise.
 >
 > Return markdown only, in exactly this shape:
 >
-> ## SAA [m:ss-m:ss]
+> ## DAA [m:ss-m:ss]
 > - shots: one entry per distinct visual state with the frame time where it starts. Types: talking head / screen
 >   share (name the app or page) / iPad or whiteboard drawing / slide / B-roll / text overlay / split screen /
 >   picture-in-picture.
 > - on-screen text: exact words you can read, each with its time.
 > - technique: how the visual supports what is said, only when notable.
 >
-> After the last sheet, add `## Patterns in SAA-SBB` with 3-6 bullets: how often the visual changes, rough share of
+> After the last sheet, add `## Patterns in DAA-DBB` with 3-6 bullets: how often the visual changes, rough share of
 > talking head vs screen/drawing, recurring layouts (face position and size, colours, captions, branding),
 > anything a slide designer could copy.
 >

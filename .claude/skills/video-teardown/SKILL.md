@@ -7,15 +7,17 @@ description: Ingest a YouTube video and tear it down, start to finish, with no b
 
 Follow `sops/video-teardown.md` exactly; it holds the agent brief and the teardown template. In short:
 
-1. `python3 scripts/add_video.py <url>`: files the video as `<coach>-videos/NN Title (id)/` and prints the
-   frame-sheet chunks. Handle its WARN / NEW lines as the SOP says.
+1. `python3 scripts/add_video.py <url>`: files the video as `<coach>-videos/NN Title (id)/`, keeps only the frames
+   worth reading in `distinct/`, and prints the distinct-sheet chunks. Handle its WARN / NEW lines as the SOP says.
+   "Quick" in Sean's message means the SOP's quick mode (no agents, about 5 minutes).
 2. Read `transcript.md` whole: chapter map, named frameworks, every number with its range, processes in order,
    stories, lines worth keeping, calls to action. Everything with its `[m:ss]`.
-3. Frames: one background agent per printed chunk, all started in one message, with the SOP's brief (over 30
-   minutes of video); under 30 minutes, read the sheets yourself. Wait for every agent.
+3. Frames: one background agent per printed chunk of `distinct/` sheets, all started in one message, with the SOP's
+   brief; do step 2 while they run. One chunk only: read it yourself. Wait for every agent.
 4. Write `teardown.md` in the video folder from the SOP template; the agents' logs go in its appendix. Then
    `python3 scripts/check_teardown.py "<folder>"` must print PASS.
 5. `python3 scripts/teardown_index.py` (rebuilds TEARDOWNS.md); commit, push the working branch, merge to `main`,
    push `main`; send Sean the folder, transcript, teardown and TEARDOWNS.md links plus the open questions.
 
-Say the time estimate first when the video is over an hour (about 2 minutes to ingest, 10-20 minutes to tear down).
+Say the time estimate first when the video is over an hour (about 2 minutes to ingest, about 10 minutes to tear
+down a 1-hour video; quick mode about 5 minutes).

@@ -5,14 +5,15 @@
 Runs scripts/ingest_youtube.py, reads the channel from meta.json, and files the result as
 <channel>-videos/NN Title (id)/ (jason-fladlien-videos/, jeremy-haynes-videos/, a new folder for a new coach),
 numbered after the videos already there. Adds the video's row to that folder's README.md (and writes the README
-for a new coach). Prints the folder, the checks, and the frame-sheet chunks for the teardown agents.
+for a new coach), runs scripts/distinct_sheets.py (the frames worth reading, in distinct/), and prints the folder,
+the checks, and the distinct-sheet chunks for the teardown agents.
 0 tokens; a 1-hour video takes about 2 minutes. Re-running for a video already filed changes nothing.
 """
 import json, os, re, shutil, subprocess, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TMP = os.path.join(ROOT, ".ingest-tmp")
-CHUNK = 17  # sheets per teardown agent: about 25 minutes of video
+CHUNK = 12  # distinct sheets per teardown agent (distinct_sheets.py keeps about half the frames)
 
 
 def video_id(arg):
@@ -99,10 +100,15 @@ def main():
     print(f"OK {folder}/{name}")
     print(f"   {channel} | {clock(meta.get('duration') or 0)} | {len(sheets)} sheets | transcript {words} words")
     if not words and "--frames-only" not in sys.argv:
-        print("   WARN no transcript: re-run later (YouTube 429s), or ask Sean to paste it")
-    print("   frame chunks for the teardown agents:")
-    for i in range(0, len(sheets), CHUNK):
-        part = sheets[i:i + CHUNK]
+        print("   WARN no transcript: re-run later (YouTube 429s), or ask Sean to paste the transcript")
+    if words:
+        subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "distinct_sheets.py"), os.path.join(home, name)], cwd=ROOT)
+    dist = sorted(f for f in os.listdir(os.path.join(home, name, "distinct")) if f.endswith(".jpg")) \
+        if os.path.isdir(os.path.join(home, name, "distinct")) else []
+    use = dist or sheets
+    print(f"   frame chunks for the teardown agents ({'distinct/' if dist else 'sheets/'}):")
+    for i in range(0, len(use), CHUNK):
+        part = use[i:i + CHUNK]
         print(f"     {part[0][:-4]}-{part[-1][:-4]}")
     if not os.path.exists(os.path.join(ROOT, "CLAUDE.md")) or folder not in open(os.path.join(ROOT, "CLAUDE.md")).read():
         print(f"   NEW coach folder: add `{folder}/` to the table in CLAUDE.md")
