@@ -80,7 +80,8 @@ there.
     slides 2:48-4:38].
 29. The mechanism slide is the most important content slide: name small and off-centre, small arrows, no "level"
     labels, a tagline per step, easy to change live, revisited with progress [Jason slides 23:04-25:00, 27:28].
-30. Every deck ends on his call to action slide (template below) [Jason slides 40:58-42:14].
+30. Every deck has his call to action slide, "My favorite slide ... Everybody should have it" (template below) [Jason
+    slides 40:58-42:14].
 
 **Nicely made: Sean's rulings (these govern today)**
 31. One focal photo object per slide, shot like a product photo (generated, cut out with rembg, a soft two-layer
@@ -91,8 +92,8 @@ there.
     [ruling 2026-10-28; slide-method §3, §4].
 33. The object carries real printed detail ("Admit one · live online", "No. 0001") and repeats (the tickets return as
     the Day 1-3 agenda); a blank box reads as a placeholder [slide-method §3b].
-34. YouTube slides stay simple and adaptable: one theme file, layouts that do not depend on After Harvest art
-    [ruling 2026-10-28].
+34. YouTube slides stay simple and adaptable: one theme file, layouts that do not depend on After Harvest art (the
+    later light set adds only the brand's own stitch and props) [ruling 2026-10-28].
 35. Dark YouTube stage: near-black #1D1914, a gold spotlight behind the object, a 6% dot grid, eggshell type, a
     Literata italic subhead, one gold moment (#E8A100) per slide, the wrong answer faded and the right one lit, white
     cards under the light with a deep shadow [ruling 2026-10-28; slide-method §3b].
