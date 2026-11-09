@@ -1,3 +1,5 @@
+Fresh chat? Read the handoff first: [`playbook/HANDOFF-main-chat.md`](playbook/HANDOFF-main-chat.md) (what the first Fladdy chat built, decided and left open; the cleaned transcript is in `playbook/transcripts/`).
+
 # Fladdy (Slides That Sell): instructions for Claude
 
 Fladdy is After Harvest's slide machine: webinar slides and YouTube slides, built on Jason Fladlien's method
